@@ -1,0 +1,600 @@
+================================================================================
+MASTER BUILD PROMPT FOR GOOGLE AI STUDIO
+PROJECT: MOBILE LEGENDS: BANG BANG (MLBB) - 100% EXACT UI, GAMEPLAY & SYSTEM CLONE
+================================================================================
+
+ROLE & MISSION:
+Act as a Principal MOBA Game Architect, Senior Graphics/VFX Engineer, and UI/UX Systems Designer. Build a complete, playable, production-grade web clone of **Mobile Legends: Bang Bang (MLBB)** with 100% faithful UI layout, exact button locations, dynamic animated backgrounds, full 5v5 Land of Dawn battlefield simulation, all interactive map/ping/camera features, all 7 Settings tabs (with working Drag-and-Drop Custom UI Editor), complete Hero/Item/Emblem/Battle Spell databases, authentic combat/CC/animation physics, and smart 5v5 AI bots.
+
+STRICT ZERO-PLACEHOLDER RULE:
+- Do NOT leave "TODO", "Coming Soon", empty tabs, or dead buttons. Every screen, corner button, modal, setting slider, shop tree, minimap ping, and combat skill MUST function smoothly.
+- Build a high-FPS (60+ FPS) HTML5 Canvas / WebGL (Three.js or rich 2.5D Isometric Canvas with dynamic lighting, shadows, grass sway, water ripples, and layered particle VFX) + React/Tailwind UI overlay + Web Audio API procedural SFX/Announcer sound engine.
+- Persist user Profile, Rank, BP/Tickets/Diamonds, Custom UI layouts, Saved Builds, Emblem setups, Match History, and Settings in `localStorage`.
+
+================================================================================
+SECTION 1: VISUAL DESIGN, BACKGROUNDS & AUDIO ATMOSPHERE
+================================================================================
+1.1 UI VISUAL THEME (MLBB MODERN GOLDEN-AZURE AESTHETIC):
+- Palette: Deep Royal Navy (`#0B132B`), Celestial Blue (`#1B3B6F`), Luminous Gold Trim (`#E6B84C` / `#FFE28A`), Glowing Cyan Energy (`#38BDF8`), Crimson Danger (`#EF4444`), Emerald Ready (`#22C55E`).
+- Typography: Clean geometric bold sans-serif for headers/timers, condensed uppercase for rank badges, tabular numbers for KDA/Gold/Cooldowns/Ping.
+- Panel Styling: Beveled metallic gold borders, chamfered sci-fi/fantasy corners, glassmorphic dark blue backdrops, glowing active tabs, and smooth 150ms scale/fade transitions.
+
+1.2 DYNAMIC ANIMATED BACKGROUNDS:
+- Main Lobby Background: Full-screen animated 3D/2.5D Land of Dawn sanctuary vista (floating monoliths, drifting golden embers, volumetric sunbeams, animated clouds, glowing runes on the pedestal) with your selected Hero centered on a rotatable 3D/layered turntable. Swiping horizontally rotates the hero; tapping triggers hero idle animations and procedural voice-line captions/SFX.
+- Draft Pick Background: Dark tactical war-room marble hall with glowing blue vs. red energy pillars and animated hero splash transitions on lock-in.
+- Loading Screen Background: Split 5v5 clash arena backdrop with dynamic light flares and shimmering Rank Borders (Warrior, Elite, Master, Grandmaster, Epic, Legend, Mythic, Mythical Honor, Mythical Glory, Mythical Immortal).
+- Selectable Battlefield Map Themes (Switchable in Pre-Match Lobby & Settings -> Basics):
+  1. Imperial Sanctuary (Classic bright sunlit stone & emerald forest)
+  2. Western Expanse (Golden desert dunes, canyon rock & oasis river)
+  3. Celestial Palace (Cloud-top white marble, gold pillars & astral river)
+  4. Sanctum Island (Ancient coastal ruins, misty waterfalls & turquoise sea)
+  5. Harmonic Sanctuary (Glowing lotus ponds & twilight lantern ambiance)
+- Selectable 2026 Battlefield Map Mechanics Variants (Toggleable in Pre-Match/Custom):
+  1. Dangerous Grass (Extra dense ambush bushes around Turrets, Mid, and Lord/Turtle pits)
+  2. Broken Walls (Extra shortcut wall gaps near Blue/Red Buffs and Mid lanes for high-mobility ganks)
+  3. Flying Cloud (Spawns a high-speed Wind Platform at Base Fountain after death to fly rapidly back to outer lanes)
+  4. Expanding Rivers (Flooding river currents grant stronger speed boosts extending into jungle entrances)
+
+1.3 PROCEDURAL WEB AUDIO ENGINE (NO EXTERNAL BROKEN MP3S):
+- Synthesize crisp MLBB UI click chimes, metallic tab swooshes, Match Found heartbeat gong, Ban/Pick slam drums, Turret lock-on warning beeps, Ping chimes (Attack sword clash, Retreat shield tone, Gather horn, On My Way chime), Skill cast SFX (slash, fireball, laser, freeze, blink), Kill streaks ("First Blood!", "Double Kill!", "Triple Kill!", "Maniac!", "SAVAGE!", "Unstoppable!", "Godlike!", "Legendary!", "Wiped Out!", "Victory!", "Defeat!") with animated screen banners + synthesized speech/chimes.
+
+================================================================================
+SECTION 2: EXACT UI SCREEN ARCHITECTURE & BUTTON COORDINATES
+================================================================================
+
+--------------------------------------------------------------------------------
+SCREEN A: MAIN LOBBY (EXACT 4-EDGE ANCHOR LAYOUT)
+--------------------------------------------------------------------------------
+ASCII WIREFRAME (16:9 LANDSCAPE):
++======================================================================================+
+| [Avatar / Profile]  [Event] [Starlight]  |  [Tickets] [BP] [Diamonds +] [🎧][✉️][⚙️] |
+|  (Rank/Level/Name)  [Shop]  [Daily]      |                      [Wi-Fi / Battery]    |
+|                                          |                                           |
+| [Recharge / Promo                        |                                [Friends] |
+|  Event Banners]                          |                                [Squad]   |
+|                         ( 3D Hero / Skin |                                [Recruit] |
+|                           Showcase Area  |                                [Ranking] |
+|                           - Tap/Rotate ) |                                           |
+| [Live / Stream]                          |                                           |
+|                                          |               +-------------------------+ |
+| [Chat Bar: Global / Team / Squad]        |               |   [RANKED]  [CLASSIC]   | |
+|                                          |               |   [BRAWL]   [ARCADE]    | |
+| [Prep] [Heroes] [Collection] [Backpack] [Esports/Events] |   [VS AI]   [CUSTOM]    | |
++======================================================================================+
+
+EXACT BUTTON LOCATIONS & BEHAVIORS:
+1. TOP-LEFT CORNER (Identity & Store Hub):
+   - Player Profile Avatar (Extreme Top-Left): Displays Avatar photo, animated Rank Border, Account Level badge (1-100), Current Rank Crest, and Nickname. Clicking opens SCREEN B (Player Profile & Namecard).
+   - Shop (Shopping Bag Icon, directly below/beside Avatar): Full multi-tab Store -> Recommended, Heroes (buy with BP/Diamonds), Skins (Normal/Elite/Special/Epic/Collector/Legend), Draw (Magic Wheel & Lucky Spin simulator), Preparation (Recall/Spawn/Elimination effects), and Fragment Exchange.
+   - Starlight & Events (Upper-Left strip): Opens Monthly Starlight Pass reward track (Lv 1-60) and Active Seasonal/Promo Diamond Event Hall.
+   - Daily Tasks / Activity Chest (Left strip): Daily & Weekly activity meter (0-800 pts) with claimable BP & Ticket chests.
+2. TOP-RIGHT CORNER (Currencies & System Utilities):
+   - Currency Bar (Left to Right):
+     * Tickets (Blue Ticket Icon)
+     * Battle Points / BP (Gold Coin Icon)
+     * Diamonds (Blue Gem + [+] Recharge Modal button)
+   - System Utility Icons (Extreme Top-Right, Left to Right):
+     * Customer Service (Headset Icon): Opens Help/FAQ, Bug Report, Account Appeal modal.
+     * Mail (Envelope Icon with red notification dot): System notices, Claimable Rewards, Friend Gifts, Match Reports, "Claim All" & "Delete Read".
+     * Settings (Gear Icon): Opens SCREEN G (Full 7-Tab Settings Menu).
+     * Device Telemetry: Live simulated Wi-Fi Ping bar (green/yellow/red ms) + Battery level icon.
+3. LEFT & CENTER AREAS:
+   - Event & Promo Carousel (Mid-Left): Auto-rotating swipeable cards linking to Shop Draws, Patch Notes, and New Hero Spotlights.
+   - Live Stream (TV/Camera Icon, Lower-Left): Watch simulated AI-vs-AI live Spectate match with commentary HUD.
+   - 3D Hero Showcase (Center): Drag to rotate hero, tap for voice line/pose, plus a "Switch Lobby Hero" quick button on the edge.
+   - Chat Bar (Bottom-Center-Left above Bottom Dock): Live scrolling ticker; clicking expands tabbed Chat Drawer (Global, Local, Recruitment, Squad, Mentor, Private Friends) where players can send messages.
+4. RIGHT EDGE (Social Drawer & Leaderboards):
+   - Expandable Social Sidebar: Friends (Online/In-Match/Offline with Invite, Spectate, Chat), Squad (9-player Squad tag, Squad Activity, Squad Rank), Team Recruit (browse/post 5-man lobbies), and Leaderboards (Trophy Icon -> Street/Regional Hero MMR, Global Hero Power, Ranked Tier, Squads, Charisma, Collection).
+5. BOTTOM NAVIGATION DOCK & MODE ENTRY:
+   - Bottom-Left to Bottom-Center Dock (5 Buttons):
+     1. Prep (Preparation): Emblems & Talents builder, Equipment Pro/Custom 3-slot Builds per hero, Battle Spells showcase, Quick Chat audio/text wheel configurator, Battle Effects (Recall/Spawn/Elimination/Kill Banner), Tutorials.
+     2. Heroes: Full 133-Hero gallery with Role filters (All, Tank, Fighter, Assassin, Mage, Marksman, Support), Lane filters (EXP, Jungle, Mid, Gold, Roam), Search bar, Hero Mastery quests, Base Stats & 4-Skill preview, and Skin switcher.
+     3. Collection / Achievements: Collection Tier progression (Novice Collector -> World Collector) & Career Achievements with "Claim All".
+     4. Backpack (Inventory): Trial Cards, Double BP/EXP Cards, Star Protection/Raising Cards, Hero/Skin Fragments, Battle Emotes, Chests (clickable to open/use).
+     5. Esports / Rising Open: Weekend tournament bracket simulator & MPL/M-Series live event hub.
+   - Game Mode Entry Cards (Bottom-Right Quadrant):
+     * RANKED (Draft Pick 5v5 with Star/Mythic Points progression)
+     * CLASSIC (Blind Pick 5v5 Land of Dawn)
+     * BRAWL (Single-lane 5v5 fast mayhem, random hero choice with 1 reroll)
+     * ARCADE (Mayhem / Overdrive mode with 80% CDR & amplified skills)
+     * VS AI (Easy / Normal / Hard Bot match)
+     * CUSTOM (5v5 Custom, 1v1 Mid, and PRACTICE MODE with live cheat panel)
+
+--------------------------------------------------------------------------------
+SCREEN B: PLAYER PROFILE & NAMECARD (6 LEFT VERTICAL TABS)
+--------------------------------------------------------------------------------
+1. Namecard / Profile: Hero Showcase model, customizable ID Cards (Mythic Medal, Collector, Achievement Hall, Season Info), Namecard Highlights (auto-logged Savages/Maniacs/MVPs with Like/Super Like counters), Account ID & Server ID (with Copy button), Charisma, Squad Tag, Edit Profile button (Avatar, Border, Flag, Bio, Titles).
+2. Social / Affinity: Partners/Bros/Besties/Confidants affinity links, Mentorship, Photo Album, Like Records.
+3. Battlefield: Statistics (Win Rate, MVP count, Savage/Maniac/Triple Kill/Legendary badges, 6-axis KDA/Push/Teamfight/Survival/Farm/Damage Radar Chart filtered by All Seasons/Current Season/Ranked/Classic), Favorite Heroes MMR list.
+4. History: Chronological Match History list showing Hero, Result (Victory/Defeat), K/D/A, Medal (MVP, Gold, Silver, Bronze), 6-Item Build, Duration, and clickable Full 10-Player Scoreboard Replay summary.
+5. Credit Score: Live Credit Score gauge (0-110), Weekly BP Cap, Ranked eligibility indicator (90+ required), and Judge Silvanna Violation/Report log.
+6. Account: Account Center bindings UI, Switch Server, Secondary Password toggle, Export/Reset Save Data.
+
+--------------------------------------------------------------------------------
+SCREEN C: PRE-MATCH LOBBY, DRAFT PICK & 10-PLAYER LOADING SCREEN
+--------------------------------------------------------------------------------
+1. Pre-Match Lobby:
+   - Center: 5 Hero Pedestals (Player + 4 inviteable AI/Bot friends or party slots) showing Rank borders & Affinity icons.
+   - Top-Left: Back button, Mode Title, Lane/Role Pre-Selection toggle (EXP, Jungle, Mid, Gold, Roam).
+   - Top-Right: Lobby Mic/Speaker toggle, Map Theme Selector, Map Variant Selector (Standard / Dangerous Grass / Broken Walls / Flying Cloud / Expanding Rivers), Team Recruit button.
+   - Right Sidebar: Inviteable Friends/Squad/AI Teammates list.
+   - Bottom-Left: Party Chat.
+   - Bottom-Right: Large Golden "START GAME" button -> Triggers Match Found popup with 10 glowing player checkmarks and "ENTER" accept button (30s countdown).
+2. Ranked Draft Pick Screen (Epic+ / Ranked Mode) & Classic Hero Select:
+   - Top-Center: Phase Banner ("BAN PHASE" -> "PICK PHASE" -> "FINAL ADJUSTMENT"), Countdown Timer, and 5 Blue Ban Slots + 5 Red Ban Slots flanking the timer.
+   - Left Column (Blue Team): 5 Ally slots showing locked Hero, Battle Spell, Lane badge, and "Swap Hero" arrows in adjustment phase.
+   - Right Column (Red Team): 5 Enemy slots showing revealed Enemy picks & Battle Spells.
+   - Center Grid: Role & Lane filter tabs + searchable 133-Hero portrait grid.
+   - Bottom Control Strip: "Show Hero / Winrate" button, Quick Prep Bar (one-tap switchers for Equipment Build Preset 1/2/3, Emblem & 3 Talents, Battle Spell, Skin selector), and Team Draft Chat (Bottom-Left).
+3. 10-Player Loading Screen:
+   - Top Row (5 Blue Team Cards) vs. Bottom Row (5 Red Team Cards), each showing Hero Splash Art, Skin Tag, Rank Frame, Player Name, Emblem Icon, Battle Spell, Loading Progress %, and Interactive Tap-to-Send "Good Luck!" emoji/sparks.
+
+--------------------------------------------------------------------------------
+SCREEN D: IN-MATCH BATTLEFIELD HUD (EXACT DEFAULT COORDINATES)
+--------------------------------------------------------------------------------
+ASCII WIREFRAME:
++======================================================================================+
+| +--------------+  [Team Score: Blue 12 | 08:45 | Red 10]   [Ping: 18ms | 60fps] [⚙️] |
+| |   MINIMAP    |  [K/D/A: 4/1/6] [Gold: 6,240] (Tap->Board)         [Attack ⚔️]      |
+| | (Tap/Drag to |  [Ally1][Ally2][Ally3][Ally4]                      [Retreat 🛡️]     |
+| |  Pan Camera) |  (HP + Green Ult Dot + Respawn)                    [Gather 🎯]      |
+| +----------[🔍]+                                                     [🎤] [🔊]       |
+| [💰 1,450 | Quick-Buy Item 1]                                        [💬 Chat]       |
+| [   Shop  | Quick-Buy Item 2]                (Open Upper-Right       [😄 Emote]      |
+|                                               Screen = Free                          |
+|                                               Camera Drag Zone)                      |
+|                                                                      (❌ Cancel Cast |
+|                                                                       appears on     |
+|       (O)                                 [Hero Lock 1][2][3]         skill drag)    |
+|     (STICK)                             [Active Item]     [+S3 Ult]                  |
+|    Movement                             [Spell]      [+S2]    [Turret]               |
+|    Joystick           [Recall][Regen]           [+S1]      [BASIC ATK]               |
+|                        (Buff Icons)                        [Minion]                  |
++======================================================================================+
+
+EXACT IN-MATCH HUD ZONES:
+1. TOP-LEFT ZONE (Minimap, Allies & Quick-Buy Shop):
+   - Minimap (Extreme Top-Left): Real-time 5v5 positions (masked by Fog of War), Turret HP rings, Jungle camp respawn countdown icons, Turtle/Lord timer icons, glowing ping ripples, and camera viewport box.
+   - Magnifying Glass Tab [🔍] on bottom-right corner of Minimap: Expands the minimap to 45% screen overlay for precision tactical pinging and route drawing.
+   - Teammate Status Strip (Directly beside/under Minimap): 4 Allied hero portraits with live HP bars, respawn countdown timers when dead, and a bright Green Dot on top corner when their Ultimate is OFF cooldown.
+   - Gold Counter & Quick-Buy Shop (Directly below Minimap on Left Edge):
+     * Displays live Gold + up to 2 Quick-Buy item slots (sub-components or finished items from your prioritized build) that glow gold when affordable; one click buys instantly without interrupting movement!
+     * Clicking the Gold/Bag icon opens the Semi-Transparent **Shop-Anywhere Overlay** (respects Battlefield UI Opacity slider so you can still watch the map):
+       - Left Categories: Recommended, Attack, Magic, Defense, Movement, Jungling, Roaming, Potions.
+       - Center: Visual Item Crafting Tree (Tier-1 -> Tier-2 -> Tier-3) with automatic discount deduction for owned sub-items.
+       - Right Panel: Item Stats, Unique Passives/Actives, [BUY], [PRIORITIZE], and Bottom 6-Slot Equipped Bar with [SELL] (60% gold refund).
+2. TOP-CENTER ZONE (Match Telemetry & Scoreboard):
+   - Score & Clock Bar: Allied Kills (Blue) | Match Timer (`MM:SS`) | Enemy Kills (Red).
+   - Personal Telemetry: Live `K / D / A` and `Total Gold`.
+   - Full 10-Player Scoreboard Overlay (Opens when tapping top bar or pressing `Tab`):
+     * Tab 1 (Equipment): Hero portrait, Level, K/D/A, Gold, Emblem Talent, Battle Spell (clickable to ping enemy spell cooldown!), 6 equipped items, and Mute Chat/Voice toggles per player.
+     * Tab 2 (Data): Live Damage Dealt to Heroes, Damage Taken, Turret Damage, and Teamfight Participation %.
+     * Tab 3 (Hero Attributes): Your hero's exact real-time stats (HP, Mana/Energy, Phys/Magic Attack, Phys/Magic Def, Attack Speed, Crit %, Penetration, Lifesteal/Spell Vamp, CDR %, Movement Speed).
+3. TOP-RIGHT & RIGHT-EDGE ZONE (System, Pings & Comms):
+   - Network Ping (`18ms`), FPS counter (`60fps`), and Settings Gear `[⚙️]` (opens in-match Settings with "Surrender" button unlocked at 6:00).
+   - 3 Tactical Signal Buttons stacked vertically:
+     * `[⚔️ Attack]` (Red)
+     * `[🛡️ Retreat]` (Yellow)
+     * `[🎯 Gather]` (Blue)
+   - Voice Mic `[🎤]`, Speaker `[🔊]`, Quick Chat Drawer `[💬]` (customizable callouts + free text), and Battle Emote Wheel `[😄]` (displays animated floating emote above hero head with sound).
+4. BOTTOM-LEFT ZONE (Movement):
+   - Virtual Movement Joystick (supports Fixed Position or Floating Position per Settings, plus Desktop WASD / Arrow Keys support).
+5. BOTTOM-CENTER ZONE (Utility & Buffs):
+   - `[Recall]` button (4-second channel to teleport to Base Fountain), `[Regen]` button (60s CD, restores HP/Mana over 5s, interrupted by hero/turret damage), and active Buff/Debuff icon bar (Blue Buff, Red Buff, Turtle Shield, Lord Buff, Potion, Stack Counters).
+6. BOTTOM-RIGHT ZONE (Combat Cluster):
+   - Primary Basic Attack Button (Large circular button at bottom-right anchor; supports `Space` or Mouse Click on desktop).
+   - Advanced Targeting Buttons (when Controls -> Targeting Method = Advanced):
+     * `[Turret]` Attack Button (above Basic Attack) — forces hero to prioritize Turrets/Base.
+     * `[Minion]` Attack Button (below/left of Basic Attack) — forces hero to prioritize Minions/Creeps.
+   - Skill Arc (Curved around Basic Attack, each with `[+]` Level-Up button when Skill Points available and numeric cooldown + mana tint):
+     * Skill 1 (`Q`), Skill 2 (`W`), Skill 3 Ultimate (`E`), plus Skill 4 (`R`) automatically displayed for 4-skill heroes (e.g., Zhuxin, Julian, Valentina, Kagura, Selena, Roger, Pharsa, Luo Yi, Yve, Beatrix, Popol & Kupa, etc.).
+   - Battle Spell Button (`F`) positioned left of Skill 1/2.
+   - Active Equipment Skill Button (`D`) (appears automatically when owning Wind of Nature, Winter Crown, Conceal, Encourage, Sprint boots, etc.).
+   - Hero Lock Portrait Wheel (up to 5 nearby enemy portraits appear in a clean arc above skills; tapping locks target with a red tether line & crosshair ring).
+   - Dynamic `[❌ Cancel Cast]` Zone: Appears automatically in the upper-right area when dragging any skill aim indicator; dragging into it (or past cancel distance) aborts the cast cleanly with zero cooldown loss.
+
+================================================================================
+SECTION 3: ALL INTERACTIVE BATTLEFIELD FEATURES & TACTICAL SIGNALING (MANDATORY!)
+================================================================================
+Implement EVERY SINGLE ONE of these authentic MLBB battlefield interactions:
+
+3.1 FOUR CAMERA & SCOUTING MODES:
+1. Direct Minimap Drag Scouting: Touching/clicking and dragging anywhere inside the Top-Left Minimap immediately pans the live battlefield camera to that exact world coordinate, rendering a glowing white viewport rectangle inside the minimap. Releasing snaps camera smoothly back to your hero.
+2. Open-Screen Free Camera Panning: Dragging on the open upper-right quadrant of the battlefield screen smoothly glides the camera up to 1.5 screens away in any direction (sensitivity controlled by Settings -> Controls -> Camera Sensitivity slider) to scout bushes, Turtle/Lord pits, and teamfights. Releasing smoothly recenters on your hero.
+3. Aim Panning (Long-Range Skillshots): When Aim Panning is ON in Settings, dragging long-range directional skills (e.g., Franco Hook, Selena Abyssal Arrow, Novaria Astral Sphere, Layla Ult, Xavier Ult, Moskov Ult) dynamically shifts the camera toward the aim direction to extend line-of-sight.
+4. Death Spectate Camera: While waiting to respawn, tapping any Ally portrait in the Teammate Status Strip or dragging the minimap lets you spectate teammates live.
+
+3.2 DRAG-TO-MARK ENEMY, BUSH, TURRET & OBJECTIVE PINGING (EXACT MLBB MECHANIC):
+- Quick-Tap `[Attack]`, `[Retreat]`, or `[Gather]`: Broadcasts an instant team ping at your hero's current location with minimap ripple and voice callout ("Launch Attack!", "Retreat!", "Request Backup!").
+- **PRESS-AND-DRAG TACTICAL MARKING (CRITICAL FEATURE):**
+  * When the player PRESSES AND HOLDS on `[Attack ⚔️]`, `[Retreat 🛡️]`, or `[Gather 🎯]` and drags their finger/cursor slightly, a **Pop-Out Interactive Tactical Mini-Map** instantly opens right beside the ping buttons!
+  * Dragging the cursor over any object on that Pop-Out Map snaps to the nearest entity and highlights it with a targeting reticle, displaying contextual smart preview text:
+    - Drag `[Attack]` onto an **Enemy Hero** -> Marks that enemy with a pulsing Red Crosshair on map + ground: *"Attack [Enemy Hero Name]!"*
+    - Drag `[Attack]` onto an **Enemy Turret** -> Marks turret: *"Destroy Enemy [Top/Mid/Bot] Turret!"*
+    - Drag `[Attack]` onto **Turtle / Lord** -> Marks objective: *"Attack the Turtle/Lord!"* (or if not spawned yet, broadcasts exact timer: *"Lord spawns in 0:42!"*)
+    - Drag `[Retreat]` onto a **Bush / Dark Fog Area** -> Places a glowing Yellow Warning Exclamation Eye in that bush: *"Watch out for ambush!"*
+    - Drag `[Retreat]` onto an **Enemy Hero** -> *"Be careful of [Enemy Hero Name]!"*
+    - Drag `[Gather]` onto an **Ally, Lane, or Objective** -> Places a pulsing Blue Rally Beacon: *"Gather at [Mid Lane / Turtle / Lord]!"*
+- **EXPANDED MINIMAP (`[🔍]`) MARKING & ROUTE DRAWING:**
+  * Opening the Expanded Minimap lets you tap ANY coordinate, enemy portrait (marks *"Enemy Missing!"* if in fog or *"Attack Enemy!"* if visible), turret, jungle buff, or Turtle/Lord icon.
+  * Clicking/dragging from your hero icon to a destination on the Expanded Minimap triggers an **"On My Way!"** glowing cyan dotted route line visible to all teammates on both the minimap and the battlefield ground!
+- **SMART AI BOT RESPONSE TO YOUR PINGS:**
+  * Allied AI bots MUST actively react to your pings! Pinging `[Attack Lord/Turtle]` causes nearby allies to rotate to the pit; pinging `[Retreat]` pulls overextended allies back; pinging `[Gather]` rallies nearby Roamer/Jungler bots to gank your lane!
+
+3.3 SMART COOLDOWN, GOLD & STATUS SIGNALING:
+- Dragging a Skill button, Ultimate button, or Battle Spell onto the Quick-Signal/Chat icon (or Shift/Alt-clicking on desktop) broadcasts live tactical status in team chat:
+  * *"Ultimate Ready!"* or *"Ultimate on cooldown: 14s!"*
+  * *"Retribution Ready!"* or *"Flicker on cooldown: 48s!"*
+- Tapping a prioritized item in the Shop broadcasts: *"Need 420 more Gold for Blade of Despair!"*
+- Tapping an Enemy Hero's Battle Spell icon inside the Scoreboard broadcasts: *"Enemy [Hero] used Flicker!"* with a countdown reminder.
+- Tapping your HP/Mana bar when below 25% broadcasts: *"Low HP, retreating!"* or *"Low Mana!"*
+
+3.4 VISION, FOG OF WAR & BUSH STEALTH SYSTEM:
+- Dynamic real-time Fog of War: Unseen areas of the map are dimmed; enemies inside bushes or outside ally/minion/turret vision radius are completely hidden.
+- **Overhead Bush Vision Detection Eye (`👁️`):**
+  * When your hero enters a bush, your model becomes semi-transparent (`opacity: 0.55`) showing you are concealed.
+  * If an enemy enters the same bush, drops a vision skill (Selena trap, Popol trap, Aldous Ult, Yi Sun-shin Ult, Novaria S1/Ult, Lesley Ult), or attacks you so you are revealed, a bright glowing **Eye Icon (`👁️`)** immediately appears above your hero's head so you know enemies can see you!
+
+3.5 TURRET RANGE RINGS & 3-STATE AGGRO WARNING:
+- Approaching any enemy turret displays a crisp circular Turret Range Ring on the battlefield floor:
+  * **GREEN RING:** Safe — allied minions are inside the turret absorbing tower shots, and you have not damaged an enemy hero.
+  * **YELLOW RING:** Caution — you are near the edge or minions are nearly dead.
+  * **RED RING + PULSING LASER TETHER + WARNING BEEP:** Turret is locked onto YOU (either no minions present or you dealt hero damage to an enemy inside turret range). Consecutive turret shots escalate damage exponentially (+40% per shot).
+
+3.6 SHIELDED RECALL, HERO LOCK, DEATH RECAP & PRACTICE CHEATS:
+- **Authentic Shielded Recall Rule:** Channeling Recall (4.0s) plays a circular magic sigil under your hero. Taking HP damage cancels Recall immediately; however, if you have an active Shield (e.g., Lolita, Esmeralda, Angela, Aegis, Rose Gold Meteor, Turtle Shield) and incoming damage is 100% absorbed by the shield without touching your HP bar, Recall is NOT interrupted!
+- **Hero Lock & Smart Targeting Tethers:** Tapping an enemy Hero Lock portrait locks your Basic Attacks and target skills onto that hero with a red ring under them. Dragging a Skill button when Smart Targeting is ON draws a curved targeting tether that snaps precisely onto enemy heroes or creeps.
+- **Death Damage Breakdown Recap:** Upon dying, a clickable `[Death Recap]` icon appears showing the exact top 3 damage sources (Hero icons, Skill names, Physical/Magic/True damage percentages, and CC duration suffered).
+- **Surrender System:** Available inside in-match Settings -> Basics starting at `06:00` match time (triggers a 5-slot team vote bar with simulated AI voting logic based on gold deficit).
+- **Practice Mode Live Cheat Drawer (Left-Edge Toggle in Custom -> Practice):**
+  * `+Level Up`, `Max Level (15)`, `+10,000 Gold`, `No Cooldown (Zero CD)`, `God Mode (Invincible)`, `Spawn Damage Bot`, `Spawn Normal Bot`, `Spawn Jungle/Turtle/Lord`, `Clear Minions`, `Toggle Turret Invincibility`, `Reset Position`.
+
+================================================================================
+SECTION 4: LAND OF DAWN BATTLEFIELD LAYOUT, FARM, JUNGLE & TIMERS
+================================================================================
+4.1 MAP GEOMETRY (SYMMETRICAL DIAGONAL 3-LANE ARENA):
+- Blue Base (Bottom-Left) vs. Red Base (Top-Right), connected by 3 Lanes + Central Diagonal River + 4 Jungle Quadrants:
+  * **EXP Lane** (Top-Left for Blue / Bottom-Right mirrored dynamically based on side — always marked with a glowing Sword/EXP icon on the floor at 0:00, grants +35% bonus EXP on Siege Minion for first 5 minutes).
+  * **Mid Lane** (Center diagonal shortest route; 3 Turrets per side: Outer, Inner, Inhibitor).
+  * **Gold Lane** (Opposite side from EXP Lane — marked with glowing Gold Coin icon on floor at 0:00, Siege Minion drops +45% bonus Gold for first 5 minutes).
+- **Base & Turret Structure (Per Side):**
+  * 1 Fountain (Instant rapid HP/Mana regen + lethal laser against invading enemies).
+  * 1 Main Base Crystal (Destroying it wins the match; deals high damage and has regenerative shield).
+  * 9 Turrets total: 3 Outer Turrets (Protected by **Outer Turret Energy Shield** from `00:00` to `05:00` -> reduces incoming damage by 50%, drops Gold coins per hit to nearby attackers), 3 Inner Turrets, 3 Base/Inhibitor Turrets (when destroyed, enemy spawns empowered **Super Minions** in that lane).
+- **River Currents & Healing:**
+  * Mid-River currents accelerate heroes walking downstream.
+  * River Lithowanderer (Walkie Grass) spawns in mid river near Blue Buff side; killing it summons a moving **Walkie Grass** ward that provides river vision, Mana regen, and +15% Movement Speed in river.
+
+4.2 EXACT JUNGLE CAMPS, MINIONS & OBJECTIVE TIMERS:
+| Entity / Objective | First Spawn | Respawn Timer | Location | Exact Buff / Reward |
+|---|---|---|---|---|
+| Lane Minion Waves | 00:10 | Every 00:30 | All 3 Lanes (Melee, Ranged, Siege/Cannon) | Gold + EXP; Gold Lane Siege (+Gold 0-5m), EXP Lane Siege (+EXP 0-5m). |
+| Outer Turret Shield | 00:00 | Expires 05:00 | All 6 Outer Turrets | 50% damage reduction; awards bonus Gold per plate damaged. |
+| Purple Buff (Thunder Fenrir / Blue Buff) | 00:20 | 01:15 (75s) | Top-Left & Bottom-Right Jungle | -10% Cooldown Reduction, -40% Mana Cost / -20% Energy Cost, HP heal on kill (75s duration). |
+| Orange Buff (Molten Fiend / Red Buff) | 00:20 | 01:15 (75s) | Bottom-Left & Top-Right Jungle | Bonus True Damage burn on attacks + Slow enemy (75s duration). |
+| Small Jungle Creeps (Beetle, Rockursa, Fiend, Crammer) | 00:25 | 01:00 (60s) | 4 Jungle Quadrants | Jungle Gold, EXP, and Retribution stack progression. |
+| Lithowanderer (River Sprite) | 00:43 | 02:00 (120s) | Mid-River (Blue Buff side) | Spawns moving Vision & Speed/Mana-regen aura in mid river. |
+| Gold Lane Crab (Sanctum Crab) | 00:45 | 01:30 (90s) | Outer River Alcoves (Gold & EXP side) | Drops Gold Buff (ticks bonus Gold every second for 18s). |
+| **TURTLE** | 02:00 | 02:00 (120s) (Stops spawning at 08:00) | River Pit (Always spawns on EXP Lane side!) | Killer gets massive refreshing Shield + Bonus Adaptive Attack; entire team gets Shield + Gold + EXP. |
+| **LORD (Normal)** | 08:00 | 03:00 (180s) after death | River Pit (Spawns on Gold/EXP pit) | Marches down the weakest enemy lane, smashing turrets with heavy AoE knockup slam. |
+| **ENHANCED LORD** | 12:00 | 03:00 (180s) | River Pit | Gains a Charge Dash that slams directly into the first enemy turret dealing massive True Damage. |
+| **EVOLVED LORD** | 18:00 | 03:00 (180s) | River Pit | Grants Damage Reduction aura to nearby allies, massive HP pool, and empowers ALL 3 lanes' minion waves simultaneously! |
+
+================================================================================
+SECTION 5: COMBAT MATH, ANIMATIONS, SKILL PHYSICS & VFX ENGINE
+================================================================================
+5.1 EXACT MLBB COMBAT FORMULAS:
+- Physical & Magic Damage Reduction Formula:
+  `EffectiveDefense = (TargetDefense - FlatPenetration) * (1 - PercentPenetration)` (Can go negative down to `-60` for amplified damage!)
+  `If EffectiveDefense >= 0: DamageMultiplier = 120 / (120 + EffectiveDefense)`
+  `If EffectiveDefense < 0: DamageMultiplier = 2 - (120 / (120 - EffectiveDefense))`
+- True Damage: Ignores all Defense and Damage Reduction (still blocked by Shields unless specifically bypassing).
+- Critical Strike: Base 200% Physical Damage (240% with Berserker's Fury).
+- Caps & Soft Caps:
+  * Cooldown Reduction (CDR): Hard cap 40% (45% with Enchanted Talisman).
+  * Attack Speed: Hard cap 3.00 attacks/sec (5.00 with Golden Staff/uncapped heroes).
+  * Movement Speed Soft Caps: Full value up to 415; between 415 and 490 gains 80% efficiency; above 490 gains 50% efficiency.
+- Healing & Anti-Heal: Lifesteal (Basic Attacks), Spell Vamp (Skills), Hybrid Lifesteal (Both). Anti-Heal items (Sea Halberd, Glowing Wand, Dominance Ice) reduce enemy Shields & HP Regen by 50% for 3s.
+
+5.2 6-TIER CROWD CONTROL (CC) HIERARCHY:
+1. Tier 1 (Soft CC): Slow, Grounded (blocks dashes).
+2. Tier 2 (Action Lock): Silence (blocks skills), Immobilize/Root (blocks movement), Disarm, Taunt.
+3. Tier 3 (Hard Disable): Stun, Freeze, Petrify, Morph/Transform (Nana Molina).
+4. Tier 4 (Displacement): Airborne/Knock-up, Knockback, Pull/Hook, Vortex.
+5. Tier 5 (Ultimate CC): Suppression (Franco Ult, Kaja Ult, Barats Ult — CANNOT be cleansed by Purify or Diggie Ult!).
+6. Tier 6 (Counters): CC Immunity (Gold glowing body shader — Martis S2, Chou S2, Lapu Ult, Diggie Ult) and Untargetable / I-Frames (Lancelot S2, Hayabusa Ult, Ling Ult, Wanwan Ult, Winter Crown).
+
+5.3 3-PHASE ANIMATION & 8 SKILL MOVEMENT PHYSICS:
+- Every attack/skill executes: (1) Foreswing/Wind-up with glowing ground telegraph -> (2) Active Hitbox Frames -> (3) Backswing (can be Animation-Canceled by moving or casting a dash!).
+- Implement all 8 Skill Movement & Geometry primitives in the engine:
+  1. Instant Blink (Teleports point A->B crossing walls; ignores dash-blockers like Khufra S2).
+  2. Linear Dash (Rapid travel across ground; stopped by Khufra/Minsitthar/Phoveus triggers).
+  3. Parabolic Z-Axis Leap (Elevates sprite/model height with ground shadow separation).
+  4. Tether & Snap-Back (Hayabusa Shadow, Harley Hat, Kagura Umbrella, Claude Dexter).
+  5. Forced Displacement (Franco Hook pull, Tigreal Push, Atlas Vortex throw, Badang Wall pin).
+  6. Channeling (Rooted like Pharsa/Odette/Gord vs. Free-Moving like Kimmy/Irithel/Cici).
+  7. Projectiles (Line Skillshot, Piercing Beam, Fan/Cone Sweep, Boomerang/Orbit, Homing Target-Lock).
+  8. Terrain Interaction (Fanny Steel Cables wall-grapple, Ling Wall-walking, Grock wall-slam).
+- 5 Visual VFX Layers on Canvas: Ground Warning Decals (blue ally / red enemy), Hero Wind-Up Glow & Silhouette Shaders (Gold = CC Immune, Translucent = Stealth, Cyan = Shield), Elemental Particle Trails, Overhead Stack Rings (e.g., Wanwan 3 weak-spots, Aldous stacks, Yin-Yang marks), and Floating Damage Numbers (Orange = Physical, Purple = Magic, White = True, Large Crits with `!`, Green = Heal).
+
+================================================================================
+SECTION 6: COMPLETE 7-TAB SETTINGS MENU & DRAG-AND-DROP CUSTOM UI EDITOR
+================================================================================
+Accessible from Top-Right `[⚙️]` in BOTH Main Lobby and In-Match. Every toggle must immediately affect the live game!
+
+TAB 1 — BASICS:
+- Outline (On/Off), Screen Shake (On/Off), Camera Height (Low / High — High zooms out 20% wider FOV!), Shadows (On/Off), Creep HP Bars (On/Off), Damage Text (On/Off), Colorblind Filter (Off/Deuteranopia/Protanopia/Tritanopia), Refresh Rate Cap (30 / 60 / 90 / 120 FPS), Graphics Quality (Smooth / Medium / High / Ultra), HD Mode, Battlefield Map Theme selector.
+- (In-Match Only): Red `[SURRENDER]` button at bottom (enabled after 06:00).
+
+TAB 2 — CONTROLS:
+- Targeting Method: Standard vs. **Advanced** (enables dedicated Turret & Minion attack buttons).
+- Targeting Priority: Lowest HP / Lowest HP % / Closest Target.
+- Hero Lock Mode (On/Off — shows enemy portrait lock wheel).
+- Skill Smart Targeting (On/Off), Basic Attack Smart Targeting (On/Off).
+- Aim Panning (On/Off), Assisted Aiming (On/Off), Attack Assist (On/Off).
+- Joystick Mode: Fixed Position vs. Floating.
+- Skill Cancel Method: Drag to `[❌]` Button vs. Drag by Distance.
+- Camera Sensitivity Slider (0% - 100%).
+- Auto Level-Up Skills (On/Off), Auto Buy Equipment (On/Off).
+
+TAB 3 — INTERFACE (INCLUDES LIVE DRAG-AND-DROP CUSTOM UI EDITOR):
+- **[OPEN CUSTOM UI EDITOR] Button:**
+  * Opens an interactive visual editor over the live battlefield HUD!
+  * Supports separate saved layouts for **3-Skill Heroes** and **4-Skill Heroes** + Presets (Default / Medium / Large).
+  * Click ANY HUD element (Minimap, Joystick, Basic Attack, Turret, Minion, S1, S2, S3, S4, Battle Spell, Active Item, Recall, Regen, Quick-Buy Shop, Ping Buttons, Cancel Cast) to:
+    - Drag to exact X/Y screen coordinates
+    - Resize Scale Slider (50% to 160%)
+    - Opacity Slider (15% to 100%)
+  * Buttons: `[Reset Default]`, `[Save & Apply]`, `[Exit]`.
+- Battlefield UI Opacity Slider (0% - 100% transparency for Shop & Scoreboard overlays).
+- Minimap Scale & Position toggle.
+
+TAB 4 — SOUND:
+- Master Volume, Sound Effects (SFX), Background Music (BGM), Hero Voices/Announcer, Voice Chat Volume sliders, Kill Announcer Style (Classic / Energetic / Esports), Audio Language selector.
+
+TAB 5 — NETWORK:
+- Speed Mode toggle, Network Boost (Dual-Channel simulation) toggle, `[Run Network Detection]` ping/jitter diagnostic test, `[Clear Cache]` button.
+
+TAB 6 — PRIVACY:
+- Hide Match History, Hide Favorite Heroes, Hide Online Status, Block Non-Friend Invites, Disable In-Match Enemy Chat toggles.
+
+TAB 7 — RESOURCE MANAGEMENT:
+- Simulated storage breakdown bar (Core Assets, HD Hero Models, Map Packs, Audio Packs) with `[Download All]` and `[Clear Redundancy]` interactive utilities.
+
+================================================================================
+SECTION 7: COMPLETE 133-HERO ROSTER DATABASE (A-Z THROUGH 2026)
+================================================================================
+Implement a data-driven Hero Engine so ALL 133 HEROES are selectable in Lobby, Heroes Gallery, Draft Pick, Classic, Brawl, AI, and Custom/Practice! Give every hero distinct base stats (HP, Mana/Energy, Phys/Magic Atk, Def, Move Speed, Range), distinct visual character avatar/weapon silhouettes, color-coded VFX palettes, and working Passive + S1 + S2 + Ultimate (+ S4 where applicable) mapped onto the 8 Skill Physics primitives:
+
+1. Aamon (Assassin | Jungle) — P: Invisible Armor (Camouflage + Shard heal) | S1: Soul Shards (homing daggers) | S2: Slayer Shards (pierce + instant camo) | Ult: Endless Shards (converging shard storm execute).
+2. Akai (Tank | Roam/Jungle) — P: Tai Chi (Shield + mark) | S1: Headbutt (dash + airborne) | S2: Body Slam (AoE slow + mark) | Ult: Heavy Spin (CC-immune spinning knockback pin).
+3. Aldous (Fighter | EXP) — P: Contract Transform (stack shield) | S1: Contract Soul Steal (infinite stacking mega-punch) | S2: Contract Explosion (damage reduction + stun) | Ult: Contract Chase Fate (global vision + unstoppable homing flight).
+4. Alice (Mage/Tank | EXP/Jungle) — P: Blood Ancestry (mana regen & move speed aura) | S1: Flowing Blood (orb + second-cast teleport) | S2: Blood Awe (AoE immobilize + %HP dmg) | Ult: Blood Ode (toggleable AoE life-drain ring).
+5. Alpha (Fighter | Jungle/EXP) — P: Beta, Advance! (2-mark True Damage laser + slow) | S1: Rotary Impact (slash wave) | S2: Force Swing (fan cleave + big heal) | Ult: Spear of Alpha (airborne slam drag + Beta barrage).
+6. Alucard (Fighter/Assassin | Jungle) — P: Pursuit (dash-enhanced basic attack) | S1: Groundsplitter (leap + slow) | S2: Whirling Smash (360 slash) | Ult: Fission Wave (hybrid lifesteal buff + wide shockwave).
+7. Angela (Support | Roam) — P: Smart Heart (move speed on cast) | S1: Love Waves (heal allies + slow/damage enemies) | S2: Puppet-on-a-String (tether -> immobilize) | Ult: Heartguard (global attach to ally + huge shield).
+8. Argus (Fighter | EXP) — P: Warmonger (double-strike + heal) | S1: Demonic Grip (hand pull + blink slash) | S2: Meteoric Sword (bleed trail) | Ult: Eternal Evil (cleanses CC + 4s Death Immunity, converts damage to HP).
+9. Arlott (Fighter/Assassin | EXP/Roam) — P: Demon Gaze (marks CC'd enemies) | S1: Dauntless Strike (cone stun) | S2: Vengeance (dash heal; instant CD reset on marked targets) | Ult: Final Slash (wide fan sweep knocking all enemies to edge).
+10. Atlas (Tank | Roam) — P: Frigid Breath (freeze aura) | S1: Annihilate (triple ground smash) | S2: Perfect Match (ejects body for speed + merge stun) | Ult: Fatal Links (chains all nearby enemies and slams them in chosen direction).
+11. Aulus (Fighter | Jungle) — P: Fighting Spirit (stacking attack/speed) | S1: Aulus, Charge! (speed + front damage reduction) | S2: The Power of Axe (fan cleave -> enhanced lifesteal attacks) | Ult: Undying Fury (passive weapon upgrades + flaming ground fissure).
+12. Aurora (Mage | Mid) — P: Pride of Ice (fatal damage triggers 1.5s Ice Freeze survival) | S1: Hailstone Blast (5 falling meteors) | S2: Frosty Breeze (cone freeze) | Ult: Frigid Glacier (giant spreading glacier shatter + AoE freeze).
+13. Badang (Fighter | EXP/Roam) — P: Chivalry Fist (4th hit knockback + wall stun) | S1: Fist Wind (ranged shockwave) | S2: Fist Break (dash + creates rock wall barrier) | Ult: Fist Crack (shielded CC-immune rapid punch barrage).
+14. Balmond (Fighter | Jungle/EXP) — P: Bloodthirst (heals %HP on minion/hero kills) | S1: Soul Lock (dash + slow) | S2: Cyclone Sweep (spinning axe AoE) | Ult: Lethal Counter (True Damage execute fan).
+15. Bane (Fighter/Mage | EXP/Jungle) — P: Shark Bite (skill charges AoE splash attack) | S1: Crab Claw Cannon (bouncing cannonball) | S2: Ale (self-heal + poison spit cone) | Ult: Deadly Catch (summons giant shark wave knocking enemies airborne).
+16. Barats (Tank/Fighter | Jungle/EXP) — P: Big Guy (stacks grow physical size, defense & AoE) | S1: So-Called Teamwork (oil spray + fire ignition) | S2: Missile Expert (missiles pull enemies toward Barats) | Ult: Detona's Welcome (CC-immune charge, swallows & suppresses enemy, spits into wall).
+17. Baxia (Tank | Jungle/Roam) — P: Baxia Mark (flat damage reduction + built-in 50% anti-heal) | S1: Baxia-Shield Unity (roll into wheel, leap walls, stun) | S2: Shield of Spirit (throws shield; resets CD on hero/creep hit) | Ult: Tortoise's Puissance (leaves lava trail + huge damage reduction).
+18. Beatrix (Marksman | Gold) — P: Mechanical Genius (4 swappable weapons: Renner Sniper, Bennett Grenade, Wesker Shotgun, Nibiru Dual-SMG) | S1: Coordination (swap guns) | S2: Tactical Reposition (dash reload) | Ult: 4 distinct Ultimates matching active gun!
+19. Belerick (Tank | Roam/EXP) — P: Deadly Thorns (reflects magic thorns when hit; +HP from items) | S1: Ancient Seed (line vines -> delayed taunt) | S2: Nature's Strike (speed + next hit heal/slow) | Ult: Wrath of Dryad (massive spreading AoE taunt vines).
+20. Benedetta (Assassin/Fighter | EXP/Jungle) — P: Elapsed Daytime (hold Basic Attack to charge Swordout dash) | S1: Phantom Slash (shadow + slash cone) | S2: An Eye for An Eye (brief CC/damage parry -> counter-stun) | Ult: Alecto Final Blow (untargetable dash leaving rapid-slashing sword trail).
+21. Brody (Marksman | Gold) — P: Abyss Corrosion (slow heavy moving auto-attacks stack marks up to 4) | S1: Abyss Impact (piercing shockwave adding stacks) | S2: Corrosive Strike (dash stun + flip back) | Ult: Torn-Apart Memory (global lock-on execute scaling with stacks).
+22. Bruno (Marksman | Gold) — P: Mecha Legs (stacks Crit Chance up to 20%) | S1: Volley Shot (empowered bouncing Powerball you can catch) | S2: Flying Tackle (slide stun + pulls ball) | Ult: Wave of the World (kicks energy ball bouncing 10 times reducing armor).
+23. Carmilla (Support/Tank | Roam) — P: Vampire Pact (steals enemy defenses) | S1: Crimson Flower (2 orbiting blood flowers healing Carmilla) | S2: Bloodbath (speed boost + ranged stun) | Ult: Curse of Blood (links up to 5 enemies so all damage & CC is shared across linked targets!).
+24. Cecilion (Mage | Mid) — P: Overflowing (infinite stacking Max Mana & damage) | S1: Bat Impact (long-range escalating bat blast) | S2: Sanguine Claws (claws pull enemies to center + immobilize) | Ult: Bats Feast (speed, slow immunity, sprays 40 healing blood bolts).
+25. Chang'e (Mage | Mid) — P: Trouble Maker (stacks amplify skill dmg) | S1: Starmoon Shockwave (energy spheres) | S2: Crescent Moon (shield + speed + enhances Basic Attacks & skills) | Ult: Meteor Shower (continuous 30-meteor forward barrage).
+26. Chip (Support/Tank | Roam) — P: Snack Time! (eats chips out of combat to heal) | S1: Crash Course (ground slam shield + mark stun) | S2: Overtime (hovercraft speed + knockback) | Ult: Shortcut (spawns interactive Portal connecting allies globally to target!) | S4: Why Walk? (teleports between 4 map Beacons).
+27. Chou (Fighter | EXP/Roam) — P: Only Fast (moving charges slow + enhanced punch) | S1: Jeet Kune Do (3-phase dash; 3rd hit knocks airborne & resets S2) | S2: Shunpo (CC-immune dash + shield) | Ult: The Way of Dragon (knocks enemy far back + second-cast mid-air flying combo).
+28. Cici (Fighter | EXP) — P: Performer's Delight (stacks speed & spell vamp) | S1: Yo-Yo Blitz (moves freely while rapidly whipping nearest enemy for %HP dmg) | S2: Buoyant Bounce (leap onto target -> second bounce!) | Ult: Curtain Call (tethers 2 enemies together; S1 hits both!).
+29. Claude (Marksman | Gold) — P: Battle Side-by-Side (Dexter monkey fires extra shots) | S1: Art of Thievery (fan steals Move/Attack Speed) | S2: Battle Mirror Image (places hologram; recast to teleport swap) | Ult: Blazing Duet (moves freely firing rapid 360-degree dual-gun barrage + shield).
+30. Clint (Marksman | Gold) — P: Double Shot (every skill empowers next Basic Attack into long piercing shot) | S1: Quick Draw (5 rapid fan bullets) | S2: Trapping Recoil (backstep + net immobilize) | Ult: Grenade Bombardment (up to 5 stored explosive grenades).
+31. Cyclops (Mage | Mid/Jungle) — P: Starlit Hourglass (every skill hit reduces ALL cooldowns by 0.5s) | S1: Stardust Shock (dual converging waves) | S2: Planets Attack (5 orbiting homing spheres + speed) | Ult: Star Power Lockdown (giant tracking orb that immobilizes up to 2s).
+32. Diggie (Support | Roam) — P: Young Again (turns into unkillable Egg on death to scout & harass) | S1: Auto Alarm Bomb (chasing owl bomb) | S2: Reverse Time (tethers enemy and pulls them back after 4s) | Ult: Time Journey (cleanses ALL team CC + grants 3s CC Immunity & massive shield).
+33. Dyrroth (Fighter | EXP/Jungle) — P: Wrath of the Abyss (rage enhances skills; 3rd hit heals) | S1: Burst Strike (abyss wave slow) | S2: Spectre Step (dash + lock-on strike shattering up to 75% Physical Defense!) | Ult: Abysm Strike (heavy cone execute scaling with missing HP).
+34. Edith (Tank/Marksman | EXP/Roam) — P: Overload (chain lightning autos) | S1: Earth Shatter (delay knockup) | S2: Onward (dash + backward throw) | Ult: Primal Wrath (ejects Phylax mech, converts Defense into massive Magic Power + ranged lifesteal attacks & new S1/S2).
+35. Esmeralda (Tank/Mage | EXP) — P: Starmoon Casket (basic attacks bypass shields & grant shields) | S1: Frostmoon Shield (steals nearby enemy shields + speed) | S2: Stardust Dance (dual spin reducing S1 CD) | Ult: Falling Starmoon (chargeable leap + AoE immobilize).
+36. Estes (Support | Roam) — P: Scripture of the Moon Elf (charges slow lightning) | S1: Moonlight Immersion (links to ally for massive continuous HP heal) | S2: Domain of Moon Goddess (ring heavily slows enemies touching edges) | Ult: Blessing of Moon Goddess (links & mega-heals ALL 4 nearby teammates at once).
+37. Eudora (Mage | Mid) — P: Superconductor (marks enemies to amplify next skill) | S1: Forked Lightning (fan blast + bonus dmg) | S2: Ball Lightning (target stun; spreads to nearby marked foes) | Ult: Thunder's Wrath (massive lightning bolt + delayed secondary AoE storm).
+38. Fanny (Assassin | Jungle) — P: Air Superiority (bonus damage & energy regen while flying) | S1: Tornado Strike (spin slash, auto-triggers mid-flight) | S2: Steel Cable (fires grapple hook to walls to zip across map!) | Ult: Cut Throat (lock-on heavy execute scaling with prey marks).
+39. Faramis (Support/Mage | Mid/Roam) — P: Vicious Retrieval (collects souls for HP/Magic & faster respawn) | S1: Shadow Stampede (passes through walls, pulls tagged enemies) | S2: Ghost Bursters (splitting AoE souls) | Ult: Cult Altar (gives entire team a second HP bar / extra life state!).
+40. Floryn (Support | Roam) — P: Dew (grants 1 ally a free upgradeable Lantern item!) | S1: Sow (damages enemy + heals nearby allies) | S2: Sprout (energy orb explodes & stuns) | Ult: Bloom (GLOBAL heal across entire map + ignores Anti-Heal!).
+41. Franco (Tank | Roam) — P: Wasteland Force (out-of-combat speed + HP regen) | S1: Iron Hook (long-range skillshot hook pulling first hit enemy to Franco) | S2: Fury Shock (AoE stomp 70% slow) | Ult: Bloody Hunt (1.8s un-purifiable Suppression + 6 slams).
+42. Fredrinn (Tank/Fighter | Jungle/EXP) — P: Crystalline Armor (stores damage taken as Crystal Energy grey HP) | S1: Piercing Strike (sword slam + extended thrust) | S2: Brave Assault (dash + airborne hit) | S3: Energy Eruption (AoE taunt) | Ult: Appraiser's Wrath (massive fan execute scaling with Crystal Energy!).
+43. Freya (Fighter | EXP/Jungle) — P: Power of Einherjar (orb stacks grant mega attack speed) | S1: Leap of Faith (leap + pull) | S2: Spirit Combo (multi-cast shield dash + knockup) | Ult: Valkyrie Descent (transforms into ranged splash Valkyrie + huge shield).
+44. Gatotkaca (Tank/Fighter | Roam/EXP) — P: Steel Bones (missing HP grants huge Phys Def; rage empowers lunge heal) | S1: Blast Iron Fist (cracked molten line) | S2: Unbreakable (chargeable dash + AoE taunt) | Ult: Avatar of the Guardian (long-range sky leap + massive AoE knockup).
+45. Gloo (Tank | EXP/Roam) — P: Stick, Stick (stacks slow & damage reduction) | S1: Slam, Slam (drops Goo; touching it explodes & immobilizes + resets CD) | S2: Pass, Pass (stretches & drags enemies) | Ult: Split, Split (splits into 12 mini-Gloos -> attaches onto enemy's head transferring 80% damage to host!).
+46. Gord (Mage | Mid) — P: Mystic Favor (every 4 hits deals True Damage + slow) | S1: Mystic Projectile (bouncing stun orb) | S2: Mystic Injunction (rapid-ticking ground damage zone) | Ult: Mystic Gush (steerable long-range continuous laser beam).
+47. Granger (Marksman | Gold/Jungle) — P: Caprice (infinite scaling Demonic Energy; no mana, rapid guns) | S1: Rhapsody (6 rapid piercing shots while moving) | S2: Rondo (dash + restores energy) | Ult: Death Sonata (fires exploding super-bullets with post-shot roll).
+48. Grock (Tank/Fighter | Roam/EXP) — P: Earthen Force (near walls: extra Move Speed, Defense & HP regen) | S1: Power of Nature (chargeable spin; CC-immune near walls) | S2: Guardian's Barrier (summons solid stone wall blocking paths) | Ult: Wild Charge (unstoppable charge; hitting a wall triggers massive AoE shockwave).
+49. Guinevere (Fighter | EXP/Jungle) — P: Super Magic (marks enemies + leaping heal attack) | S1: Energy Wave (slow orb reducing all CDs by 1s) | S2: Spatial Migration (leap knockup + second-cast shadow blink) | Ult: Violet Requiem (CC-immune AoE barrage extending knockup duration).
+50. Gusion (Assassin | Jungle/Mid) — P: Dagger Specialist (skill stacks empower healing basic attack) | S1: Sword Spike (marks target -> recast dashes behind them) | S2: Shadowblade Slaughter (throws 5 daggers -> recast pulls them back through target) | Ult: Incandescence (dash + instantly resets S1 & S2 cooldowns!).
+51. Hanabi (Marksman | Gold) — P: Ninjutsu Petal Barrage (basic attacks bounce between enemies; CC-immune while Shielded!) | S1: Ninjutsu Equinox (shield + speed) | S2: Soul Scroll (piercing slow mark) | Ult: Forbidden Jutsu Higanbana (blooming AoE immobilize spreading to nearby foes).
+52. Hanzo (Assassin | Jungle) — P: Ame no Habakiri (absorbs demon blood) | S1: Ninjutsu Demon Feast (instantly devours jungle creeps!) | S2: Soul Reap (AoE spike ring) | Ult: Kinjutsu Pinnacle Ninja (leaves real body behind, sends invincible Demon Ghost through walls with lethal S1/S2!).
+53. Harith (Mage | Gold/Mid) — P: Key Insight (nearby enemies grant Resilience) | S1: Synchro Fission (converging explosion) | S2: Chrono Dash (dash + shield + enhanced slow shot reducing S2 CD) | Ult: Zaman Force (cross-shaped rift slashing S2 cooldown to near-zero for endless dashing!).
+54. Harley (Assassin/Mage | Jungle/Mid) — P: Magic Master (basic attacks shred Magic Defense) | S1: Poker Trick (rapid spread of magic cards) | S2: Space Escape (blink leaving hat -> recast snaps back to hat) | Ult: Deadly Magic (fire ring records all damage dealt for 4s then detonates!).
+55. Hayabusa (Assassin | Jungle) — P: Ninjutsu Trace of Shadow (stacks amplify all damage) | S1: Phantom Shuriken (3 fan shurikens returning back) | S2: Quad Shadow (places 4 shadows in cross; recast teleports to any shadow!) | Ult: Ougi Shadow Kill (untargetable rapid shadow slashes across target).
+56. Helcurt (Assassin | Jungle/Roam) — P: Shadow of Styx (concealed state grants speed + HP regen + dark burst) | S1: Hidden Terror (blink terrify/slow) | S2: Deadly Stinger (fires up to 5 stacked lethal stingers) | Ult: Dark Night Falls (blinds ALL 5 enemies globally into near-total darkness for 3.5s!).
+57. Hilda (Fighter/Tank | Roam/EXP) — P: Blessing of Wilderness (entering bushes grants massive Shield & HP regen!) | S1: Combat Ritual (speed + AoE cleave) | S2: Art of Hunting (3-hit lock-on chase combo) | Ult: Power of Wildness (leaping mega-slam scaling with permanent kill/assist stacks).
+58. Hirara (Mage/Support | Mid/Roam - 2026) — P: Astral Prism (skills leave floating light shards that refract teammates' projectiles) | S1: Radiant Lance (piercing prism beam splitting on shard hit) | S2: Mirror Veil (creates reflective crystal wall granting allies shield & deflecting slows) | Ult: Supernova Convergence (detonates all prisms in a sweeping starfield stun + burst).
+59. Hylos (Tank | Roam/EXP) — P: Thickened Blood (converts Mana into bonus Max HP; uses HP when out of Mana) | S1: Law and Order (speed + next hit stun) | S2: Ring of Punishment (toggleable burning aura slowing enemy move & attack speed) | Ult: Glorious Pathway (long golden highway accelerating allies + healing Hylos + slowing foes).
+60. Irithel (Marksman | Gold) — P: Jungle Heart (shoots crossbow continuously WHILE MOVING!) | S1: Strafe (arrow volley shredding Phys Def) | S2: Force of the Queen (AoE roar slow) | Ult: Heavy Crossbow (leaps + fires massive AoE explosive bolts).
+61. Ixia (Marksman | Gold) — P: Siphon Starlium (3rd hit fires lifesteal beam) | S1: Dual Beam (2 parallel beams + speed) | S2: Star Helix (pulls enemies into center line) | Ult: Full Barrage (expands into massive 180-degree fan zone hitting up to 6 targets at extreme range!).
+62. Jawhead (Fighter | Roam/Jungle/EXP) — P: Mecha Suppression (stacks bonus basic damage) | S1: Smart Missiles (fires 12 homing rockets automatically) | S2: Ejector (speed + shield; recast throws nearest Ally or Enemy to target spot!) | Ult: Unstoppable Force (long-range lock-on ramming stun).
+63. Johnson (Tank/Support | Roam) — P: Electro-airbag (massive auto-shield at low HP) | S1: Deadly Pincers (AoE wrench stun) | S2: Electromagnetic Rays (continuous shield cone slow) | Ult: Full Throttle (transforms into drivable Sports Car; 1 Ally can ride inside; crashing explodes & stuns!).
+64. Joy (Assassin | Jungle/EXP) — P: Humph, Joy's Angry! (shield + speed on hit) | S1: Look, Leonin Crystal! (places beat crystal) | S2: Meow, Rhythm of Joy! (up to 4 rhythm-timed dashes with Beat multiplier!) | Ult: Ha, Electrifying Beats! (8-pulse speed burst; perfect beats grant huge damage & spell vamp).
+65. Julian (Fighter/Mage | Jungle/EXP/Mid) — P: Smith's Legacy (no separate Ult button; every 3rd skill cast is an Enhanced Mega-Skill!) | S1: Scythe (enhanced flying spinning scythe) | S2: Sword (enhanced untargetable multi-slash dash) | S3: Chain (enhanced AoE airborne cage).
+66. Kadita (Mage/Assassin | Mid/Roam) — P: Thalassophobia (heals back 65% of damage taken after 4s) | S1: Ocean Ode (CC-immune wave ride through walls) | S2: Breath of the Ocean (delayed water geyser knockup) | Ult: Rough Waves (untargetable dive releasing 6 outward & returning tidal waves).
+67. Kagura (Mage | Mid) — P: Yin Yang Gathering (re-equipping umbrella grants shield + stun) | S1: Seimei Umbrella Open (sends umbrella to location) | S2: Rasho Umbrella Flee (CC-cleanse blink OR teleports to umbrella) | Ult: Yin Yang Overturn (links & yanks enemies to umbrella OR knocks back!).
+68. Kaja (Support/Fighter | Roam/EXP) — P: Wrath Sanction (chain lightning reducing enemy damage output) | S1: Ring of Order (expanding electric ring healing Kaja) | S2: Lightning Bomb (dash leaving 3 shock bombs) | Ult: Divine Judgment (1.5s Suppression whip dragging enemy behind Kaja!).
+69. Kalea (Support/Fighter | Roam/EXP - 2025/2026) — P: Surge of Life (water zones empower next 3 attacks to heal lowest-HP ally + splash dmg) | S1: Wavebreaker (AoE water slam creating tidal zone) | S2: Tidal Strike (dash into wall/water -> leaps airborne slamming target) | Ult: Tsunami Slam (grabs an enemy with serpent tail and slams them violently in chosen direction!).
+70. Karina (Assassin | Jungle) — P: Shadow Combo (3rd hit deals True Damage % missing HP + cuts CD) | S1: Dance of Blades (blocks & reflects ALL Basic Attacks + speed) | S2: Dance of Death (360-degree magic slash) | Ult: Shadow Assault (lock-on dash leaving shadow; resets CD instantly on kill!).
+71. Karrie (Marksman | Gold) — P: Lightwheel Mark (every 5th hit deals massive % Max HP True Damage — tank shredder!) | S1: Spinning Lightwheel (slowing spinning wheel) | S2: Phantom Step (short dash firing wheel) | Ult: Speedy Lightwheel (dual-wield rapid double shots).
+72. Khaleed (Fighter | EXP/Roam) — P: Sand Walk (moves fast on sand wave + charging dash hit) | S1: Desert Tornado (up to 3 consecutive spinning pulls) | S2: Quicksand Guard (channels huge rapid self-heal + 35% damage reduction) | Ult: Raging Sandstorm (CC-immune sand wave ride slamming & stunning enemies).
+73. Khufra (Tank | Roam) — P: Spell Curse (ranged magic heal slap) | S1: Tyrant's Revenge (chargeable ultra-long leap knockup) | S2: Bouncing Ball (turns into bouncing ball that BLOCKS & KNOCKS UP all enemy dashes!) | Ult: Tyrant's Rage (pulls enemies; slamming them into walls stuns heavily).
+74. Kimmy (Marksman/Mage | Mid/Jungle/Gold) — P: Chemist's Instinct (aims & fires continuous manual twin-stick spray while moving!) | S1: Energy Transformation (enhanced splash plasma shots) | S2: Chemical Refinement (jetpack dash leaving slow strip) | Ult: Maximum Charge (chargeable long-range explosive plasma cannon).
+75. Lancelot (Assassin | Jungle) — P: Soul Cutter (each dash boosts damage up to +30%) | S1: Puncture (dash resets CD if hitting an unmarked target!) | S2: Thorned Rose (untargetable triangular 3-slash burst) | Ult: Phantom Execution (untargetable forward charge pierce).
+76. Lapu-Lapu (Fighter | EXP) — P: Homeland Defender (bravery bar grants shield + leap attack) | S1: Justice Blades (2 converging boomerangs) | S2: Jungle Warrior (dash) | Ult: Bravest Fighter (transforms into Heavy-Sword Stance with CC-immune 3-hit Ult slam & damage-reduction S2!).
+77. Layla (Marksman | Gold) — P: Malefic Gun (damage scales higher the farther away target is!) | S1: Malefic Bomb (line shot extending basic attack range) | S2: Void Projectile (exploding mark -> AoE stun) | Ult: Destruction Rush (passive extends range per level + massive long-range energy cannon).
+78. Leomord (Fighter | Jungle/EXP) — P: The Oath Keeper (100% Crit on enemies below 50% HP!) | S1: Momentum (shield + chargeable slash) | S2: Decimation (dash slow) | Ult: Phantom Steed (summons Barbiel horse -> mounts for huge defense, speed, moving cleave & new S1/S2!).
+79. Lesley (Marksman/Assassin | Gold) — P: Lethal Shoot (out-of-combat charges long-range True Damage Crit shot) | S1: Master of Camouflage (camo + speed + phys atk) | S2: Tactical Grenade (knockback hop) | Ult: Ultimate Snipe (reveals all nearby stealth + fires 4 homing long-range sniper bullets).
+80. Ling (Assassin | Jungle) — P: Cloud Walker (doubles Crit Chance from items) | S1: Finch Poise (leaps ONTO WALLS and hops between walls freely!) | S2: Defiant Sword (fast pierce dash) | Ult: Tempest of Blades (untargetable sky slam spawning 4 swords that reset S2 on pickup!).
+81. Lolita (Support/Tank | Roam) — P: Noumenon Energy Core (periodically grants stacking Shields to nearby allies) | S1: Power Charge (dash + stun slam) | S2: Guardian's Reflection (raises shield that REFLECTS enemy projectiles & basic attacks back at them!) | Ult: Noumenon Blast (huge chargeable cone AoE stun).
+82. Lukas (Fighter | EXP/Jungle) — P: Hero's Resolve (builds Resolve over time & attacks to transform) | S1: Flash Combo (rapid punches + heavy slam) | S2: Flash Step (blink behind target + enhanced strikes) | Ult: Unleash the Beast (transforms into Sacred Beast form boosting all attributes + massive Shockwave Blast!).
+83. Lunox (Mage | Mid/Jungle/Gold) — P: Dreamland Twist (Chaos = %Magic Pen; Order = Spell Vamp) | S1: Starlight Pulse (Order AoE heal) | S2: Chaos Assault (Chaos %HP burst) | Ult (Order): Brilliance (2.5s invincible moving light orb) | Ult (Chaos): Darkening (blink + zero-CD Chaos Assault machine-gun!).
+84. Luo Yi (Mage | Mid) — P: Duality (opposite Yin & Yang marks pull enemies together in huge magnetic explosion!) | S1: Dispersion (alternating Yin/Yang blasts) | S2: Rotation (lingering Yin/Yang magic circle) | Ult: Diversion (teleports Luo Yi + ALL allies in circle across long map distance!).
+85. Lylia (Mage | Mid) — P: Angry Gloom (stacking speed near Gloom) | S1: Magic Shockwave (line orb triggers Gloom) | S2: Shadow Energy (up to 5 stored explosive traps) | Ult: Black Shoes (rewinds 4s back to shoes restoring HP, Mana & full S2 stacks!).
+86. Marcel (Fighter/Tank | EXP/Roam - 2026) — P: Bastion Rhythm (blocking/absorbing hits charges counter-pulse aura) | S1: Iron Vault (forward shield rush + shockwave) | S2: Aegis Lock (absorbs incoming front damage and unleashes cone stun) | Ult: Fortress Reckoning (raises massive runic arena ring locking enemies inside while boosting ally armor).
+87. Martis (Fighter | Jungle/EXP) — P: Ashura's Wrath (each skill grants +30% Attack Speed up to 120%) | S1: Ashura Aura (pinches enemies together) | S2: Mortal Coil (CC-immune multi-dash knockback + 60% dmg reduction + second-cast knockup) | Ult: Decimation (True Damage execute; resets CD + 100% speed on kill!).
+88. Masha (Fighter/Tank | EXP/Jungle) — P: Ancient Strength (3 full HP bars! Losing a bar cleanses CC & grants brief immunity) | S1: Wild Power (empowered %HP claw strikes) | S2: Howl Shock (disarm/slow wave) | Ult: Thunderclap (CC-immune lunge costing HP for huge burst + resets when losing HP bar!).
+89. Mathilda (Support/Assassin | Roam) — P: Ancestral Guidance (moving charges speed + magic attack) | S1: Soul Bloom (gathers up to 6 homing wisps) | S2: Guiding Wind (dash granting shield + gives ALL nearby allies a clickable Dash Button to fly straight to Mathilda!) | Ult: Circling Eagle (locks target, circles firing wisps, then slams knockback).
+90. Melissa (Marksman | Gold) — P: Doll Buster (+damage to minions/summons) | S1: Falling! (dash + attack speed + moves Muddles) | S2: Go! Muddles! (links nearby enemies to doll; attacking doll damages all linked foes!) | Ult: Go Away! (impenetrable magic barrier knocking back all melee enemies trying to enter!).
+91. Minotaur (Tank/Support | Roam) — P: Rage Incarnate (CC lowers enemy def; heals boost ally def) | S1: Despair Stomp (leap airborne) | S2: Motivation Roar (AoE ally heal) | Ult: Minoan Fury (CC-immune 3 ground smashes; final smash huge AoE knockup + enhances S1/S2).
+92. Minsitthar (Fighter | EXP/Roam) — P: Mark of the King (5 stacks -> stun + heal) | S1: Spear of Glory (pulls enemies in a line back!) | S2: Shield Assault (front shield + rapid spear thrusts) | Ult: King's Calling (summons 4 Royal Guards in a ring that GROUNDS enemies — ZERO blinks or dashes allowed inside!).
+93. Miya (Marksman | Gold) — P: Moon Blessing (stacks Attack Speed + summons Moonlight Shadow arrow) | S1: Moon Arrow (splits basic attacks to hit 3 targets!) | S2: Arrow of Eclipse (AoE frost immobilize + splitting slows) | Ult: Hidden Moonlight (cleanses ALL CC + turns invisible + full passive stacks!).
+94. Moskov (Marksman | Gold) — P: Spear of Quiescence (basic attacks pierce targets & cut S1/S2 CD by 0.8s!) | S1: Abyss Walker (blink + massive Attack Speed boost) | S2: Spear of Misery (knocks target back; hitting a wall or hero stuns!) | Ult: Spear of Destruction (GLOBAL piercing spear; recast to teleport directly behind hit enemy!).
+95. Nana (Mage | Mid) — P: Molina's Gift (fatal hit transforms Nana into invincible fast raccoon once per 150s!) | S1: Magic Boomerang (out-and-back giant boomerang) | S2: Molina Smooch (AoE polymorph turning enemies into helpless Molinas!) | Ult: Molina Blitz (3 consecutive heavy AoE paws; 2 hits stun).
+96. Natalia (Assassin | Roam/Jungle) — P: Assassin Instinct (stays in bush 1s -> Camouflage + silent teleport-behind basic attack!) | S1: Claw Dash (2-stage dash on hit) | S2: Smoke Bomb (100% immune to ALL Basic Attacks inside smoke + Attack Speed) | Ult: The Hunt (instant Camouflage charge x2).
+97. Natan (Marksman | Gold/Jungle) — P: Theory of Everything (converts Phys to Magic scaling; stacks speed) | S1: Superposition (dense magic wave) | S2: Interference! (gravitational vortex pulling & knocking back) | Ult: Entropy? (summons Reverse-Clone copying all attacks & skills; recast swaps places!).
+98. Nolan (Assassin | Jungle) — P: Dimensional Rift (2 overlapping rifts pull enemies & explode restoring Energy!) | S1: Expansion (rectangular rift slash) | S2: Gauge (dash leaving rift) | Ult: Fracture (cleanses CC + 3 rifts + backstep burst).
+99. Novaria (Mage | Mid/Roam) — P: Star Trail (reveals hit enemies) | S1: Astral Meteor (AoE shatter slow) | S2: Astral Recall (walks through walls! Fires ultra-long-range sniper star scaling up to 2.5x damage by distance!) | Ult: Astral Echo (giant wide wave revealing enemies + expanding their hitbox size by 50%!).
+100. Obsidia (Marksman | Gold - 2025/2026) — P: Return to Bone (collects Bone Shards from hits that orbit & fire automatically!) | S1: Abyssal Bone Needle (piercing dark needle generating shards) | S2: Phantom Shadowmeld (rapid stealth sprint) | Ult: Hunt of Bone (tethers Obsidia to target enemy locking their movement radius while firing rapid bone barrages).
+101. Odette (Mage | Mid) — P: Lakeshore Ambience (sound notes bounce between enemies after skills) | S1: Avian Authority (swan wave slow) | S2: Blue Nova (splitting immobilize orbs) | Ult: Swan Song (dash + massive AoE channeling musical storm + huge shield).
+102. Paquito (Fighter/Assassin | EXP/Jungle) — P: Champ Stance (3 stacks reset ALL CDs & grant Enhanced Super-Skill!) | S1: Heavy Left Punch (punch + shield) | S2: Jab (fast burst dash) | Ult: Knockout Strike (elbow shove + haymaker slow/airborne).
+103. Pharsa (Mage | Mid) — P: Spiritual Unity (Verri bird deals bonus magic slow) | S1: Curse of Crow (marks area; next hit stuns) | S2: Energy Impact (long-range beam) | Ult: Feathered Air Strike (4 giant ultra-long-range sky bombardments!) | S4: Wings by Wings (transforms into fast bird flying over walls!).
+104. Phoveus (Fighter | EXP) — P: Demonic Force (enemy dashes reduce ALL Phoveus cooldowns; enhanced slam) | S1: Demonic Impact (smash + second blast) | S2: Dark Wave (pulls enemies inward + knockup) | Ult: Infernal Pursuit (leaps & slams repeatedly onto any marked/dashing enemy with zero CD!).
+105. Popol and Kupa (Marksman | Gold/Jungle) — P: We Are Friends (Kupa wolf fights alongside Popol; S4 revives Kupa) | S1: Bite 'em, Kupa! (spear + Kupa lunge/stun) | S2: Kupa, Help! (shield + wolf knockup) | S3: Popol's Surprise (places 3 vision immobilize traps) | Ult: We Are Angry! (Alpha Wolf huge size, HP & Attack Speed!).
+106. Rafaela (Support | Roam) — P: Divine Resurgence (revives dead ally instantly at base on cooldown / light retribution) | S1: Light of Retribution (reveals invisible foes + slow) | S2: Holy Healing (AoE heal + Move Speed + Slow Immunity!) | Ult: Holy Baptism (line stun wave).
+107. Roger (Fighter/Marksman | Jungle/Gold) — P: Full Moon Curse (Human slows; Wolf deals % missing HP dmg) | Human S1: Open Fire (double armor-shred shot) | S2: Hunter's Steps (speed) | Wolf S1: Lycan Pounce (untargetable AoE bite) | Wolf S2: Bloodthirsty Howl (massive speed toward low-HP foes) | Ult: Wolf Transformation / Restore Human Form (instant form switch!).
+108. Ruby (Fighter/Tank | EXP/Roam) — P: Let's Dance! (massive Spell Vamp; hops short distance after EVERY skill!) | S1: Be Good! (slash + shockwave slow) | S2: Don't Run, Wolf King! (360-degree pull + stun) | Ult: I'm Offended! (huge wide scythe hook pulling all enemies straight to Ruby!).
+109. Saber (Assassin | Jungle/Roam) — P: Enemy's Bane (shreds enemy Physical Defense per hit) | S1: Orbiting Swords (5 orbiting swords fly toward basic attack target) | S2: Charge (dash + enhanced slow slash) | Ult: Triple Sweep (lock-on knockup 3-slash one-shot combo!).
+110. Selena (Assassin/Mage | Mid/Roam) — P: Symbiosis (Abyssal Marks explode in Elven/Abyssal forms) | Elven S1: Abyssal Trap (3 vision mines) | S2: Abyssal Arrow (ultra-long skillshot stun up to 3 seconds!) | Ult: Primal Darkness (instant swap to melee Abyssal Demon with claw burst & resettable dash!).
+111. Silvanna (Fighter | EXP/Roam) — P: Knightess' Resolve (basic attacks shred Magic Def) | S1: Cosmetic Lance (line stun + dash) | S2: Spiral Strangling (rapid spear spin pulling enemies + shield) | Ult: Imperial Justice (leaps & chains 1 enemy inside a 3.5s inescapable Circle of Light!).
+112. Sora (Fighter/Assassin | EXP/Jungle - 2026) — P: Shifting Gale (accumulates Wind/Storm stacks shifting between swift Torrent and heavy Cloud forms) | S1: Skyward Slash (rapid wind arc + follow-up cleave) | S2: Zephyr Step (evasive dash leaving cutting whirlwind) | Ult: Tempest Ascension (dual-form sky dive unleashing chain knockup & storm execution).
+113. Sun (Fighter | EXP/Jungle) — P: Simian God (doppelgangers shred armor & heal Sun) | S1: Endless Variety (throws staff spawning clone) | S2: Swift Exchange (dash swapping with clone) | S3: Instantaneous Move (all clones dash-strike target!) | Ult: Clone Techniques (untargetable spin spawning strong golden Doppelganger!).
+114. Suyou (Assassin/Fighter | Jungle/EXP) — P: Transient Immortal (Tap skills = fast Mortal form; Hold skills = heavy Immortal form with damage reduction!) | S1: Blade Surge (dash OR charge stun) | S2: Soul Sever (execute slash OR 3-hit cleave heal) | Ult: Evil Queller (backstep slow OR long-range sniper arrow).
+115. Terizla (Fighter | EXP) — P: Body of Smith (gains up to 30% Damage Reduction as HP drops; Attack Speed converts to Phys Atk) | S1: Revenge Strike (fissure delayed explosion) | S2: Execution Strike (3 heavy sweeping hammer slams) | Ult: Penalty Zone (leaps & chains all enemies repeatedly back to center!).
+116. Thamuz (Fighter | EXP/Jungle) — P: Grand Lord Lava (scorch True Damage eruptions) | S1: Molten Scythes (throws spinning scythes + speed) | S2: Chasm Trample (leap slow + recalls scythes) | Ult: Cauterant Inferno (giant lava ring granting huge Max HP, Attack Speed & massive heal-on-hit!).
+117. Tigreal (Tank | Roam) — P: Fearless (every 4 hits blocks 1 Basic Attack or Turret shot completely!) | S1: Attack Wave (3-hit slow wave) | S2: Sacred Hammer (pushes all enemies forward + second-cast knockup) | Ult: Implosion (pulls ALL nearby enemies inward & stuns!).
+118. Uranus (Tank | EXP) — P: Radiance (taking hits stacks insane continuous HP Regeneration up to 20 stacks!) | S1: Ionic Edge (2 orbiting energy blades lowering enemy attack) | S2: Transcendent Ward (dash + exploding shield) | Ult: Consecration (cleanses slow + huge instant heal + speed).
+119. Vale (Mage | Mid) — P: Windtalk (passive stacking Move Speed) | S1: Wind Blade (twin converging wind blades) | S2: Windblow (tornado knocking enemies airborne + lingering vortex) | Ult: Windstorm (giant pulling storm center that detonates massively!).
+120. Valentina (Mage | Mid) — P: Primal Force (bonus EXP & Spell Vamp against same/lower level heroes) | S1: Shadow Strike (cone burst; 2nd hit Terrifies!) | S2: Arcane Shade (2 dashes firing shadow bolts that cut S1 CD) | Ult: I Am You (STEALS & CASTS any enemy hero's Ultimate ability!).
+121. Valir (Mage | Mid/Roam) — P: Ashing (3 burn stacks trigger explosion + stun!) | S1: Burst Fireball (chargeable fireballs; hitting heroes refunds a charge!) | S2: Searing Torrent (wide firewall pushing all diving enemies back!) | Ult: Vengeance Flame (cleanses ALL CC + enhances S1/S2 range & damage!).
+122. Vexana (Mage | Mid) — P: Nether Touch (killed enemies explode in AoE) | S1: Deathly Grasp (line Terrify phantom) | S2: Cursed Blast (heavy delayed sky blast) | Ult: Eternal Guard (summons giant Undead Knight knocking enemies up and fighting autonomously!).
+123. Wanwan (Marksman | Gold) — P: Tiger Pace (hops after EVERY Basic Attack! Reveals 3 Weaknesses around enemies) | S1: Swallow's Path (returns daggers -> stun) | S2: Needles in Flowers (instant CC Cleanse!) | Ult: Crossbow of Tang (unlocked after breaking 3 Weaknesses -> flies INVINCIBLE firing rapid auto-arrows & switching targets on kill!).
+124. X.Borg (Fighter | EXP/Jungle) — P: Firaga Armor (separate Armor HP bar; explodes when broken & regenerates via Fire Supplies) | S1: Fire Missiles (free-moving flamethrower dealing True Damage at max heat!) | S2: Fire Stake (pulls stakes & Fire Supplies back) | Ult: Last Insanity (CC-immune spinning fire tornado -> detonates Armor for massive %HP True Damage!).
+125. Xavier (Mage | Mid) — P: Transcendence (3 stages upgrade all skill widths & slash cooldowns) | S1: Infinite Extension (beam extends distance through every hit target!) | S2: Mystic Field (barrier -> hit with S1/Ult to explode into huge AoE Immobilize!) | Ult: Dawning Light (GLOBAL screen-wide laser across entire map!).
+126. Yi Sun-shin (Assassin/Marksman | Jungle) — P: Heavenly Vow (swapping Melee Glaive <-> Bow grants guaranteed massive Crit!) | S1: Traceless (CC-immune dash) | S2: Blood Floods (melee slash OR chargeable ultra-long piercing arrow) | Ult: Mountain Shocker (GLOBAL reveals all 5 enemies & drops 3 cannon waves on every enemy!).
+127. Yin (Fighter/Assassin | Jungle/EXP) — P: Leave It to Me (+damage when 1v1) | S1: Charged Punch (speed + AoE punch) | S2: Instant Blast (dash + stun rings) | Ult: My Turn (kidnaps 1 enemy into a separate 1v1 Domain Arena for 8s as Lieh with mega-smash & stun!).
+128. Yu Zhong (Fighter | EXP) — P: Cursing Touch (5 Sha Residue stacks erupt healing Yu Zhong & dealing massive %HP dmg) | S1: Dragon Tail (outer edge deals 250% damage!) | S2: Soul Grip (slow + dash pull) | S3: Furious Dive (leap knockup) | Ult: Black Dragon Form (transforms into giant CC-immune flying Black Dragon across walls!).
+129. Yve (Mage | Mid) — P: Galactic Power (stacks bonus Ult taps) | S1: Void Blast (fast AoE + speed) | S2: Void Crystal (spawns crystal + sliding slow ray) | Ult: Real World Manipulation (projects 7x7 starry chessboard across screen; tap/slide tiles to bomb & immobilize enemies!).
+130. Zetian (Mage | Mid - 2025/2026) — P: Celestial Armament (automatic spell-shield shockwave knocking back divers + stacking Magic Pen) | S1: Phoenix Strike (3-stage rapid spirit wave pulling foes) | S2: Phoenix Descent (summons swooping phoenix zone shredding Magic Def) | Ult: Fury of the Phoenix (GLOBAL celestial barrage striking & stunning all 5 enemies while boosting team Move Speed!).
+131. Zhask (Mage | Mid) — P: Decimation (summons frenzied Nightmaric Spawn on death) | S1: Nightmaric Spawn (places laser turret copying attack speed) | S2: Mind Eater (laser + Spawn beam -> stun!) | S3: Hive Clones (slowing mines) | Ult: Dominator's Descent (merges INSIDE giant super-Spawn with massive HP & mega-laser!).
+132. Zhuxin (Mage | Mid/Roam) — P: Crimson Butterflies (regenerates Mana via floating butterflies) | S1: Fluttering Grace (fan slow stealing Move Speed) | S2: Lantern Flare (HOLD & DRAG floating Spirit Lantern to pull enemies into the air and throw them anywhere!) | Ult: Crimson Beacon (blink + huge shield + constant butterfly damage dome).
+133. Zilong (Fighter/Assassin | EXP/Jungle) — P: Dragon Flurry (every 3rd hit strikes 3 times + heals) | S1: Spear Flip (flips enemy backward over Zilong's head) | S2: Spear Strike (lock-on dash shredding armor; resets CD on kill!) | Ult: Supreme Warrior (cleanses slows + huge Move & Attack Speed boost!).
+
+================================================================================
+SECTION 8: COMPLETE EQUIPMENT, EMBLEMS, TALENTS & BATTLE SPELLS DATABASE
+================================================================================
+8.1 COMPLETE TIER-3 EQUIPMENT DATABASE (WITH TIER-1 & TIER-2 CRAFTING TREES):
+- ATTACK ITEMS (19):
+  1. Malefic Gun (2026: +40 Phys Atk, +20% Atk Spd, +30% Phys Pen, +12% Basic Attack Range!)
+  2. Sky Piercer (2026: +60 Adaptive Atk, +15 Move Spd; Passive: Executes enemies below 4% up to 12% HP via Lethality stacks!)
+  3. Blade of Despair (+160 Phys Atk, +5% Move Spd; +25% Atk vs targets <50% HP)
+  4. Blade of the Heptaseas (+70 Phys Atk, +250 HP, +15 Phys Pen; Ambush burst + slow)
+  5. Endless Battle (+60 Phys Atk, +250 HP, +10% CDR, +8% Hybrid Lifesteal, +5% Move Spd; True Damage after skill)
+  6. Berserker's Fury (+65 Phys Atk, +25% Crit Chance; +40% Crit Damage)
+  7. Haas's Claws (+30 Phys Atk, +15% Atk Spd, +20% Crit Chance, +25% Lifesteal; Frenzy Atk Spd on Crit)
+  8. Malefic Roar (+60 Phys Atk, +20% Phys Pen scaling up to +40% vs high armor)
+  9. Demon Hunter Sword (+35 Phys Atk, +20% Atk Spd; deals 8% Target Current HP bonus dmg + Lifesteal)
+  10. Corrosion Scythe (+30 Phys Atk, +30% Atk Spd, +5% Move Spd; slows enemy & stacks Atk Spd)
+  11. Golden Staff (+55 Phys Atk, +15% Atk Spd; converts Crit into Atk Spd, triggers on-hit effects 3x!)
+  12. Windtalker (+35% Atk Spd, +20 Move Spd, +10% Crit; periodic Typhoon splash)
+  13. Hunter Strike (+80 Phys Atk, +10% CDR, +15 Phys Pen; 5 hits grant +50% decaying Move Speed)
+  14. War Axe (+35 Phys Atk, +400 HP, +10% CDR, +12% Spell Vamp; stacks Adaptive Atk + 10% True Damage!)
+  15. Sea Halberd (+80 Phys Atk, +20% Atk Spd; 50% Anti-Heal + +8% dmg vs higher Max HP foes)
+  16. Rose Gold Meteor (+40 Phys Atk, +20% Atk Spd, +10% Lifesteal; Lifeline Shield + Hybrid Def at <30% HP)
+  17. Wind of Nature (+30 Phys Atk, +20% Atk Spd, +10% Lifesteal; ACTIVE: 2s Physical Damage Immunity!)
+  18. Great Dragon Spear (+70 Phys Atk, +10% CDR, +20% Crit; casting Ult grants +30% Move Spd)
+  19. Swift Crossbow (Tier-2 core) + full Tier-1/Tier-2 components (Dagger, Legion Sword, Vampire Mallet, Fury Hammer, etc.).
+
+- MAGIC ITEMS (17):
+  1. Wishing Lantern (2026: +75 Magic Power, +400 Mana, +10% CDR; every 800 Magic dmg summons Butterfly dealing 8% Current HP Magic dmg!)
+  2. Flask of the Oasis (+60 Magic Power, +300 HP, +10% CDR, +12% Healing Effect; saves low-HP healed ally with huge Shield!)
+  3. Winter Crown (2026: +45 Adaptive Atk, +400 HP, +5% CDR; ACTIVE: 2s Frozen Invincibility — does NOT interrupt channeled Ultimates!)
+  4. Glowing Wand (2026: +75 Magic Power, +400 HP, +5% Move Spd; Burn %Max HP + 50% Anti-Heal!)
+  5. Holy Crystal (+185 Magic Power; amplifies total Magic Power by +21%-35%)
+  6. Divine Glaive (+60 Magic Power, +40% Magic Pen scaling up to +60% vs high Magic Def)
+  7. Genius Wand (+75 Magic Power, +5% Move Spd, +10 Magic Pen; shreds enemy Magic Def per hit)
+  8. Lightning Truncheon (+75 Magic Power, +400 Mana, +10% CDR; AoE chain lightning + Move Speed burst)
+  9. Clock of Destiny (+45 Magic Power, +400 HP, +800 Mana, +10% CDR; stacks Hybrid Def & clutch low-HP heal)
+  10. Enchanted Talisman (+50 Magic Power, +250 HP, +20% CDR; massive Mana Regen + raises CDR cap to 45%)
+  11. Concentrated Energy (+70 Magic Power, +400 HP, +20% Hybrid Lifesteal; stacks Magic dmg amplification)
+  12. Ice Queen Wand (+75 Magic Power, +300 HP, +10% Spell Vamp, +7% Move Spd; skills slow enemies up to 20%)
+  13. Blood Wings (+90 Magic Power; huge regenerating Shield + Move Speed)
+  14. Feather of Heaven (+55 Magic Power, +20% Atk Spd, +10% Lifesteal, +5% CDR; Basic Attacks deal bonus Magic dmg)
+  15. Starlium Scythe (+70 Magic Power, +10% CDR, +8% Hybrid Lifesteal, +6 Mana Regen; True Damage Basic Attack after skill)
+  16. Fleeting Time (+30 Adaptive Atk, +600 HP, +15% CDR; Kills/Assists refund 30% Ultimate CD!)
+  17. Tier-1/Tier-2 Magic components (Mystery Codex, Elegant Gem, Magic Wand, Tome of Evil, etc.).
+
+- DEFENSE ITEMS (15):
+  1. Chastise Pauldron (2026: +900 HP, +40 Phys Def; slows attackers' Attack Speed & grants clutch damage reduction!)
+  2. Dominance Ice (+500 Mana, +55 Phys Def, +5% Move Spd; Aura applies 50% Anti-Heal & -20% Atk Spd to attackers)
+  3. Antique Cuirass (+920 HP, +40 Phys Def, +4 HP Regen; reduces enemy Physical Attack per skill hit)
+  4. Blade Armor (+70 Phys Def; +20% Crit Damage Reduction + reflects Basic Attack damage)
+  5. Athena's Shield (+900 HP, +48 Magic Def, +2 HP Regen; triggers 25% Magic Damage Reduction shield for 3s!)
+  6. Radiant Armor (+950 HP, +40 Magic Def, +12 HP Regen; stacks ramping Magic Def against continuous magic poke)
+  7. Oracle (+850 HP, +20 Phys Def, +20 Magic Def, +10% CDR; boosts all incoming Shields & HP Regen by +30%!)
+  8. Immortality (+800 HP, +15 Phys Def; Resurrects you 2.5s after death with HP & Shield — 210s CD!)
+  9. Guardian Helmet (+1550 HP, +20 HP Regen; rapid out-of-combat %Max HP regen)
+  10. Cursed Helmet (+1200 HP, +20 Magic Def; Burning Soul deals AoE %Max HP Magic damage around you)
+  11. Brute Force Breastplate (+600 HP, +23 Phys Def, +10% CDR; stacks Adaptive Atk, Move Speed & CC Reduction)
+  12. Queen's Wings (+600 HP, +40 Adaptive Atk, +10% CDR, +10% Spell Vamp; 30% Damage Reduction at <40% HP)
+  13. Thunder Belt (+800 HP, +15 Phys Def, +15 Magic Def, +20 Move Spd; infinite permanent Hybrid Def stacking True Damage slow punch!)
+  14. Twilight Armor (+1200 HP, +15 Phys Def; caps & reduces single-hit burst damage above 800!)
+  15. Tier-1/Tier-2 Defense components (Vitality Crystal, Leather Jerkin, Silence Robe, Dreadnaught Armor, Steel Legplates).
+
+- MOVEMENT BOOTS (7) + JUNGLING BLESSINGS (3) + ROAMING BLESSINGS (4) + POTIONS (3):
+  * Boots: Tough Boots (+22 Magic Def, -30% CC Duration), Warrior Boots (+22 Phys Def), Magic Shoes (+10% CDR), Arcane Boots (+10 Magic Pen), Swift Boots (+15% Atk Spd), Demon Shoes (Mana Regen), Rapid Boots (+65 Move Spd).
+  * Jungling Blessings (Requires Retribution): Ice Retribution (steals Move Speed), Flame Retribution (steals Adaptive Attack), Bloody Retribution (steals Max HP).
+  * Roaming Blessings: Conceal (ACTIVE: Team Camouflage + Speed), Encourage (Team Attack & Speed Aura), Favor (Extra Heal on ally heal/shield), Dire Hit (Bonus burst vs <35% HP enemies).
+  * Late-Game Potions (1500g, 120s): Power Potion, Magic Potion, Rock Potion.
+
+8.2 ALL 7 EMBLEMS & ALL 26 TALENTS (3 TIERS):
+- 7 Base Emblems (Upgradeable Lv 1-60): Common, Tank, Assassin, Mage, Fighter, Support, Marksman.
+- Tier 1 Talents (8): Thrill (+16 Adaptive Atk), Swift (+10% Atk Spd), Vitality (+225 HP), Rupture (+5 Adaptive Pen), Inspire (+5% CDR), Firmness (+6 Hybrid Def), Agility (+4% Move Spd), Fatal (+5% Crit Chance & +10% Crit Dmg).
+- Tier 2 Talents (9): Wilderness Blessing (+10% Jungle/River speed), Seasoned Hunter (+15% Lord/Turtle/Creep dmg), Tenacity (+15 Hybrid Def at <50% HP), Master Assassin (+7% dmg in 1v1), Bargain Hunter (5% cheaper Shop items), Festival of Blood (stacking Spell Vamp), Pull Yourself Together (-15% Battle Spell & Active Item CD), Weapon Master (+5% bonus Attack from items), Bloodthirsty / Life Drain.
+- Tier 3 Core Talents (9): Impure Rage (4% Current HP bonus magic dmg + mana), Quantum Charge (Basic attack gives Move Speed + HP), Concussive Blast (HP-scaling AoE shockwave), Killing Spree (kill heals 15% HP + 20% Move Speed), Lethal Ignition (3-hit burst scorch), Brave Smite (skill hit heals 5% Max HP), Focusing Mark (+6% team damage on hit foe), Weakness Finder (basic attacks slow enemy move & attack speed), War Cry (+8% sustained damage after 3 hits), Temporal Reign (casting Ult slashes S1/S2 CDs by 1.5x!).
+
+8.3 ALL 12 BATTLE SPELLS:
+1. Execute (True Damage execute scaling with missing HP; CD cut by 40% on kill)
+2. Retribution (Mandatory Jungler spell: massive True Damage to Creeps/Turtle/Lord + upgrades via Jungle Boots)
+3. Inspire (+55% Attack Speed, ignores Phys Def, heals per hit for 8 attacks)
+4. Sprint (+50% Move Speed + Slow Immunity for 6s)
+5. Revitalize (Summons Healing Spring restoring massive team HP over 4s)
+6. Aegis (Instant protective Shield absorbing heavy damage)
+7. Petrify (AoE 0.8s Petrify stun + Magic damage)
+8. Purify (Instantly cleanses all non-Suppression CC + 1.2s CC Immunity & Move Speed)
+9. Flameshot (Long-range knockback + sniper fireball scaling with distance)
+10. Flicker (Instant directional Blink crossing walls + brief Hybrid Defense boost)
+11. Arrival (Global Teleport to any Allied Turret or Minion + brief Move Speed)
+12. Vengeance (35% Damage Reduction + reflects 35% incoming damage back as Magic Damage for 3s).
+
+================================================================================
+SECTION 9: SMART 5v5 AI BOT ENGINE & PERFORMANCE REQUIREMENTS
+================================================================================
+- Role-Aware 5v5 AI (EXP, Jungle, Mid, Gold, Roam):
+  * Jungler AI clears Blue/Red buffs + camps systematically using Retribution to secure Turtle & Lord at low HP!
+  * Roamer AI buys Roam Boots, provides bush vision, protects Gold Laner, and rotates to gank Mid/Turtle.
+  * Laners last-hit minions, retreat when below 25% HP to Recall safely behind turrets, dodge enemy turrets when no minions are tanking, purchase real counter-items dynamically from the Shop, and respond to player Drag-to-Mark pings!
+- Responsive Controls: Support BOTH Touch/Mobile controls (multi-touch virtual joystick + skill aiming + minimap drag + pop-out ping map) AND Desktop Mouse/Keyboard controls (`WASD` Move, `Q/W/E/R` Skills with mouse cursor aim indicator, `Space` Basic Attack, `F` Battle Spell, `D` Active Item, `B` Recall, `G` Regen, `Tab` Scoreboard, `P` Shop, Click-Drag Minimap or Ping Buttons).
+- Deliverables: Clean modular code architecture, zero runtime errors, smooth 60 FPS canvas loop, full persistence, and immediate playability from Main Lobby -> Draft Pick -> Loading Screen -> Full 5v5 Land of Dawn Match -> Post-Match MVP Medal & Star Progression Screen!
+
+BEGIN GENERATION NOW. BUILD THE COMPLETE, FULLY PLAYABLE APPLICATION WITH ZERO PLACEHOLDERS.

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tsepang Arcade" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#121c14" />
+    <meta name="color-scheme" content="dark light" />
+    <title>&#x1F33F; Tsepang Garden &amp; Game Arcade</title>
+    <meta
+      name="description"
+      content="Interactive garden world and 29-game arcade featuring Mini Militia DA2, Hoops 2K26 + NBA 2K14 Hybrid 3D, Legends Arena MOBA, 3D Battle Royale, Asphalt Nitro 3D, Stockfish Chess, Tactical Ops FPS, Candy Clash, Sudoku, and more."
+    />
+    <meta property="og:title" content="&#x1F33F; Tsepang Garden &amp; Game Arcade" />
+    <meta
+      property="og:description"
+      content="Interactive garden world and 29-game arcade — 100% live modular offline &amp; online launcher."
+    />
+    <meta property="og:type" content="website" />
+    <style id="arcade-boot-style">
+      #arcade-boot-screen{position:fixed;top:0;right:0;bottom:0;left:0;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;padding:20px;background:#101d15;color:#e8f5ec;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;z-index:9999}
+      .arcade-boot-card{max-width:440px;width:100%;background:#16281c;border:1px solid #84fab0;border-radius:16px;padding:20px;text-align:center}
+      .arcade-boot-title{font-size:19px;font-weight:700;margin:0 0 8px;color:#84fab0}
+      .arcade-boot-sub{font-size:13px;line-height:1.5;color:#cbe3d2;margin:0 0 10px}
+      .arcade-boot-err{margin-top:8px;font-size:11px;color:#fca5a5;word-break:break-word}
+    </style>
+    <link rel="stylesheet" href="./core/styles-tailwind-1.css?v=8" />
+    <link rel="stylesheet" href="./core/styles-tailwind-2.css?v=8" />
+    <link rel="stylesheet" href="./core/styles-base.css?v=8" />
+    <link rel="stylesheet" href="./core/styles-games.css?v=8" />
+    <link rel="stylesheet" href="./games/hoops-2k26/styles.css?v=8" />
+    <link rel="stylesheet" href="./games/legends-arena/styles.css?v=8" />
+    <link rel="stylesheet" href="./games/stockfish-chess/styles.css?v=8" />
+  </head>
+  <body data-state="garden">
+    <div id="root">
+      <div id="arcade-boot-screen">
+        <div class="arcade-boot-card">
+          <div class="arcade-boot-title">&#x1F33F; Tsepang Garden &amp; Game Arcade</div>
+          <p class="arcade-boot-sub" id="arcadeBootStatus">Loading 29 live modular games...</p>
+          <div class="arcade-boot-err" id="arcadeBootErr"></div>
+          <noscript>
+            <p class="arcade-boot-sub">Enable JavaScript or open index.html in Chrome, Safari, Firefox, or Samsung Internet.</p>
+          </noscript>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        window.ARCADE_BUILD_VERSION = "Tsepang Arcade · Live Modular v2.6 (rev ?v=8 · Hoops 2K26 Part 7 Complete 7-Tab Settings, Sliders, HUD Editor, Replay & MVP · Offline Ready)";
+        window.onerror = function (msg) {
+          var el = document.getElementById('arcadeBootErr');
+          if (el) el.textContent = String(msg || 'Runtime error');
+        };
+      })();
+    </script>
+    <script src="./vendor/polyfills.js?v=8"></script>
+    <script src="./core/module-runtime.js?v=8"></script>
+    <script src="./vendor/react-core.js?v=8"></script>
+    <script src="./vendor/react-dom-1.js?v=8"></script>
+    <script src="./vendor/react-dom-2.js?v=8"></script>
+    <script src="./vendor/react-dom-3.js?v=8"></script>
+    <script src="./vendor/three-1.js?v=8"></script>
+    <script src="./vendor/three-2.js?v=8"></script>
+    <script src="./vendor/three-3.js?v=8"></script>
+    <script src="./vendor/three-4.js?v=8"></script>
+    <script src="./vendor/three-5.js?v=8"></script>
+    <script src="./vendor/three-6.js?v=8"></script>
+    <script src="./vendor/three-7.js?v=8"></script>
+    <script src="./vendor/three-8.js?v=8"></script>
+    <script src="./vendor/three-9.js?v=8"></script>
+    <script src="./core/engine-base.js?v=8"></script>
+    <script src="./core/three-shared.js?v=8"></script>
+    <script src="./core/ui-shell.js?v=8"></script>
+    <script src="./core/ui-settings.js?v=8"></script>
+    <script src="./core/ui-lobbies.js?v=8"></script>
+    <script src="./games/angry-slingshot/game.js?v=8"></script>
+    <script src="./games/asphalt-nitro-3d/game.js?v=8"></script>
+    <script src="./games/battle-royale-3d/game.js?v=8"></script>
+    <script src="./games/block-blast/game.js?v=8"></script>
+    <script src="./games/candy-clash/game.js?v=8"></script>
+    <script src="./games/catch-butterflies/game.js?v=8"></script>
+    <script src="./games/code-hero/game.js?v=8"></script>
+    <script src="./games/cooking-frenzy/game.js?v=8"></script>
+    <script src="./games/crossword/game.js?v=8"></script>
+    <script src="./games/eight-ball-pool/game.js?v=8"></script>
+    <script src="./games/flappy-bird/game.js?v=8"></script>
+    <script src="./games/fruit-slash/game.js?v=8"></script>
+    <script src="./games/highway-racer/game.js?v=8"></script>
+    <script src="./games/hill-climb/game.js?v=8"></script>
+    <script src="./games/hoops-2k26/data-1.js?v=8"></script>
+    <script src="./games/hoops-2k26/data-2.js?v=8"></script>
+    <script src="./games/hoops-2k26/engine-1.js?v=8"></script>
+    <script src="./games/hoops-2k26/engine-2.js?v=8"></script>
+    <script src="./games/hoops-2k26/engine-3.js?v=8"></script>
+    <script src="./games/hoops-2k26/engine-4.js?v=8"></script>
+    <script src="./games/hoops-2k26/ui-1.js?v=8"></script>
+    <script src="./games/hoops-2k26/ui-2.js?v=8"></script>
+    <script src="./games/hoops-2k26/ui-3.js?v=8"></script>
+    <script src="./games/hoops-2k26/ui-4.js?v=8"></script>
+    <script src="./games/hoops-2k26/ui-5.js?v=8"></script>
+    <script src="./games/hoops-2k26/ui-6.js?v=8"></script>
+    <script src="./games/hungry-shark/game.js?v=8"></script>
+    <script src="./games/legends-arena/data-1.js?v=8"></script>
+    <script src="./games/legends-arena/data-2.js?v=8"></script>
+    <script src="./games/legends-arena/data-3.js?v=8"></script>
+    <script src="./games/legends-arena/data-4.js?v=8"></script>
+    <script src="./games/legends-arena/data-5.js?v=8"></script>
+    <script src="./games/legends-arena/data-6.js?v=8"></script>
+    <script src="./games/legends-arena/data-7.js?v=8"></script>
+    <script src="./games/legends-arena/data-8.js?v=8"></script>
+    <script src="./games/legends-arena/engine-1.js?v=8"></script>
+    <script src="./games/legends-arena/engine-2.js?v=8"></script>
+    <script src="./games/legends-arena/engine-3.js?v=8"></script>
+    <script src="./games/legends-arena/engine-4.js?v=8"></script>
+    <script src="./games/legends-arena/ui-1.js?v=8"></script>
+    <script src="./games/legends-arena/ui-2.js?v=8"></script>
+    <script src="./games/legends-arena/ui-3.js?v=8"></script>
+    <script src="./games/legends-arena/ui-4.js?v=8"></script>
+    <script src="./games/mini-militia/data.js?v=8"></script>
+    <script src="./games/mini-militia/engine.js?v=8"></script>
+    <script src="./games/mini-militia/ui-1.js?v=8"></script>
+    <script src="./games/mini-militia/ui-2.js?v=8"></script>
+    <script src="./games/naruto-senki-storm/data.js?v=8"></script>
+    <script src="./games/naruto-senki-storm/engine-1.js?v=8"></script>
+    <script src="./games/naruto-senki-storm/engine-2.js?v=8"></script>
+    <script src="./games/plant-vs-zombie/game.js?v=8"></script>
+    <script src="./games/stick-war-legacy/game.js?v=8"></script>
+    <script src="./games/stickman-brawl/game.js?v=8"></script>
+    <script src="./games/stockfish-chess/game.js?v=8"></script>
+    <script src="./games/subway-surfers/game.js?v=8"></script>
+    <script src="./games/sudoku/game.js?v=8"></script>
+    <script src="./games/super-runner/game.js?v=8"></script>
+    <script src="./games/tactical-ops-fps/game.js?v=8"></script>
+    <script src="./games/vector-parkour/game.js?v=8"></script>
+    <script src="./games/worm-io/game.js?v=8"></script>
+    <script src="./core/registry.js?v=8"></script>
+    <script src="./core/app-main.js?v=8"></script>
+  </body>
+</html>
