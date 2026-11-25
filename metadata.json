@@ -1,8 +1,0 @@
-{
-  "name": "Tsepang Garden & Game Arcade",
-  "description": "Interactive garden world and 24-game arcade featuring Stockfish Chess, Tactical Ops FPS, Candy Clash, Block Blast, Subway Surfers, Hill Climb, Plant vs Zombie, Angry Slingshot, Cooking Frenzy, Hungry Shark, Worm.io, Stickman Brawl, 8 Ball Pool, Vector Parkour, Crossword, Sudoku, Mini Militia, and Stick War: Legacy.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
