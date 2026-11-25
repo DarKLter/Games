@@ -1,0 +1,171 @@
+/* Legends Arena 3D MOBA — MLBB Modern Golden-Azure Visual Theme & Animations */
+
+.mlbb-num {
+  font-variant-numeric: tabular-nums;
+}
+.mlbb-panel-gold {
+  background: linear-gradient(155deg, rgba(16, 28, 61, 0.94), rgba(11, 19, 43, 0.96));
+  border: 1px solid rgba(230, 184, 76, 0.48);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 226, 138, 0.25),
+    inset 0 -1px 0 rgba(11, 19, 43, 0.7),
+    0 8px 24px rgba(4, 9, 24, 0.58);
+}
+.mlbb-bevel-gold {
+  background: linear-gradient(145deg, rgba(27, 59, 111, 0.88), rgba(11, 19, 43, 0.96));
+  border: 1px solid rgba(230, 184, 76, 0.6);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 226, 138, 0.35),
+    0 6px 18px rgba(3, 8, 22, 0.65);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), border-color 150ms ease, filter 150ms ease;
+}
+.mlbb-bevel-gold:hover {
+  border-color: rgba(255, 226, 138, 0.95);
+  filter: brightness(1.08);
+}
+.mlbb-bevel-gold:active {
+  transform: scale(0.97);
+}
+.mlbb-chamfer {
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+.mlbb-war-room-bg {
+  background:
+    radial-gradient(circle at 12% 45%, rgba(56, 189, 248, 0.16), transparent 36%),
+    radial-gradient(circle at 88% 45%, rgba(239, 68, 68, 0.16), transparent 36%),
+    radial-gradient(circle at 50% 0%, rgba(230, 184, 76, 0.12), transparent 45%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 2px,
+      transparent 2px,
+      transparent 18px
+    ),
+    linear-gradient(180deg, #060a17 0%, #0b132b 52%, #050814 100%);
+}
+@keyframes mlbbSkillReadyPop {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--mlbb-pop-color, #e6b84c);
+  }
+40% {
+    transform: scale(1.16);
+    box-shadow: 0 0 22px 6px var(--mlbb-pop-color, #e6b84c);
+  }
+100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+.mlbb-skill-ready-pop {
+  animation: mlbbSkillReadyPop 0.65s ease-out;
+}
+@keyframes mlbbRankShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+50% {
+    background-position: 100% 50%;
+  }
+100% {
+    background-position: 0% 50%;
+  }
+}
+.mlbb-rank-shimmer {
+  background-size: 220% 220%;
+  animation: mlbbRankShimmer 3.2s ease infinite;
+}
+@keyframes mlbbLightningFlare {
+  0%, 100% {
+    opacity: 0.22;
+    transform: scaleX(0.96);
+  }
+48% {
+    opacity: 0.78;
+    transform: scaleX(1.04);
+  }
+52% {
+    opacity: 1;
+    transform: scaleX(1.08);
+  }
+56% {
+    opacity: 0.32;
+    transform: scaleX(1);
+  }
+}
+.mlbb-lightning-flare {
+  animation: mlbbLightningFlare 2.2s ease-in-out infinite;
+}
+@keyframes mlbbSparkPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 6px) scale(0.72);
+  }
+25% {
+    opacity: 1;
+    transform: translate(-50%, -6px) scale(1.08);
+  }
+100% {
+    opacity: 0;
+    transform: translate(-50%, -28px) scale(0.94);
+  }
+}
+.mlbb-spark-pop {
+  animation: mlbbSparkPop 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes mlbbSplashFlash {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+.mlbb-splash-flash {
+  animation: mlbbSplashFlash 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes mlbbHeartbeat {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(230, 184, 76, 0.55);
+  }
+25% {
+    transform: scale(1.025);
+    box-shadow: 0 0 28px 6px rgba(230, 184, 76, 0.42);
+  }
+55% {
+    transform: scale(1.008);
+    box-shadow: 0 0 12px 2px rgba(56, 189, 248, 0.32);
+  }
+}
+.mlbb-heartbeat {
+  animation: mlbbHeartbeat 1.25s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mlbb-rank-shimmer,
+  .mlbb-lightning-flare,
+  .mlbb-heartbeat,
+  .mlbb-spark-pop,
+  .mlbb-splash-flash {
+    animation: none !important;
+  }
+}
+.mlbb-cb-deuteranopia {
+  filter: hue-rotate(-14deg) saturate(1.12);
+}
+.mlbb-cb-protanopia {
+  filter: hue-rotate(16deg) contrast(1.06);
+}
+.mlbb-cb-tritanopia {
+  filter: hue-rotate(-28deg) saturate(1.08);
+}

@@ -1,0 +1,109 @@
+================================================================================
+GOOGLE AI STUDIO INCREMENTAL MASTER PROMPT — PART 3 OF 7
+PROJECT: MOBILE LEGENDS: BANG BANG (MLBB) — 100% EXACT CLONE
+SCOPE: EXACT IN-MATCH BATTLEFIELD HUD & ALL INTERACTIVE BATTLEFIELD FEATURES
+       (MINIMAP DRAG, FREE CAMERA PAN, DRAG-TO-MARK ENEMY/BUSH/TURRET/LORD,
+        EXPANDED MINIMAP ROUTE DRAWING, COOLDOWN PINGS, HERO LOCK, SHIELDED
+        RECALL, DEATH RECAP, BATTLE EMOTES, SURRENDER & PRACTICE CHEATS)
+================================================================================
+
+CONTINUATION RULES (CRITICAL):
+- Preserve 100% of Parts 1 and 2. Do NOT overwrite Lobby, Profile, Draft Pick, Audio, or the Land of Dawn Map/Timers engine.
+- Now build the **100% Exact MLBB In-Match Battlefield HUD** (`src/components/BattlefieldHUD.tsx`) and EVERY interactive battlefield camera, map-marking, signaling, targeting, and tactical feedback system.
+
+--------------------------------------------------------------------------------
+1. EXACT IN-MATCH BATTLEFIELD HUD LAYOUT (DEFAULT ANCHORS + CUSTOM UI READY)
+--------------------------------------------------------------------------------
+Every HUD widget must read its `{ x, y, scale, opacity }` from the central `customUiLayout` store (so Part 7's Drag-and-Drop Custom UI Editor immediately moves/resizes every single button!).
+
+```text
++======================================================================================+
+| +--------------+  [Team Score: Blue 12 | 08:45 | Red 10]   [Ping: 18ms | 60fps] [⚙️] |
+| |   MINIMAP    |  [K/D/A: 4/1/6] [Gold: 6,240] (Tap->Board)         [Attack ⚔️]      |
+| | (Tap/Drag to |  [Ally1][Ally2][Ally3][Ally4]                      [Retreat 🛡️]     |
+| |  Pan Camera) |  (HP + Green Ult Dot + Respawn)                    [Gather 🎯]      |
+| +----------[🔍]+                                                     [🎤] [🔊]       |
+| [💰 1,450 | Quick-Buy Item 1]                                        [💬 Chat]       |
+| [   Shop  | Quick-Buy Item 2]                (Open Upper-Right       [😄 Emote]      |
+|                                               Screen = Free                          |
+|                                               Camera Drag Zone)                      |
+|                                                                      (❌ Cancel Cast |
+|                                                                       appears on     |
+|       (O)                                 [Hero Lock 1][2][3]         skill drag)    |
+|     (STICK)                             [Active Item]     [+S3 Ult]                  |
+|    Movement                             [Spell]      [+S2]    [Turret]               |
+|    Joystick           [Recall][Regen]           [+S1]      [BASIC ATK]               |
+|                        (Buff Icons)                        [Minion]                  |
++======================================================================================+
+```
+
+EXACT ZONE REQUIREMENTS:
+1. **TOP-LEFT ZONE:**
+   - **Live Tactical Minimap:** Crisp square map showing terrain, Fog of War, Blue/Red Hero icons (hidden if in fog!), Turret HP rings, Jungle/Buff/Turtle/Lord respawn icons, live animated Ping ripples, "On My Way" route lines, and the white Camera Viewport rectangle.
+   - **Expand Map Corner Tab `[🔍]`:** Bottom-right corner of the minimap; opens the 45%-screen Expanded Tactical Map.
+   - **Teammate Status Strip:** 4 Allied Hero portraits beside/under the minimap showing live HP bars, grayed-out Respawn Countdown numbers when dead, and a bright **Green Dot** on the top corner whenever their Ultimate is READY.
+   - **Gold Counter & Quick-Buy Strip (Directly below Minimap):** Displays live Gold + up to 2 glowing **Quick-Buy** item slots (one tap buys instantly without interrupting movement!) + clickable Bag/Gold button to open the semi-transparent Shop-Anywhere overlay (wired to Part 6's complete item crafting tree).
+2. **TOP-CENTER ZONE:**
+   - **Score & Clock Bar:** Blue Kills | `MM:SS` Clock | Red Kills, plus live personal `K / D / A` and `Total Gold`.
+   - **Full 10-Player Scoreboard Overlay (Tap top bar or press `Tab`):**
+     * Respects `Battlefield UI Opacity` setting so you can still watch the live fight behind it!
+     * **Tab 1 (`Equipment`):** All 10 players with Hero Portrait, Level, K/D/A, Gold, Emblem Talent, Battle Spell (CLICKABLE to ping enemy spell usage!), 6 equipped items, and individual Mute Chat/Voice icons.
+     * **Tab 2 (`Data`):** Real-time Damage Dealt to Heroes, Damage Taken, Turret Damage, and Teamfight Participation %.
+     * **Tab 3 (`Hero Attributes`):** Live readout of your hero's exact stats (HP, Mana/Energy, Phys/Magic Atk, Phys/Magic Def, Atk Speed, Crit %, Penetration, Lifesteal/Spell Vamp, CDR %, Move Speed).
+3. **TOP-RIGHT & RIGHT-EDGE ZONE:**
+   - Live Ping (`18ms`), live measured FPS (`60fps`), and Settings Gear `[⚙️]` (with in-match Surrender unlocked at `06:00`).
+   - 3 Stacked Signal Buttons: `[⚔️ Attack]` (Red), `[🛡️ Retreat]` (Yellow), `[🎯 Gather]` (Blue).
+   - `[🎤]` Mic, `[🔊]` Speaker, `[💬]` Quick Chat Drawer (custom callouts + live text input), and `[😄]` Battle Emote Wheel (spawns animated floating emote bubble above your hero's head + sound!).
+4. **BOTTOM-LEFT ZONE:**
+   - Virtual Movement Joystick (supports both **Fixed Position** and **Floating Position** modes + simultaneous Desktop `WASD` / Arrow key control).
+5. **BOTTOM-CENTER ZONE:**
+   - `[Recall]` (4.0s channel, `B` key), `[Regen]` (60s CD, restores HP/Mana over 5s, interrupted by hero/turret damage, `G` key), and active Buff/Debuff icon bar (Blue Buff, Red Buff, Turtle Shield, Lord Buff, Potions, Hero Passive Stacks) with countdown radial sweeps.
+6. **BOTTOM-RIGHT COMBAT CLUSTER:**
+   - Large **Basic Attack** button (`Space` / Click), plus **Advanced Targeting** `[Turret]` (above) and `[Minion]` (below-left) buttons when Advanced Targeting is enabled in Settings.
+   - Curved **Skill Arc**: `S1 (Q)`, `S2 (W)`, `S3 Ult (E)`, and automatic `S4 (R)` for 4-skill heroes — each showing numeric CD, Mana tint, and glowing `[+]` Level-Up button when Skill Points are available.
+   - **Battle Spell (`F`)** left of S1/S2, and **Active Equipment Skill (`D`)** automatically appearing when carrying active items (`Wind of Nature`, `Winter Crown`, `Conceal`, etc.).
+   - **Hero Lock Portrait Wheel:** Up to 5 nearby visible enemy portraits appear in a clean arc above the skills; tapping locks your attacks/skills onto that enemy with a glowing red tether & underfoot crosshair ring!
+   - **Dynamic `[❌ Cancel Cast]` Zone:** Appears automatically in the upper-right area when dragging any skill aim indicator; dragging into it (or past cancel distance) cleanly aborts cast with zero CD loss.
+
+--------------------------------------------------------------------------------
+2. FOUR INTERACTIVE CAMERA & SCOUTING MODES (MANDATORY!)
+--------------------------------------------------------------------------------
+1. **Direct Minimap Drag Scouting:** Touching/clicking and dragging anywhere on the Top-Left Minimap immediately pans the main battlefield camera to that exact world coordinate, moving the glowing white viewport rectangle inside the minimap. Releasing smoothly snaps the camera back to your hero.
+2. **Open-Screen Free Camera Panning:** Clicking/dragging on the open upper-right quadrant of the battlefield glides the camera smoothly up to `1.5` screens away in any direction (scaled by `Camera Sensitivity` setting) to scout bushes, Turtle/Lord pits, and teamfights; releasing smoothly recenters on your hero.
+3. **Aim Panning (Long-Range Skillshots):** When `Aim Panning` is ON, dragging long-range directional skills smoothly shifts the camera toward your aim vector so you can snipe off-screen enemies.
+4. **Death Spectate Camera:** While waiting on your respawn timer, tapping any Ally portrait in the Teammate Status Strip or dragging the minimap lets you spectate teammates live.
+
+--------------------------------------------------------------------------------
+3. DRAG-TO-MARK ENEMY, BUSH, TURRET & OBJECTIVE PINGING (CRITICAL FEATURE!)
+--------------------------------------------------------------------------------
+Implement the EXACT MLBB interactive tactical ping system:
+- **Quick Tap `[⚔️ Attack]`, `[🛡️ Retreat]`, or `[🎯 Gather]`:** Instant ping at your hero's current location with animated ground ripple, minimap pulse, team chat log, and voice callout (`"Launch Attack!"`, `"Retreat!"`, `"Request Backup!"`).
+- **PRESS-AND-HOLD DRAG-TO-MARK POP-OUT MINI-MAP:**
+  * Holding down (`> 140ms` or dragging `> 10px`) on `[⚔️ Attack]`, `[🛡️ Retreat]`, or `[🎯 Gather]` instantly pops open a **Glowing Tactical Pop-Out Mini-Map** right beside the ping buttons!
+  * As you drag your cursor/finger across this Pop-Out Mini-Map, a smart targeting reticle magnetically snaps to the nearest entity and shows a live contextual preview tooltip:
+    - Drag `[Attack]` onto an **Enemy Hero** -> Drops a pulsing **Red Target Crosshair** on that enemy (both on battlefield & minimap): *"Attack [Enemy Hero Name]!"*
+    - Drag `[Attack]` onto an **Enemy Turret** -> *"Destroy Enemy [Top/Mid/Bot] Turret!"*
+    - Drag `[Attack]` onto **Turtle / Lord** -> *"Attack the Turtle/Lord!"* (or if not yet spawned, broadcasts exact timer: *"Lord spawns in 0:42!"*)
+    - Drag `[Retreat]` onto a **Bush / Fogged Area** -> Drops a glowing **Yellow Ambush Warning Eye (`⚠️👁️`)** in that bush: *"Watch out for ambush!"*
+    - Drag `[Retreat]` onto an **Enemy Hero** -> *"Be careful of [Enemy Hero Name]!"*
+    - Drag `[Gather]` onto an **Ally, Lane, or Objective** -> Drops a pulsing **Blue Rally Beacon**: *"Gather at [Mid Lane / Turtle / Lord]!"*
+  * Releasing sends the tactical ping into a shared `activePings[]` bus so **Allied AI bots (Part 7) immediately react to your ping** (rotating to Turtle/Lord, ganking marked enemies, or retreating from marked bushes!).
+- **EXPANDED MINIMAP (`[🔍]`) MARKING & "ON MY WAY" ROUTE DRAWING:**
+  * Tapping `[🔍]` opens the large translucent tactical map overlay.
+  * Tapping any enemy icon (visible -> *"Attack [Hero]!"*; in fog -> *"Enemy Missing!"*), turret, buff, or Turtle/Lord pings it instantly.
+  * Dragging from your hero icon (or clicking the `"On My Way"` toggle + tapping any destination) draws a glowing **Cyan Dotted Route Line** on BOTH the minimap and the battlefield ground visible to your whole team (`"On my way!"`).
+
+--------------------------------------------------------------------------------
+4. SMART COOLDOWN SIGNALING, SHIELDED RECALL, DEATH RECAP & PRACTICE CHEATS
+--------------------------------------------------------------------------------
+- **Smart Cooldown / Gold / Status Signaling:**
+  * Dragging a Skill button, Ultimate, or Battle Spell toward the Quick-Signal/Chat icon (or `Alt+Click` / `Shift+Click` on desktop) broadcasts live status: *"Ultimate Ready!"*, *"Ultimate on cooldown: 14s!"*, *"Retribution Ready!"*, or *"Flicker on cooldown: 48s!"*.
+  * Clicking an enemy's Battle Spell icon inside the Scoreboard broadcasts: *"Enemy [Hero] used Flicker!"* with a countdown timer pill.
+  * Clicking your HP/Mana bar below 25% broadcasts *"Low HP, retreating!"* / *"Low Mana!"*.
+- **Authentic Shielded Recall Rule:** Channeling Recall (`4.0s`) draws an expanding golden-cyan magic circle under your hero. Taking direct HP damage interrupts Recall immediately; however, if you have an active Shield and incoming damage is `100%` absorbed by your Shield without touching your HP bar, Recall continues uninterrupted!
+- **Death Damage Breakdown Recap:** Upon death, show a `[💀 Death Recap]` button that opens a breakdown card listing the Top 3 damage contributors (Hero portraits, Skill names, Physical/Magic/True damage percentages, and total CC duration suffered).
+- **Surrender System:** Available in in-match Settings starting at `06:00`, opening a 5-slot team vote bar with animated ally votes.
+- **Practice Mode Live Cheat Drawer (Collapsible Left-Edge Panel when Mode = Practice):**
+  * Buttons: `+Level Up`, `Max Level (15)`, `+10,000 Gold`, `Toggle Zero CD`, `Toggle God Mode`, `Spawn Damage Bot`, `Spawn Normal Bot`, `Spawn Turtle/Lord`, `Clear Minions`, `Toggle Turret Invincible`, `Reset Hero Position`.
+
+BUILD PART 3 COMPLETELY NOW. MAKE SURE DRAG-TO-MARK ENEMY, BUSH WARNINGS, MINIMAP DRAG, AND ROUTE DRAWING FEEL ULTRA-RESPONSIVE ON BOTH MOUSE AND TOUCH.

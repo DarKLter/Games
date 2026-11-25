@@ -1,0 +1,3985 @@
+(function(ArcadeMod){
+// === MODULE: src/games/hoops-2k26/hybrid/rosters2K26 ===
+ArcadeMod.define("src/games/hoops-2k26/hybrid/rosters2K26", function(require, module, exports) {
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "ROSTERS_2K26", {
+    enumerable: true,
+    get: function() {
+        return ROSTERS_2K26;
+    }
+});
+var _rosterTypes = require("./rosterTypes");
+var ROSTERS_2K26 = [
+    // ======================== WESTERN CONFERENCE (15) ========================
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_okc',
+        era: '2K26',
+        city: 'Oklahoma City',
+        name: 'Thunder',
+        abbr: 'OKC',
+        conference: 'WEST',
+        arena: 'Paycom Center',
+        colors: [
+            '#007AC1',
+            '#EF3B24',
+            '#FDBB30',
+            '#cc9858',
+            '#007AC1'
+        ],
+        players: [
+            [
+                'Shai Gilgeous-Alexander',
+                2,
+                'PG',
+                98,
+                'SUPERSTAR_WING',
+                78,
+                {
+                    attrs: {
+                        midRange: 98,
+                        drivingLayup: 97,
+                        ballHandle: 96,
+                        threePt: 87,
+                        perimeterDef: 92,
+                        steal: 93,
+                        speed: 93
+                    },
+                    badges: {
+                        SHIFTY_SHOOTER: 'LEGEND',
+                        LAYUP_MIXMASTER: 'LEGEND',
+                        ANKLE_ASSASSIN: 'LEGEND',
+                        DEADEYE: 'HOF',
+                        GLOVE: 'HOF',
+                        UNPLUCKABLE: 'LEGEND'
+                    },
+                    appearance: {
+                        hairStyle: 'BRAIDS',
+                        armSleeve: 'RIGHT'
+                    }
+                }
+            ],
+            [
+                'Alex Caruso',
+                9,
+                'SG',
+                83,
+                'TWO_WAY_WING',
+                77,
+                {
+                    attrs: {
+                        perimeterDef: 95,
+                        steal: 93
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'LEGEND',
+                        GLOVE: 'HOF',
+                        INTERCEPTOR: 'HOF'
+                    },
+                    appearance: {
+                        headband: true,
+                        hairStyle: 'BALD'
+                    }
+                }
+            ],
+            [
+                'Jalen Williams',
+                8,
+                'SF',
+                89,
+                'TWO_WAY_WING',
+                78,
+                {
+                    attrs: {
+                        drivingDunk: 90,
+                        midRange: 89,
+                        threePt: 87,
+                        perimeterDef: 90
+                    },
+                    badges: {
+                        POSTERIZER: 'GOLD',
+                        PERIMETER_CHALLENGER: 'HOF',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Chet Holmgren',
+                7,
+                'PF',
+                88,
+                'STRETCH_BIG',
+                85,
+                {
+                    wingspanInches: 90,
+                    attrs: {
+                        block: 95,
+                        interiorDef: 93,
+                        threePt: 85,
+                        drivingDunk: 88
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'LEGEND',
+                        HIGH_FLYING_DENIER: 'HOF',
+                        SET_SHOT_SPECIALIST: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Isaiah Hartenstein',
+                55,
+                'C',
+                82,
+                'RIM_PROTECTOR',
+                84,
+                {
+                    badges: {
+                        FLOAT_GAME: 'GOLD',
+                        BOXOUT_BEAST: 'HOF',
+                        REBOUND_CHASER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Lu Dort',
+                5,
+                'SG',
+                81,
+                'TWO_WAY_WING',
+                76,
+                {
+                    attrs: {
+                        perimeterDef: 93,
+                        strength: 88
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Cason Wallace',
+                22,
+                'PG',
+                79,
+                'TWO_WAY_WING',
+                75
+            ],
+            [
+                'Isaiah Joe',
+                11,
+                'SG',
+                78,
+                'SHARPSHOOTER',
+                75,
+                {
+                    attrs: {
+                        threePt: 91
+                    },
+                    badges: {
+                        LIMITLESS_RANGE: 'GOLD',
+                        SET_SHOT_SPECIALIST: 'HOF'
+                    }
+                }
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_den',
+        era: '2K26',
+        city: 'Denver',
+        name: 'Nuggets',
+        abbr: 'DEN',
+        conference: 'WEST',
+        arena: 'Ball Arena',
+        colors: [
+            '#0E2240',
+            '#FEC524',
+            '#8B2131',
+            '#cf9c5c',
+            '#0E2240'
+        ],
+        players: [
+            [
+                'Jamal Murray',
+                27,
+                'PG',
+                86,
+                'ELITE_PG',
+                76,
+                {
+                    attrs: {
+                        threePt: 89,
+                        midRange: 90,
+                        ballHandle: 90
+                    },
+                    badges: {
+                        SHIFTY_SHOOTER: 'HOF',
+                        DEADEYE: 'HOF',
+                        ANKLE_ASSASSIN: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Christian Braun',
+                0,
+                'SG',
+                79,
+                'TWO_WAY_WING',
+                78
+            ],
+            [
+                'Michael Porter Jr.',
+                1,
+                'SF',
+                82,
+                'SHARPSHOOTER',
+                82,
+                {
+                    attrs: {
+                        threePt: 91,
+                        midRange: 88
+                    },
+                    badges: {
+                        DEADEYE: 'HOF',
+                        SET_SHOT_SPECIALIST: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Aaron Gordon',
+                32,
+                'PF',
+                83,
+                'SLASHER',
+                80,
+                {
+                    attrs: {
+                        drivingDunk: 95,
+                        vertical: 94,
+                        strength: 90
+                    },
+                    badges: {
+                        POSTERIZER: 'HOF',
+                        AERIAL_WIZARD: 'LEGEND',
+                        PHYSICAL_FINISHER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Nikola Jokić',
+                15,
+                'C',
+                98,
+                'POINT_CENTER',
+                83,
+                {
+                    weightLbs: 284,
+                    attrs: {
+                        closeShot: 99,
+                        passAccuracy: 98,
+                        midRange: 94,
+                        threePt: 88,
+                        defReb: 96,
+                        offReb: 92,
+                        strength: 95
+                    },
+                    badges: {
+                        DIMER: 'LEGEND',
+                        VERSATILE_VISIONARY: 'LEGEND',
+                        BREAK_STARTER: 'LEGEND',
+                        FLOAT_GAME: 'LEGEND',
+                        BOXOUT_BEAST: 'LEGEND',
+                        REBOUND_CHASER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Russell Westbrook',
+                4,
+                'PG',
+                79,
+                'SLASHER',
+                76,
+                {
+                    badges: {
+                        LIGHTNING_LAUNCH: 'GOLD',
+                        DIMER: 'GOLD',
+                        PHYSICAL_FINISHER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Peyton Watson',
+                8,
+                'SF',
+                77,
+                'TWO_WAY_WING',
+                80,
+                {
+                    badges: {
+                        HIGH_FLYING_DENIER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Julian Strawther',
+                3,
+                'SG',
+                76,
+                'SHARPSHOOTER',
+                78
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_lal',
+        era: '2K26',
+        city: 'Los Angeles',
+        name: 'Lakers',
+        abbr: 'LAL',
+        conference: 'WEST',
+        arena: 'Crypto.com Arena',
+        colors: [
+            '#552583',
+            '#FDB927',
+            '#FFFFFF',
+            '#d0a060',
+            '#552583'
+        ],
+        players: [
+            [
+                'Luka Dončić',
+                77,
+                'PG',
+                97,
+                'SUPERSTAR_WING',
+                79,
+                {
+                    attrs: {
+                        threePt: 93,
+                        midRange: 95,
+                        ballHandle: 96,
+                        passAccuracy: 97,
+                        drivingLayup: 94,
+                        defReb: 88
+                    },
+                    badges: {
+                        SHIFTY_SHOOTER: 'LEGEND',
+                        LIMITLESS_RANGE: 'LEGEND',
+                        DIMER: 'LEGEND',
+                        VERSATILE_VISIONARY: 'LEGEND',
+                        DEADEYE: 'HOF',
+                        ANKLE_ASSASSIN: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Austin Reaves',
+                15,
+                'SG',
+                84,
+                'SHARPSHOOTER',
+                77,
+                {
+                    badges: {
+                        LAYUP_MIXMASTER: 'GOLD',
+                        SHIFTY_SHOOTER: 'GOLD',
+                        DIMER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Rui Hachimura',
+                28,
+                'SF',
+                80,
+                'ROLE_FORWARD',
+                80
+            ],
+            [
+                'LeBron James',
+                23,
+                'PF',
+                95,
+                'SUPERSTAR_WING',
+                81,
+                {
+                    weightLbs: 250,
+                    attrs: {
+                        closeShot: 95,
+                        drivingDunk: 93,
+                        drivingLayup: 95,
+                        threePt: 88,
+                        passAccuracy: 95,
+                        strength: 93,
+                        speed: 89
+                    },
+                    badges: {
+                        POSTERIZER: 'HOF',
+                        PHYSICAL_FINISHER: 'LEGEND',
+                        DIMER: 'LEGEND',
+                        VERSATILE_VISIONARY: 'LEGEND',
+                        HIGH_FLYING_DENIER: 'HOF',
+                        BREAK_STARTER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Jaxson Hayes',
+                11,
+                'C',
+                77,
+                'RIM_PROTECTOR',
+                84,
+                {
+                    badges: {
+                        AERIAL_WIZARD: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Dorian Finney-Smith',
+                17,
+                'SF',
+                78,
+                'TWO_WAY_WING',
+                79
+            ],
+            [
+                'Jarred Vanderbilt',
+                2,
+                'PF',
+                78,
+                'TWO_WAY_WING',
+                80,
+                {
+                    attrs: {
+                        perimeterDef: 90,
+                        defReb: 86
+                    }
+                }
+            ],
+            [
+                'Dalton Knecht',
+                4,
+                'SG',
+                77,
+                'SHARPSHOOTER',
+                78,
+                {
+                    attrs: {
+                        threePt: 88
+                    }
+                }
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_sas',
+        era: '2K26',
+        city: 'San Antonio',
+        name: 'Spurs',
+        abbr: 'SAS',
+        conference: 'WEST',
+        arena: 'Frost Bank Center',
+        colors: [
+            '#111111',
+            '#C4CED4',
+            '#00B2A9',
+            '#cca064',
+            '#111111'
+        ],
+        players: [
+            [
+                "De'Aaron Fox",
+                4,
+                'PG',
+                88,
+                'ELITE_PG',
+                75,
+                {
+                    attrs: {
+                        speed: 97,
+                        acceleration: 98,
+                        drivingLayup: 92,
+                        midRange: 88,
+                        steal: 87
+                    },
+                    badges: {
+                        LIGHTNING_LAUNCH: 'LEGEND',
+                        ANKLE_ASSASSIN: 'HOF',
+                        FLOAT_GAME: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Stephon Castle',
+                5,
+                'SG',
+                82,
+                'TWO_WAY_WING',
+                78,
+                {
+                    badges: {
+                        PERIMETER_CHALLENGER: 'GOLD',
+                        PHYSICAL_FINISHER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Devin Vassell',
+                24,
+                'SF',
+                81,
+                'SHARPSHOOTER',
+                77
+            ],
+            [
+                'Jeremy Sochan',
+                10,
+                'PF',
+                79,
+                'TWO_WAY_WING',
+                80
+            ],
+            [
+                'Victor Wembanyama',
+                1,
+                'C',
+                95,
+                'STRETCH_BIG',
+                88,
+                {
+                    wingspanInches: 96,
+                    attrs: {
+                        block: 99,
+                        interiorDef: 97,
+                        threePt: 86,
+                        drivingDunk: 93,
+                        defReb: 94,
+                        ballHandle: 82
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'LEGEND',
+                        HIGH_FLYING_DENIER: 'LEGEND',
+                        POGO_STICK: 'LEGEND',
+                        AERIAL_WIZARD: 'HOF',
+                        LIMITLESS_RANGE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Harrison Barnes',
+                40,
+                'PF',
+                78,
+                'STRETCH_BIG',
+                80
+            ],
+            [
+                'Keldon Johnson',
+                0,
+                'SF',
+                78,
+                'SLASHER',
+                77
+            ],
+            [
+                'Chris Paul',
+                3,
+                'PG',
+                79,
+                'ELITE_PG',
+                72,
+                {
+                    attrs: {
+                        passAccuracy: 94
+                    },
+                    badges: {
+                        DIMER: 'HOF',
+                        VERSATILE_VISIONARY: 'HOF'
+                    }
+                }
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_min',
+        era: '2K26',
+        city: 'Minnesota',
+        name: 'Timberwolves',
+        abbr: 'MIN',
+        conference: 'WEST',
+        arena: 'Target Center',
+        colors: [
+            '#0C2340',
+            '#236192',
+            '#78BE20',
+            '#c9975a',
+            '#0C2340'
+        ],
+        players: [
+            [
+                'Mike Conley',
+                10,
+                'PG',
+                80,
+                'ELITE_PG',
+                72,
+                {
+                    badges: {
+                        DIMER: 'GOLD',
+                        FLOAT_GAME: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Anthony Edwards',
+                5,
+                'SG',
+                95,
+                'SUPERSTAR_WING',
+                76,
+                {
+                    attrs: {
+                        drivingDunk: 97,
+                        vertical: 97,
+                        threePt: 91,
+                        speed: 94,
+                        perimeterDef: 89
+                    },
+                    badges: {
+                        POSTERIZER: 'LEGEND',
+                        LIGHTNING_LAUNCH: 'LEGEND',
+                        LIMITLESS_RANGE: 'HOF',
+                        DEADEYE: 'HOF',
+                        PHYSICAL_FINISHER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Jaden McDaniels',
+                3,
+                'SF',
+                81,
+                'TWO_WAY_WING',
+                81,
+                {
+                    attrs: {
+                        perimeterDef: 93,
+                        block: 84
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'HOF',
+                        HIGH_FLYING_DENIER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Julius Randle',
+                30,
+                'PF',
+                84,
+                'POST_SCORER',
+                81
+            ],
+            [
+                'Rudy Gobert',
+                27,
+                'C',
+                86,
+                'RIM_PROTECTOR',
+                85,
+                {
+                    attrs: {
+                        interiorDef: 97,
+                        block: 94,
+                        defReb: 95,
+                        offReb: 92
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'LEGEND',
+                        REBOUND_CHASER: 'LEGEND',
+                        BOXOUT_BEAST: 'HOF',
+                        POGO_STICK: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Naz Reid',
+                11,
+                'C',
+                82,
+                'STRETCH_BIG',
+                81,
+                {
+                    attrs: {
+                        threePt: 88
+                    },
+                    badges: {
+                        SET_SHOT_SPECIALIST: 'GOLD',
+                        PHYSICAL_FINISHER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Donte DiVincenzo',
+                0,
+                'SG',
+                80,
+                'SHARPSHOOTER',
+                76,
+                {
+                    attrs: {
+                        threePt: 89
+                    }
+                }
+            ],
+            [
+                'Nickeil Alexander-Walker',
+                9,
+                'SG',
+                78,
+                'TWO_WAY_WING',
+                77
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_gsw',
+        era: '2K26',
+        city: 'Golden State',
+        name: 'Warriors',
+        abbr: 'GSW',
+        conference: 'WEST',
+        arena: 'Chase Center',
+        colors: [
+            '#1D428A',
+            '#FFC72C',
+            '#FFFFFF',
+            '#cc9858',
+            '#1D428A'
+        ],
+        players: [
+            [
+                'Stephen Curry',
+                30,
+                'PG',
+                95,
+                'SHARPSHOOTER',
+                74,
+                {
+                    attrs: {
+                        threePt: 99,
+                        midRange: 96,
+                        ballHandle: 96,
+                        freeThrow: 97
+                    },
+                    badges: {
+                        LIMITLESS_RANGE: 'LEGEND',
+                        DEADEYE: 'LEGEND',
+                        SHIFTY_SHOOTER: 'LEGEND',
+                        SET_SHOT_SPECIALIST: 'LEGEND',
+                        ANKLE_ASSASSIN: 'HOF',
+                        MINI_MARKSMAN: 'LEGEND'
+                    }
+                }
+            ],
+            [
+                'Brandin Podziemski',
+                2,
+                'SG',
+                79,
+                'ROLE_GUARD',
+                76
+            ],
+            [
+                'Jimmy Butler',
+                10,
+                'SF',
+                89,
+                'TWO_WAY_WING',
+                79,
+                {
+                    attrs: {
+                        midRange: 89,
+                        drivingLayup: 91,
+                        perimeterDef: 92,
+                        steal: 90,
+                        strength: 88
+                    },
+                    badges: {
+                        PHYSICAL_FINISHER: 'HOF',
+                        PERIMETER_CHALLENGER: 'HOF',
+                        GLOVE: 'HOF',
+                        DEADEYE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Jonathan Kuminga',
+                0,
+                'PF',
+                81,
+                'SLASHER',
+                79,
+                {
+                    attrs: {
+                        drivingDunk: 93,
+                        vertical: 93
+                    },
+                    badges: {
+                        POSTERIZER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Draymond Green',
+                23,
+                'C',
+                83,
+                'TWO_WAY_WING',
+                78,
+                {
+                    attrs: {
+                        interiorDef: 93,
+                        perimeterDef: 90,
+                        passAccuracy: 87
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'HOF',
+                        PERIMETER_CHALLENGER: 'HOF',
+                        DIMER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Buddy Hield',
+                7,
+                'SG',
+                79,
+                'SHARPSHOOTER',
+                76,
+                {
+                    attrs: {
+                        threePt: 91
+                    },
+                    badges: {
+                        LIMITLESS_RANGE: 'GOLD',
+                        SET_SHOT_SPECIALIST: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Moses Moody',
+                4,
+                'SF',
+                77,
+                'TWO_WAY_WING',
+                77
+            ],
+            [
+                'Kevon Looney',
+                5,
+                'C',
+                77,
+                'RIM_PROTECTOR',
+                81
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_dal',
+        era: '2K26',
+        city: 'Dallas',
+        name: 'Mavericks',
+        abbr: 'DAL',
+        conference: 'WEST',
+        arena: 'American Airlines Center',
+        colors: [
+            '#00538C',
+            '#002B5E',
+            '#B8C4CA',
+            '#cc9a5c',
+            '#00538C'
+        ],
+        players: [
+            [
+                'Kyrie Irving',
+                11,
+                'PG',
+                91,
+                'ELITE_PG',
+                74,
+                {
+                    attrs: {
+                        ballHandle: 99,
+                        drivingLayup: 98,
+                        threePt: 91,
+                        midRange: 93
+                    },
+                    badges: {
+                        ANKLE_ASSASSIN: 'LEGEND',
+                        LAYUP_MIXMASTER: 'LEGEND',
+                        HANDLES_FOR_DAYS: 'LEGEND',
+                        SHIFTY_SHOOTER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Klay Thompson',
+                31,
+                'SG',
+                81,
+                'SHARPSHOOTER',
+                78,
+                {
+                    attrs: {
+                        threePt: 92
+                    },
+                    badges: {
+                        SET_SHOT_SPECIALIST: 'HOF',
+                        DEADEYE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Cooper Flagg',
+                32,
+                'SF',
+                85,
+                'TWO_WAY_WING',
+                81,
+                {
+                    attrs: {
+                        drivingDunk: 90,
+                        perimeterDef: 89,
+                        interiorDef: 87,
+                        block: 87,
+                        threePt: 83
+                    },
+                    badges: {
+                        HIGH_FLYING_DENIER: 'HOF',
+                        POSTERIZER: 'GOLD',
+                        PERIMETER_CHALLENGER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Anthony Davis',
+                3,
+                'PF',
+                94,
+                'RIM_PROTECTOR',
+                82,
+                {
+                    attrs: {
+                        closeShot: 95,
+                        interiorDef: 97,
+                        block: 96,
+                        defReb: 95,
+                        midRange: 87
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'LEGEND',
+                        REBOUND_CHASER: 'LEGEND',
+                        HIGH_FLYING_DENIER: 'HOF',
+                        POGO_STICK: 'HOF',
+                        AERIAL_WIZARD: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Dereck Lively II',
+                2,
+                'C',
+                82,
+                'RIM_PROTECTOR',
+                85,
+                {
+                    badges: {
+                        AERIAL_WIZARD: 'HOF',
+                        PAINT_PATROLLER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'P.J. Washington',
+                25,
+                'PF',
+                80,
+                'TWO_WAY_WING',
+                79
+            ],
+            [
+                'Daniel Gafford',
+                21,
+                'C',
+                81,
+                'RIM_PROTECTOR',
+                82
+            ],
+            [
+                'Naji Marshall',
+                13,
+                'SF',
+                78,
+                'TWO_WAY_WING',
+                78
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_phx',
+        era: '2K26',
+        city: 'Phoenix',
+        name: 'Suns',
+        abbr: 'PHX',
+        conference: 'WEST',
+        arena: 'Footprint Center',
+        colors: [
+            '#1D1160',
+            '#E56020',
+            '#F9AD1B',
+            '#cf9c5c',
+            '#1D1160'
+        ],
+        players: [
+            [
+                'Tyus Jones',
+                21,
+                'PG',
+                79,
+                'ELITE_PG',
+                73,
+                {
+                    badges: {
+                        DIMER: 'HOF',
+                        UNPLUCKABLE: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Devin Booker',
+                1,
+                'SG',
+                93,
+                'SUPERSTAR_WING',
+                78,
+                {
+                    attrs: {
+                        midRange: 97,
+                        threePt: 90,
+                        ballHandle: 91,
+                        passAccuracy: 87
+                    },
+                    badges: {
+                        SHIFTY_SHOOTER: 'LEGEND',
+                        DEADEYE: 'LEGEND',
+                        SET_SHOT_SPECIALIST: 'HOF',
+                        DIMER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Bradley Beal',
+                3,
+                'SF',
+                83,
+                'SHARPSHOOTER',
+                76
+            ],
+            [
+                'Kevin Durant',
+                35,
+                'PF',
+                95,
+                'SUPERSTAR_WING',
+                83,
+                {
+                    attrs: {
+                        midRange: 99,
+                        threePt: 94,
+                        closeShot: 92,
+                        block: 85
+                    },
+                    badges: {
+                        DEADEYE: 'LEGEND',
+                        SHIFTY_SHOOTER: 'LEGEND',
+                        SET_SHOT_SPECIALIST: 'LEGEND',
+                        LIMITLESS_RANGE: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Nick Richards',
+                2,
+                'C',
+                78,
+                'RIM_PROTECTOR',
+                84
+            ],
+            [
+                'Grayson Allen',
+                8,
+                'SG',
+                79,
+                'SHARPSHOOTER',
+                76,
+                {
+                    attrs: {
+                        threePt: 91
+                    }
+                }
+            ],
+            [
+                'Royce O-Neale',
+                0,
+                'SF',
+                77,
+                'TWO_WAY_WING',
+                78
+            ],
+            [
+                'Ryan Dunn',
+                0,
+                'PF',
+                76,
+                'TWO_WAY_WING',
+                80
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_mem',
+        era: '2K26',
+        city: 'Memphis',
+        name: 'Grizzlies',
+        abbr: 'MEM',
+        conference: 'WEST',
+        arena: 'FedExForum',
+        colors: [
+            '#5D76A9',
+            '#12173F',
+            '#F5B112',
+            '#c89658',
+            '#12173F'
+        ],
+        players: [
+            [
+                'Ja Morant',
+                12,
+                'PG',
+                93,
+                'SLASHER',
+                74,
+                {
+                    attrs: {
+                        drivingDunk: 97,
+                        vertical: 98,
+                        speed: 96,
+                        acceleration: 97,
+                        drivingLayup: 96,
+                        ballHandle: 94
+                    },
+                    badges: {
+                        POSTERIZER: 'LEGEND',
+                        LIGHTNING_LAUNCH: 'LEGEND',
+                        LAYUP_MIXMASTER: 'LEGEND',
+                        ANKLE_ASSASSIN: 'HOF',
+                        AERIAL_WIZARD: 'HOF'
+                    },
+                    appearance: {
+                        hairStyle: 'DREADS'
+                    }
+                }
+            ],
+            [
+                'Desmond Bane',
+                22,
+                'SG',
+                86,
+                'SHARPSHOOTER',
+                77,
+                {
+                    attrs: {
+                        threePt: 92,
+                        strength: 86
+                    },
+                    badges: {
+                        SET_SHOT_SPECIALIST: 'HOF',
+                        DEADEYE: 'HOF',
+                        LIMITLESS_RANGE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Jaylen Wells',
+                0,
+                'SF',
+                79,
+                'TWO_WAY_WING',
+                79
+            ],
+            [
+                'Jaren Jackson Jr.',
+                13,
+                'PF',
+                89,
+                'RIM_PROTECTOR',
+                82,
+                {
+                    attrs: {
+                        block: 96,
+                        interiorDef: 94,
+                        threePt: 84
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'LEGEND',
+                        HIGH_FLYING_DENIER: 'HOF',
+                        POGO_STICK: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Zach Edey',
+                14,
+                'C',
+                81,
+                'POST_SCORER',
+                88,
+                {
+                    weightLbs: 300,
+                    attrs: {
+                        strength: 95,
+                        closeShot: 90,
+                        offReb: 92
+                    },
+                    badges: {
+                        BOXOUT_BEAST: 'HOF',
+                        PHYSICAL_FINISHER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Santi Aldama',
+                7,
+                'PF',
+                79,
+                'STRETCH_BIG',
+                84
+            ],
+            [
+                'Scotty Pippen Jr.',
+                1,
+                'PG',
+                78,
+                'ROLE_GUARD',
+                73
+            ],
+            [
+                'Brandon Clarke',
+                15,
+                'PF',
+                78,
+                'SLASHER',
+                80
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_hou',
+        era: '2K26',
+        city: 'Houston',
+        name: 'Rockets',
+        abbr: 'HOU',
+        conference: 'WEST',
+        arena: 'Toyota Center',
+        colors: [
+            '#CE1141',
+            '#111111',
+            '#C4CED4',
+            '#ca9658',
+            '#CE1141'
+        ],
+        players: [
+            [
+                'Fred VanVleet',
+                5,
+                'PG',
+                82,
+                'ELITE_PG',
+                72,
+                {
+                    badges: {
+                        DIMER: 'GOLD',
+                        UNPLUCKABLE: 'HOF',
+                        GLOVE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Jalen Green',
+                4,
+                'SG',
+                85,
+                'SLASHER',
+                76,
+                {
+                    attrs: {
+                        drivingDunk: 94,
+                        speed: 94,
+                        vertical: 95,
+                        threePt: 85
+                    },
+                    badges: {
+                        POSTERIZER: 'HOF',
+                        LIGHTNING_LAUNCH: 'HOF',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Amen Thompson',
+                1,
+                'SF',
+                86,
+                'TWO_WAY_WING',
+                79,
+                {
+                    attrs: {
+                        speed: 95,
+                        vertical: 96,
+                        perimeterDef: 94,
+                        steal: 90,
+                        drivingDunk: 93
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'HOF',
+                        HIGH_FLYING_DENIER: 'HOF',
+                        LIGHTNING_LAUNCH: 'HOF',
+                        POSTERIZER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Jabari Smith Jr.',
+                10,
+                'PF',
+                81,
+                'STRETCH_BIG',
+                83
+            ],
+            [
+                'Alperen Sengun',
+                28,
+                'C',
+                89,
+                'POINT_CENTER',
+                83,
+                {
+                    attrs: {
+                        closeShot: 94,
+                        passAccuracy: 89,
+                        defReb: 90,
+                        strength: 90
+                    },
+                    badges: {
+                        PHYSICAL_FINISHER: 'HOF',
+                        DIMER: 'HOF',
+                        VERSATILE_VISIONARY: 'GOLD',
+                        FLOAT_GAME: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Dillon Brooks',
+                9,
+                'SF',
+                79,
+                'TWO_WAY_WING',
+                78
+            ],
+            [
+                'Tari Eason',
+                17,
+                'PF',
+                80,
+                'TWO_WAY_WING',
+                80
+            ],
+            [
+                'Reed Sheppard',
+                15,
+                'PG',
+                77,
+                'SHARPSHOOTER',
+                74
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_lac',
+        era: '2K26',
+        city: 'Los Angeles',
+        name: 'Clippers',
+        abbr: 'LAC',
+        conference: 'WEST',
+        arena: 'Intuit Dome',
+        colors: [
+            '#1D428A',
+            '#C8102E',
+            '#BEC0C2',
+            '#cd9b5c',
+            '#1D428A'
+        ],
+        players: [
+            [
+                'James Harden',
+                1,
+                'PG',
+                88,
+                'ELITE_PG',
+                77,
+                {
+                    attrs: {
+                        passAccuracy: 94,
+                        ballHandle: 93,
+                        threePt: 89
+                    },
+                    badges: {
+                        DIMER: 'HOF',
+                        SHIFTY_SHOOTER: 'HOF',
+                        ANKLE_ASSASSIN: 'HOF',
+                        LIMITLESS_RANGE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Norman Powell',
+                24,
+                'SG',
+                84,
+                'SHARPSHOOTER',
+                76,
+                {
+                    attrs: {
+                        threePt: 91
+                    },
+                    badges: {
+                        SET_SHOT_SPECIALIST: 'HOF',
+                        DEADEYE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Kawhi Leonard',
+                2,
+                'SF',
+                92,
+                'TWO_WAY_WING',
+                79,
+                {
+                    attrs: {
+                        midRange: 96,
+                        threePt: 89,
+                        perimeterDef: 94,
+                        steal: 92,
+                        strength: 90
+                    },
+                    badges: {
+                        DEADEYE: 'LEGEND',
+                        PERIMETER_CHALLENGER: 'LEGEND',
+                        GLOVE: 'LEGEND',
+                        SHIFTY_SHOOTER: 'HOF'
+                    },
+                    appearance: {
+                        hairStyle: 'BRAIDS'
+                    }
+                }
+            ],
+            [
+                'Derrick Jones Jr.',
+                55,
+                'PF',
+                79,
+                'SLASHER',
+                78,
+                {
+                    attrs: {
+                        drivingDunk: 94,
+                        vertical: 96
+                    }
+                }
+            ],
+            [
+                'Ivica Zubac',
+                40,
+                'C',
+                85,
+                'RIM_PROTECTOR',
+                84,
+                {
+                    badges: {
+                        BOXOUT_BEAST: 'HOF',
+                        PAINT_PATROLLER: 'HOF',
+                        REBOUND_CHASER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Bogdan Bogdanovic',
+                10,
+                'SG',
+                79,
+                'SHARPSHOOTER',
+                77
+            ],
+            [
+                'Kris Dunn',
+                8,
+                'PG',
+                78,
+                'TWO_WAY_WING',
+                75,
+                {
+                    attrs: {
+                        perimeterDef: 92,
+                        steal: 91
+                    }
+                }
+            ],
+            [
+                'Nicolas Batum',
+                33,
+                'PF',
+                76,
+                'TWO_WAY_WING',
+                80
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_sac',
+        era: '2K26',
+        city: 'Sacramento',
+        name: 'Kings',
+        abbr: 'SAC',
+        conference: 'WEST',
+        arena: 'Golden 1 Center',
+        colors: [
+            '#5A2D81',
+            '#63727A',
+            '#FFFFFF',
+            '#c89558',
+            '#5A2D81'
+        ],
+        players: [
+            [
+                'Malik Monk',
+                0,
+                'PG',
+                83,
+                'SLASHER',
+                75,
+                {
+                    badges: {
+                        LIGHTNING_LAUNCH: 'HOF',
+                        POSTERIZER: 'GOLD',
+                        DIMER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Zach LaVine',
+                8,
+                'SG',
+                87,
+                'SLASHER',
+                77,
+                {
+                    attrs: {
+                        drivingDunk: 96,
+                        vertical: 96,
+                        threePt: 90
+                    },
+                    badges: {
+                        POSTERIZER: 'LEGEND',
+                        LIMITLESS_RANGE: 'HOF',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'DeMar DeRozan',
+                10,
+                'SF',
+                86,
+                'SUPERSTAR_WING',
+                78,
+                {
+                    attrs: {
+                        midRange: 96,
+                        freeThrow: 91
+                    },
+                    badges: {
+                        SHIFTY_SHOOTER: 'LEGEND',
+                        DEADEYE: 'HOF',
+                        PHYSICAL_FINISHER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Keegan Murray',
+                13,
+                'PF',
+                81,
+                'STRETCH_BIG',
+                80
+            ],
+            [
+                'Domantas Sabonis',
+                11,
+                'C',
+                90,
+                'POINT_CENTER',
+                82,
+                {
+                    attrs: {
+                        defReb: 97,
+                        offReb: 95,
+                        passAccuracy: 90,
+                        closeShot: 93,
+                        strength: 93
+                    },
+                    badges: {
+                        REBOUND_CHASER: 'LEGEND',
+                        BOXOUT_BEAST: 'LEGEND',
+                        DIMER: 'HOF',
+                        BREAK_STARTER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Keon Ellis',
+                23,
+                'SG',
+                78,
+                'TWO_WAY_WING',
+                76
+            ],
+            [
+                'Jonas Valanciunas',
+                17,
+                'C',
+                79,
+                'POST_SCORER',
+                83
+            ],
+            [
+                'Trey Lyles',
+                41,
+                'PF',
+                76,
+                'STRETCH_BIG',
+                81
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_por',
+        era: '2K26',
+        city: 'Portland',
+        name: 'Trail Blazers',
+        abbr: 'POR',
+        conference: 'WEST',
+        arena: 'Moda Center',
+        colors: [
+            '#E03A3E',
+            '#111111',
+            '#FFFFFF',
+            '#c9975a',
+            '#E03A3E'
+        ],
+        players: [
+            [
+                'Scoot Henderson',
+                0,
+                'PG',
+                80,
+                'ELITE_PG',
+                75,
+                {
+                    badges: {
+                        LIGHTNING_LAUNCH: 'GOLD',
+                        DIMER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Shaedon Sharpe',
+                17,
+                'SG',
+                83,
+                'SLASHER',
+                77,
+                {
+                    attrs: {
+                        drivingDunk: 96,
+                        vertical: 98
+                    },
+                    badges: {
+                        POSTERIZER: 'LEGEND',
+                        AERIAL_WIZARD: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Deni Avdija',
+                8,
+                'SF',
+                82,
+                'TWO_WAY_WING',
+                81
+            ],
+            [
+                'Toumani Camara',
+                33,
+                'PF',
+                80,
+                'TWO_WAY_WING',
+                79,
+                {
+                    attrs: {
+                        perimeterDef: 90
+                    }
+                }
+            ],
+            [
+                'Donovan Clingan',
+                23,
+                'C',
+                79,
+                'RIM_PROTECTOR',
+                86,
+                {
+                    attrs: {
+                        block: 90,
+                        interiorDef: 89
+                    }
+                }
+            ],
+            [
+                'Anfernee Simons',
+                1,
+                'SG',
+                82,
+                'SHARPSHOOTER',
+                75,
+                {
+                    attrs: {
+                        threePt: 89
+                    }
+                }
+            ],
+            [
+                'Jerami Grant',
+                9,
+                'PF',
+                80,
+                'TWO_WAY_WING',
+                79
+            ],
+            [
+                'Deandre Ayton',
+                2,
+                'C',
+                81,
+                'POST_SCORER',
+                84
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_nop',
+        era: '2K26',
+        city: 'New Orleans',
+        name: 'Pelicans',
+        abbr: 'NOP',
+        conference: 'WEST',
+        arena: 'Smoothie King Center',
+        colors: [
+            '#0C2340',
+            '#C8102E',
+            '#85714D',
+            '#cca064',
+            '#0C2340'
+        ],
+        players: [
+            [
+                'Dejounte Murray',
+                5,
+                'PG',
+                84,
+                'TWO_WAY_WING',
+                77,
+                {
+                    badges: {
+                        GLOVE: 'HOF',
+                        INTERCEPTOR: 'GOLD',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'CJ McCollum',
+                3,
+                'SG',
+                82,
+                'SHARPSHOOTER',
+                75
+            ],
+            [
+                'Trey Murphy III',
+                25,
+                'SF',
+                84,
+                'SHARPSHOOTER',
+                80,
+                {
+                    attrs: {
+                        threePt: 91,
+                        drivingDunk: 90
+                    },
+                    badges: {
+                        LIMITLESS_RANGE: 'HOF',
+                        POSTERIZER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Zion Williamson',
+                1,
+                'PF',
+                89,
+                'SLASHER',
+                78,
+                {
+                    weightLbs: 284,
+                    attrs: {
+                        drivingDunk: 97,
+                        drivingLayup: 95,
+                        strength: 98,
+                        vertical: 95,
+                        closeShot: 95
+                    },
+                    badges: {
+                        PHYSICAL_FINISHER: 'LEGEND',
+                        POSTERIZER: 'LEGEND',
+                        LAYUP_MIXMASTER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Yves Missi',
+                21,
+                'C',
+                79,
+                'RIM_PROTECTOR',
+                83
+            ],
+            [
+                'Herb Jones',
+                2,
+                'SF',
+                82,
+                'TWO_WAY_WING',
+                79,
+                {
+                    attrs: {
+                        perimeterDef: 95,
+                        steal: 91
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'LEGEND',
+                        INTERCEPTOR: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Jose Alvarado',
+                15,
+                'PG',
+                78,
+                'TWO_WAY_WING',
+                72,
+                {
+                    badges: {
+                        GLOVE: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Jordan Hawkins',
+                24,
+                'SG',
+                77,
+                'SHARPSHOOTER',
+                77
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_uta',
+        era: '2K26',
+        city: 'Utah',
+        name: 'Jazz',
+        abbr: 'UTA',
+        conference: 'WEST',
+        arena: 'Delta Center',
+        colors: [
+            '#4E2A84',
+            '#002B5C',
+            '#F9A01B',
+            '#cc9958',
+            '#4E2A84'
+        ],
+        players: [
+            [
+                'Keyonte George',
+                3,
+                'PG',
+                80,
+                'ELITE_PG',
+                76
+            ],
+            [
+                'Collin Sexton',
+                2,
+                'SG',
+                81,
+                'SLASHER',
+                75
+            ],
+            [
+                'Lauri Markkanen',
+                23,
+                'SF',
+                86,
+                'STRETCH_BIG',
+                84,
+                {
+                    attrs: {
+                        threePt: 90,
+                        drivingDunk: 88
+                    },
+                    badges: {
+                        SET_SHOT_SPECIALIST: 'HOF',
+                        DEADEYE: 'HOF',
+                        AERIAL_WIZARD: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'John Collins',
+                20,
+                'PF',
+                81,
+                'SLASHER',
+                81
+            ],
+            [
+                'Walker Kessler',
+                24,
+                'C',
+                81,
+                'RIM_PROTECTOR',
+                84,
+                {
+                    attrs: {
+                        block: 94,
+                        interiorDef: 91
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'HOF',
+                        POGO_STICK: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Jordan Clarkson',
+                0,
+                'SG',
+                79,
+                'SHARPSHOOTER',
+                75
+            ],
+            [
+                'Isaiah Collier',
+                8,
+                'PG',
+                77,
+                'ROLE_GUARD',
+                75
+            ],
+            [
+                'Kyle Filipowski',
+                22,
+                'C',
+                77,
+                'STRETCH_BIG',
+                84
+            ]
+        ]
+    }),
+    // ======================== EASTERN CONFERENCE (15) ========================
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_bos',
+        era: '2K26',
+        city: 'Boston',
+        name: 'Celtics',
+        abbr: 'BOS',
+        conference: 'EAST',
+        arena: 'TD Garden',
+        colors: [
+            '#007A33',
+            '#BA9653',
+            '#FFFFFF',
+            '#d3a260',
+            '#007A33'
+        ],
+        players: [
+            [
+                'Jrue Holiday',
+                4,
+                'PG',
+                85,
+                'TWO_WAY_WING',
+                76,
+                {
+                    attrs: {
+                        perimeterDef: 94,
+                        steal: 89,
+                        strength: 86
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'LEGEND',
+                        GLOVE: 'HOF',
+                        DIMER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Derrick White',
+                9,
+                'SG',
+                86,
+                'TWO_WAY_WING',
+                76,
+                {
+                    attrs: {
+                        perimeterDef: 92,
+                        block: 85,
+                        threePt: 88
+                    },
+                    badges: {
+                        HIGH_FLYING_DENIER: 'HOF',
+                        PERIMETER_CHALLENGER: 'HOF',
+                        SET_SHOT_SPECIALIST: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Jaylen Brown',
+                7,
+                'SF',
+                92,
+                'SUPERSTAR_WING',
+                78,
+                {
+                    attrs: {
+                        drivingDunk: 94,
+                        midRange: 91,
+                        perimeterDef: 90,
+                        speed: 91
+                    },
+                    badges: {
+                        POSTERIZER: 'HOF',
+                        PHYSICAL_FINISHER: 'HOF',
+                        PERIMETER_CHALLENGER: 'HOF',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Jayson Tatum',
+                0,
+                'PF',
+                96,
+                'SUPERSTAR_WING',
+                80,
+                {
+                    attrs: {
+                        threePt: 91,
+                        midRange: 93,
+                        drivingDunk: 91,
+                        ballHandle: 90,
+                        perimeterDef: 90,
+                        defReb: 88
+                    },
+                    badges: {
+                        DEADEYE: 'LEGEND',
+                        SHIFTY_SHOOTER: 'LEGEND',
+                        LIMITLESS_RANGE: 'HOF',
+                        POSTERIZER: 'HOF',
+                        PERIMETER_CHALLENGER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Kristaps Porziņģis',
+                8,
+                'C',
+                86,
+                'STRETCH_BIG',
+                86,
+                {
+                    attrs: {
+                        threePt: 89,
+                        block: 91,
+                        interiorDef: 90
+                    },
+                    badges: {
+                        LIMITLESS_RANGE: 'GOLD',
+                        PAINT_PATROLLER: 'HOF',
+                        SET_SHOT_SPECIALIST: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Payton Pritchard',
+                11,
+                'PG',
+                82,
+                'SHARPSHOOTER',
+                73,
+                {
+                    attrs: {
+                        threePt: 92
+                    },
+                    badges: {
+                        LIMITLESS_RANGE: 'HOF',
+                        MINI_MARKSMAN: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Al Horford',
+                42,
+                'C',
+                80,
+                'STRETCH_BIG',
+                81
+            ],
+            [
+                'Sam Hauser',
+                30,
+                'SF',
+                78,
+                'SHARPSHOOTER',
+                79,
+                {
+                    attrs: {
+                        threePt: 92
+                    }
+                }
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_mil',
+        era: '2K26',
+        city: 'Milwaukee',
+        name: 'Bucks',
+        abbr: 'MIL',
+        conference: 'EAST',
+        arena: 'Fiserv Forum',
+        colors: [
+            '#00471B',
+            '#EEE1C6',
+            '#0077C0',
+            '#c9985a',
+            '#00471B'
+        ],
+        players: [
+            [
+                'Damian Lillard',
+                0,
+                'PG',
+                89,
+                'SHARPSHOOTER',
+                74,
+                {
+                    attrs: {
+                        threePt: 94,
+                        ballHandle: 92,
+                        freeThrow: 95
+                    },
+                    badges: {
+                        LIMITLESS_RANGE: 'LEGEND',
+                        DEADEYE: 'LEGEND',
+                        SHIFTY_SHOOTER: 'HOF',
+                        ANKLE_ASSASSIN: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Gary Trent Jr.',
+                5,
+                'SG',
+                78,
+                'SHARPSHOOTER',
+                77
+            ],
+            [
+                'Kyle Kuzma',
+                18,
+                'SF',
+                81,
+                'ROLE_FORWARD',
+                81
+            ],
+            [
+                'Giannis Antetokounmpo',
+                34,
+                'PF',
+                97,
+                'SLASHER',
+                83,
+                {
+                    weightLbs: 243,
+                    wingspanInches: 89,
+                    attrs: {
+                        drivingDunk: 99,
+                        drivingLayup: 97,
+                        closeShot: 97,
+                        strength: 97,
+                        speed: 92,
+                        interiorDef: 94,
+                        block: 92,
+                        defReb: 94
+                    },
+                    badges: {
+                        POSTERIZER: 'LEGEND',
+                        PHYSICAL_FINISHER: 'LEGEND',
+                        AERIAL_WIZARD: 'LEGEND',
+                        HIGH_FLYING_DENIER: 'LEGEND',
+                        PAINT_PATROLLER: 'HOF',
+                        REBOUND_CHASER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Brook Lopez',
+                11,
+                'C',
+                80,
+                'STRETCH_BIG',
+                85,
+                {
+                    attrs: {
+                        block: 91,
+                        threePt: 84
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'HOF',
+                        BOXOUT_BEAST: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Bobby Portis',
+                9,
+                'PF',
+                80,
+                'STRETCH_BIG',
+                82
+            ],
+            [
+                'Taurean Prince',
+                12,
+                'SF',
+                77,
+                'TWO_WAY_WING',
+                78
+            ],
+            [
+                'AJ Green',
+                20,
+                'SG',
+                77,
+                'SHARPSHOOTER',
+                76,
+                {
+                    attrs: {
+                        threePt: 91
+                    }
+                }
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_nyk',
+        era: '2K26',
+        city: 'New York',
+        name: 'Knicks',
+        abbr: 'NYK',
+        conference: 'EAST',
+        arena: 'Madison Square Garden',
+        colors: [
+            '#006BB6',
+            '#F58426',
+            '#FFFFFF',
+            '#ce9d5c',
+            '#006BB6'
+        ],
+        players: [
+            [
+                'Jalen Brunson',
+                11,
+                'PG',
+                93,
+                'ELITE_PG',
+                74,
+                {
+                    attrs: {
+                        midRange: 95,
+                        threePt: 91,
+                        ballHandle: 95,
+                        drivingLayup: 94
+                    },
+                    badges: {
+                        MINI_MARKSMAN: 'LEGEND',
+                        SHIFTY_SHOOTER: 'LEGEND',
+                        ANKLE_ASSASSIN: 'HOF',
+                        FLOAT_GAME: 'HOF',
+                        UNPLUCKABLE: 'HOF'
+                    },
+                    appearance: {
+                        hairStyle: 'BRAIDS'
+                    }
+                }
+            ],
+            [
+                'Mikal Bridges',
+                25,
+                'SG',
+                84,
+                'TWO_WAY_WING',
+                78,
+                {
+                    attrs: {
+                        perimeterDef: 91,
+                        midRange: 89,
+                        threePt: 87
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'HOF',
+                        SET_SHOT_SPECIALIST: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Josh Hart',
+                3,
+                'SF',
+                82,
+                'TWO_WAY_WING',
+                76,
+                {
+                    attrs: {
+                        defReb: 88,
+                        offReb: 85,
+                        strength: 85
+                    },
+                    badges: {
+                        REBOUND_CHASER: 'HOF',
+                        PHYSICAL_FINISHER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'OG Anunoby',
+                8,
+                'PF',
+                84,
+                'TWO_WAY_WING',
+                79,
+                {
+                    attrs: {
+                        perimeterDef: 95,
+                        interiorDef: 89,
+                        steal: 90
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'LEGEND',
+                        GLOVE: 'HOF',
+                        INTERCEPTOR: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Karl-Anthony Towns',
+                32,
+                'C',
+                90,
+                'STRETCH_BIG',
+                84,
+                {
+                    attrs: {
+                        threePt: 93,
+                        closeShot: 92,
+                        defReb: 93,
+                        midRange: 90
+                    },
+                    badges: {
+                        SET_SHOT_SPECIALIST: 'LEGEND',
+                        LIMITLESS_RANGE: 'HOF',
+                        DEADEYE: 'HOF',
+                        REBOUND_CHASER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Miles McBride',
+                2,
+                'PG',
+                79,
+                'TWO_WAY_WING',
+                73
+            ],
+            [
+                'Mitchell Robinson',
+                23,
+                'C',
+                80,
+                'RIM_PROTECTOR',
+                84,
+                {
+                    attrs: {
+                        offReb: 95,
+                        block: 90
+                    }
+                }
+            ],
+            [
+                'Cameron Payne',
+                1,
+                'PG',
+                76,
+                'ROLE_GUARD',
+                75
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_cle',
+        era: '2K26',
+        city: 'Cleveland',
+        name: 'Cavaliers',
+        abbr: 'CLE',
+        conference: 'EAST',
+        arena: 'Rocket Arena',
+        colors: [
+            '#860038',
+            '#FDBB30',
+            '#041E42',
+            '#cc9858',
+            '#860038'
+        ],
+        players: [
+            [
+                'Darius Garland',
+                10,
+                'PG',
+                87,
+                'ELITE_PG',
+                73,
+                {
+                    attrs: {
+                        threePt: 90,
+                        ballHandle: 93,
+                        passAccuracy: 91
+                    },
+                    badges: {
+                        DIMER: 'HOF',
+                        ANKLE_ASSASSIN: 'HOF',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Donovan Mitchell',
+                45,
+                'SG',
+                93,
+                'SUPERSTAR_WING',
+                75,
+                {
+                    attrs: {
+                        drivingDunk: 95,
+                        threePt: 90,
+                        speed: 93,
+                        vertical: 95,
+                        ballHandle: 93
+                    },
+                    badges: {
+                        POSTERIZER: 'LEGEND',
+                        LIGHTNING_LAUNCH: 'HOF',
+                        LIMITLESS_RANGE: 'HOF',
+                        SHIFTY_SHOOTER: 'HOF'
+                    }
+                }
+            ],
+            [
+                "De'Andre Hunter",
+                12,
+                'SF',
+                81,
+                'TWO_WAY_WING',
+                80
+            ],
+            [
+                'Evan Mobley',
+                4,
+                'PF',
+                89,
+                'RIM_PROTECTOR',
+                83,
+                {
+                    attrs: {
+                        interiorDef: 96,
+                        perimeterDef: 89,
+                        block: 94,
+                        defReb: 91
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'LEGEND',
+                        HIGH_FLYING_DENIER: 'HOF',
+                        POGO_STICK: 'HOF',
+                        REBOUND_CHASER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Jarrett Allen',
+                31,
+                'C',
+                86,
+                'RIM_PROTECTOR',
+                81,
+                {
+                    badges: {
+                        PAINT_PATROLLER: 'HOF',
+                        AERIAL_WIZARD: 'HOF',
+                        BOXOUT_BEAST: 'HOF'
+                    },
+                    appearance: {
+                        hairStyle: 'AFRO'
+                    }
+                }
+            ],
+            [
+                'Max Strus',
+                1,
+                'SF',
+                78,
+                'SHARPSHOOTER',
+                77
+            ],
+            [
+                'Ty Jerome',
+                2,
+                'PG',
+                80,
+                'SHARPSHOOTER',
+                77,
+                {
+                    badges: {
+                        FLOAT_GAME: 'HOF',
+                        SET_SHOT_SPECIALIST: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Isaac Okoro',
+                35,
+                'SG',
+                77,
+                'TWO_WAY_WING',
+                77
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_phi',
+        era: '2K26',
+        city: 'Philadelphia',
+        name: '76ers',
+        abbr: 'PHI',
+        conference: 'EAST',
+        arena: 'Wells Fargo Center',
+        colors: [
+            '#006BB6',
+            '#ED174C',
+            '#FFFFFF',
+            '#cb9858',
+            '#006BB6'
+        ],
+        players: [
+            [
+                'Tyrese Maxey',
+                0,
+                'PG',
+                90,
+                'ELITE_PG',
+                74,
+                {
+                    attrs: {
+                        speed: 97,
+                        acceleration: 98,
+                        threePt: 90,
+                        drivingLayup: 92
+                    },
+                    badges: {
+                        LIGHTNING_LAUNCH: 'LEGEND',
+                        LIMITLESS_RANGE: 'HOF',
+                        FLOAT_GAME: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Jared McCain',
+                20,
+                'SG',
+                80,
+                'SHARPSHOOTER',
+                75,
+                {
+                    attrs: {
+                        threePt: 89
+                    }
+                }
+            ],
+            [
+                'Paul George',
+                8,
+                'SF',
+                88,
+                'TWO_WAY_WING',
+                80,
+                {
+                    attrs: {
+                        threePt: 90,
+                        midRange: 90,
+                        perimeterDef: 90
+                    },
+                    badges: {
+                        DEADEYE: 'HOF',
+                        PERIMETER_CHALLENGER: 'HOF',
+                        SHIFTY_SHOOTER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Caleb Martin',
+                16,
+                'PF',
+                78,
+                'TWO_WAY_WING',
+                77
+            ],
+            [
+                'Joel Embiid',
+                21,
+                'C',
+                95,
+                'POST_SCORER',
+                84,
+                {
+                    weightLbs: 280,
+                    attrs: {
+                        closeShot: 97,
+                        midRange: 95,
+                        threePt: 86,
+                        strength: 97,
+                        interiorDef: 95,
+                        block: 92,
+                        defReb: 94
+                    },
+                    badges: {
+                        DEADEYE: 'LEGEND',
+                        PHYSICAL_FINISHER: 'LEGEND',
+                        PAINT_PATROLLER: 'LEGEND',
+                        BOXOUT_BEAST: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Kelly Oubre Jr.',
+                9,
+                'SF',
+                79,
+                'SLASHER',
+                79
+            ],
+            [
+                'Guerschon Yabusele',
+                28,
+                'PF',
+                79,
+                'STRETCH_BIG',
+                80
+            ],
+            [
+                'Andre Drummond',
+                1,
+                'C',
+                78,
+                'RIM_PROTECTOR',
+                83
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_ind',
+        era: '2K26',
+        city: 'Indiana',
+        name: 'Pacers',
+        abbr: 'IND',
+        conference: 'EAST',
+        arena: 'Gainbridge Fieldhouse',
+        colors: [
+            '#002D62',
+            '#FDBB30',
+            '#FFFFFF',
+            '#cc9958',
+            '#002D62'
+        ],
+        players: [
+            [
+                'Tyrese Haliburton',
+                0,
+                'PG',
+                90,
+                'ELITE_PG',
+                77,
+                {
+                    attrs: {
+                        passAccuracy: 97,
+                        threePt: 90,
+                        ballHandle: 92
+                    },
+                    badges: {
+                        DIMER: 'LEGEND',
+                        VERSATILE_VISIONARY: 'LEGEND',
+                        LIMITLESS_RANGE: 'HOF',
+                        BREAK_STARTER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Andrew Nembhard',
+                2,
+                'SG',
+                81,
+                'TWO_WAY_WING',
+                76
+            ],
+            [
+                'Aaron Nesmith',
+                23,
+                'SF',
+                80,
+                'TWO_WAY_WING',
+                77
+            ],
+            [
+                'Pascal Siakam',
+                43,
+                'PF',
+                88,
+                'SUPERSTAR_WING',
+                80,
+                {
+                    attrs: {
+                        drivingLayup: 91,
+                        midRange: 88,
+                        speed: 87
+                    },
+                    badges: {
+                        LAYUP_MIXMASTER: 'HOF',
+                        PHYSICAL_FINISHER: 'HOF',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Myles Turner',
+                33,
+                'C',
+                83,
+                'STRETCH_BIG',
+                83,
+                {
+                    attrs: {
+                        block: 92,
+                        threePt: 85
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'HOF',
+                        SET_SHOT_SPECIALIST: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Bennedict Mathurin',
+                0,
+                'SG',
+                81,
+                'SLASHER',
+                77
+            ],
+            [
+                'T.J. McConnell',
+                9,
+                'PG',
+                80,
+                'ELITE_PG',
+                73,
+                {
+                    badges: {
+                        FLOAT_GAME: 'HOF',
+                        GLOVE: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Obi Toppin',
+                1,
+                'PF',
+                79,
+                'SLASHER',
+                81,
+                {
+                    attrs: {
+                        drivingDunk: 94,
+                        vertical: 95
+                    }
+                }
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_orl',
+        era: '2K26',
+        city: 'Orlando',
+        name: 'Magic',
+        abbr: 'ORL',
+        conference: 'EAST',
+        arena: 'Kia Center',
+        colors: [
+            '#0077C0',
+            '#111111',
+            '#C4CED4',
+            '#cc9a5a',
+            '#0077C0'
+        ],
+        players: [
+            [
+                'Jalen Suggs',
+                4,
+                'PG',
+                84,
+                'TWO_WAY_WING',
+                77,
+                {
+                    attrs: {
+                        perimeterDef: 95,
+                        steal: 92
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'LEGEND',
+                        GLOVE: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Kentavious Caldwell-Pope',
+                3,
+                'SG',
+                79,
+                'TWO_WAY_WING',
+                77
+            ],
+            [
+                'Franz Wagner',
+                22,
+                'SF',
+                89,
+                'SUPERSTAR_WING',
+                82,
+                {
+                    attrs: {
+                        drivingLayup: 93,
+                        perimeterDef: 89,
+                        passAccuracy: 85
+                    },
+                    badges: {
+                        LAYUP_MIXMASTER: 'HOF',
+                        PHYSICAL_FINISHER: 'HOF',
+                        PERIMETER_CHALLENGER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Paolo Banchero',
+                5,
+                'PF',
+                91,
+                'SUPERSTAR_WING',
+                82,
+                {
+                    weightLbs: 250,
+                    attrs: {
+                        drivingDunk: 92,
+                        midRange: 89,
+                        strength: 92,
+                        passAccuracy: 85
+                    },
+                    badges: {
+                        PHYSICAL_FINISHER: 'LEGEND',
+                        POSTERIZER: 'HOF',
+                        SHIFTY_SHOOTER: 'HOF',
+                        DIMER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Wendell Carter Jr.',
+                34,
+                'C',
+                80,
+                'STRETCH_BIG',
+                82
+            ],
+            [
+                'Jonathan Isaac',
+                1,
+                'PF',
+                80,
+                'RIM_PROTECTOR',
+                82,
+                {
+                    attrs: {
+                        interiorDef: 93,
+                        perimeterDef: 91,
+                        block: 92
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'HOF',
+                        HIGH_FLYING_DENIER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Anthony Black',
+                0,
+                'PG',
+                78,
+                'TWO_WAY_WING',
+                79
+            ],
+            [
+                'Goga Bitadze',
+                35,
+                'C',
+                79,
+                'RIM_PROTECTOR',
+                83
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_mia',
+        era: '2K26',
+        city: 'Miami',
+        name: 'Heat',
+        abbr: 'MIA',
+        conference: 'EAST',
+        arena: 'Kaseya Center',
+        colors: [
+            '#98002E',
+            '#F9A01B',
+            '#111111',
+            '#c89454',
+            '#98002E'
+        ],
+        players: [
+            [
+                'Tyler Herro',
+                14,
+                'PG',
+                88,
+                'SHARPSHOOTER',
+                77,
+                {
+                    attrs: {
+                        threePt: 92,
+                        midRange: 91,
+                        ballHandle: 89
+                    },
+                    badges: {
+                        SHIFTY_SHOOTER: 'HOF',
+                        DEADEYE: 'HOF',
+                        LIMITLESS_RANGE: 'HOF',
+                        FLOAT_GAME: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Andrew Wiggins',
+                22,
+                'SG',
+                82,
+                'TWO_WAY_WING',
+                79
+            ],
+            [
+                'Jaime Jaquez Jr.',
+                11,
+                'SF',
+                80,
+                'SLASHER',
+                78
+            ],
+            [
+                'Bam Adebayo',
+                13,
+                'PF',
+                89,
+                'RIM_PROTECTOR',
+                81,
+                {
+                    attrs: {
+                        interiorDef: 95,
+                        perimeterDef: 92,
+                        defReb: 91,
+                        strength: 91
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'LEGEND',
+                        PERIMETER_CHALLENGER: 'HOF',
+                        BOXOUT_BEAST: 'HOF'
+                    }
+                }
+            ],
+            [
+                "Kel'el Ware",
+                7,
+                'C',
+                80,
+                'RIM_PROTECTOR',
+                84,
+                {
+                    badges: {
+                        AERIAL_WIZARD: 'GOLD',
+                        HIGH_FLYING_DENIER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Terry Rozier',
+                2,
+                'PG',
+                78,
+                'ELITE_PG',
+                73
+            ],
+            [
+                'Duncan Robinson',
+                55,
+                'SG',
+                78,
+                'SHARPSHOOTER',
+                79,
+                {
+                    attrs: {
+                        threePt: 91
+                    }
+                }
+            ],
+            [
+                'Nikola Jovic',
+                5,
+                'PF',
+                78,
+                'STRETCH_BIG',
+                82
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_det',
+        era: '2K26',
+        city: 'Detroit',
+        name: 'Pistons',
+        abbr: 'DET',
+        conference: 'EAST',
+        arena: 'Little Caesars Arena',
+        colors: [
+            '#C8102E',
+            '#1D42BA',
+            '#FFFFFF',
+            '#c89558',
+            '#1D42BA'
+        ],
+        players: [
+            [
+                'Cade Cunningham',
+                2,
+                'PG',
+                90,
+                'ELITE_PG',
+                78,
+                {
+                    attrs: {
+                        passAccuracy: 93,
+                        ballHandle: 92,
+                        midRange: 90,
+                        threePt: 87
+                    },
+                    badges: {
+                        DIMER: 'HOF',
+                        VERSATILE_VISIONARY: 'HOF',
+                        SHIFTY_SHOOTER: 'HOF',
+                        PHYSICAL_FINISHER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Jaden Ivey',
+                23,
+                'SG',
+                82,
+                'SLASHER',
+                76,
+                {
+                    attrs: {
+                        speed: 95,
+                        acceleration: 96,
+                        drivingDunk: 89
+                    }
+                }
+            ],
+            [
+                'Ausar Thompson',
+                9,
+                'SF',
+                82,
+                'TWO_WAY_WING',
+                78,
+                {
+                    attrs: {
+                        perimeterDef: 93,
+                        steal: 90,
+                        vertical: 95
+                    }
+                }
+            ],
+            [
+                'Tobias Harris',
+                12,
+                'PF',
+                80,
+                'ROLE_FORWARD',
+                80
+            ],
+            [
+                'Jalen Duren',
+                0,
+                'C',
+                84,
+                'RIM_PROTECTOR',
+                82,
+                {
+                    attrs: {
+                        drivingDunk: 92,
+                        defReb: 92,
+                        offReb: 91,
+                        strength: 92
+                    },
+                    badges: {
+                        AERIAL_WIZARD: 'HOF',
+                        REBOUND_CHASER: 'HOF',
+                        BOXOUT_BEAST: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Malik Beasley',
+                5,
+                'SG',
+                80,
+                'SHARPSHOOTER',
+                76,
+                {
+                    attrs: {
+                        threePt: 92
+                    }
+                }
+            ],
+            [
+                'Isaiah Stewart',
+                28,
+                'C',
+                79,
+                'RIM_PROTECTOR',
+                80
+            ],
+            [
+                'Tim Hardaway Jr.',
+                8,
+                'SF',
+                78,
+                'SHARPSHOOTER',
+                77
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_atl',
+        era: '2K26',
+        city: 'Atlanta',
+        name: 'Hawks',
+        abbr: 'ATL',
+        conference: 'EAST',
+        arena: 'State Farm Arena',
+        colors: [
+            '#E03A3E',
+            '#26282A',
+            '#C1D32F',
+            '#cc995a',
+            '#E03A3E'
+        ],
+        players: [
+            [
+                'Trae Young',
+                11,
+                'PG',
+                90,
+                'ELITE_PG',
+                73,
+                {
+                    attrs: {
+                        passAccuracy: 97,
+                        threePt: 91,
+                        ballHandle: 95
+                    },
+                    badges: {
+                        DIMER: 'LEGEND',
+                        LIMITLESS_RANGE: 'LEGEND',
+                        FLOAT_GAME: 'HOF',
+                        ANKLE_ASSASSIN: 'HOF',
+                        MINI_MARKSMAN: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Dyson Daniels',
+                5,
+                'SG',
+                83,
+                'TWO_WAY_WING',
+                79,
+                {
+                    attrs: {
+                        steal: 97,
+                        perimeterDef: 95
+                    },
+                    badges: {
+                        GLOVE: 'LEGEND',
+                        INTERCEPTOR: 'LEGEND',
+                        PERIMETER_CHALLENGER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Zaccharie Risacher',
+                10,
+                'SF',
+                80,
+                'TWO_WAY_WING',
+                81
+            ],
+            [
+                'Jalen Johnson',
+                1,
+                'PF',
+                87,
+                'SLASHER',
+                81,
+                {
+                    attrs: {
+                        drivingDunk: 93,
+                        speed: 90,
+                        defReb: 89,
+                        passAccuracy: 85
+                    },
+                    badges: {
+                        POSTERIZER: 'HOF',
+                        AERIAL_WIZARD: 'HOF',
+                        BREAK_STARTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Onyeka Okongwu',
+                17,
+                'C',
+                81,
+                'RIM_PROTECTOR',
+                81
+            ],
+            [
+                'Caris LeVert',
+                3,
+                'SG',
+                79,
+                'SLASHER',
+                78
+            ],
+            [
+                'Clint Capela',
+                15,
+                'C',
+                79,
+                'RIM_PROTECTOR',
+                82
+            ],
+            [
+                'Georges Niang',
+                20,
+                'PF',
+                76,
+                'STRETCH_BIG',
+                79
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_chi',
+        era: '2K26',
+        city: 'Chicago',
+        name: 'Bulls',
+        abbr: 'CHI',
+        conference: 'EAST',
+        arena: 'United Center',
+        colors: [
+            '#CE1141',
+            '#111111',
+            '#FFFFFF',
+            '#c89252',
+            '#CE1141'
+        ],
+        players: [
+            [
+                'Josh Giddey',
+                3,
+                'PG',
+                83,
+                'ELITE_PG',
+                80,
+                {
+                    attrs: {
+                        passAccuracy: 92,
+                        defReb: 86
+                    },
+                    badges: {
+                        DIMER: 'HOF',
+                        VERSATILE_VISIONARY: 'HOF',
+                        BREAK_STARTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Coby White',
+                0,
+                'SG',
+                84,
+                'SHARPSHOOTER',
+                77,
+                {
+                    attrs: {
+                        threePt: 89,
+                        speed: 91
+                    },
+                    badges: {
+                        SHIFTY_SHOOTER: 'GOLD',
+                        LIGHTNING_LAUNCH: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Ayo Dosunmu',
+                11,
+                'SF',
+                79,
+                'TWO_WAY_WING',
+                77
+            ],
+            [
+                'Matas Buzelis',
+                14,
+                'PF',
+                80,
+                'SLASHER',
+                82,
+                {
+                    attrs: {
+                        drivingDunk: 90,
+                        block: 84
+                    }
+                }
+            ],
+            [
+                'Nikola Vucevic',
+                9,
+                'C',
+                83,
+                'STRETCH_BIG',
+                82
+            ],
+            [
+                'Lonzo Ball',
+                2,
+                'PG',
+                78,
+                'TWO_WAY_WING',
+                78
+            ],
+            [
+                'Patrick Williams',
+                44,
+                'PF',
+                77,
+                'TWO_WAY_WING',
+                79
+            ],
+            [
+                'Kevin Huerter',
+                13,
+                'SG',
+                78,
+                'SHARPSHOOTER',
+                79
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_tor',
+        era: '2K26',
+        city: 'Toronto',
+        name: 'Raptors',
+        abbr: 'TOR',
+        conference: 'EAST',
+        arena: 'Scotiabank Arena',
+        colors: [
+            '#CE1141',
+            '#111111',
+            '#A1A1AA',
+            '#c89558',
+            '#CE1141'
+        ],
+        players: [
+            [
+                'Immanuel Quickley',
+                5,
+                'PG',
+                82,
+                'ELITE_PG',
+                74,
+                {
+                    badges: {
+                        FLOAT_GAME: 'HOF',
+                        LIMITLESS_RANGE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'RJ Barrett',
+                9,
+                'SG',
+                84,
+                'SLASHER',
+                78,
+                {
+                    badges: {
+                        PHYSICAL_FINISHER: 'GOLD',
+                        LAYUP_MIXMASTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Brandon Ingram',
+                3,
+                'SF',
+                86,
+                'SUPERSTAR_WING',
+                80,
+                {
+                    attrs: {
+                        midRange: 92,
+                        threePt: 86
+                    },
+                    badges: {
+                        DEADEYE: 'HOF',
+                        SHIFTY_SHOOTER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Scottie Barnes',
+                4,
+                'PF',
+                88,
+                'TWO_WAY_WING',
+                80,
+                {
+                    attrs: {
+                        perimeterDef: 90,
+                        interiorDef: 89,
+                        passAccuracy: 88,
+                        defReb: 88,
+                        drivingDunk: 90
+                    },
+                    badges: {
+                        DIMER: 'GOLD',
+                        HIGH_FLYING_DENIER: 'HOF',
+                        PHYSICAL_FINISHER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Jakob Poeltl',
+                19,
+                'C',
+                82,
+                'RIM_PROTECTOR',
+                84
+            ],
+            [
+                'Gradey Dick',
+                1,
+                'SG',
+                79,
+                'SHARPSHOOTER',
+                78,
+                {
+                    attrs: {
+                        threePt: 88
+                    }
+                }
+            ],
+            [
+                'Ochai Agbaji',
+                30,
+                'SF',
+                77,
+                'TWO_WAY_WING',
+                77
+            ],
+            [
+                'Kelly Olynyk',
+                41,
+                'C',
+                77,
+                'STRETCH_BIG',
+                83
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_bkn',
+        era: '2K26',
+        city: 'Brooklyn',
+        name: 'Nets',
+        abbr: 'BKN',
+        conference: 'EAST',
+        arena: 'Barclays Center',
+        colors: [
+            '#111111',
+            '#FFFFFF',
+            '#A1A1AA',
+            '#b99364',
+            '#111111'
+        ],
+        players: [
+            [
+                "D'Angelo Russell",
+                1,
+                'PG',
+                80,
+                'ELITE_PG',
+                75,
+                {
+                    badges: {
+                        DIMER: 'GOLD',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Cam Thomas',
+                24,
+                'SG',
+                84,
+                'SHARPSHOOTER',
+                75,
+                {
+                    attrs: {
+                        midRange: 90,
+                        threePt: 89,
+                        ballHandle: 89
+                    },
+                    badges: {
+                        SHIFTY_SHOOTER: 'HOF',
+                        DEADEYE: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Cameron Johnson',
+                2,
+                'SF',
+                82,
+                'SHARPSHOOTER',
+                80,
+                {
+                    attrs: {
+                        threePt: 91
+                    }
+                }
+            ],
+            [
+                'Noah Clowney',
+                21,
+                'PF',
+                77,
+                'STRETCH_BIG',
+                82
+            ],
+            [
+                'Nic Claxton',
+                33,
+                'C',
+                81,
+                'RIM_PROTECTOR',
+                83,
+                {
+                    attrs: {
+                        block: 90,
+                        interiorDef: 89,
+                        perimeterDef: 83
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'HOF',
+                        AERIAL_WIZARD: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Ziaire Williams',
+                8,
+                'SF',
+                77,
+                'ROLE_FORWARD',
+                81
+            ],
+            [
+                'Trendon Watford',
+                9,
+                'PF',
+                76,
+                'ROLE_FORWARD',
+                80
+            ],
+            [
+                "Day'Ron Sharpe",
+                20,
+                'C',
+                77,
+                'RIM_PROTECTOR',
+                81
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_cha',
+        era: '2K26',
+        city: 'Charlotte',
+        name: 'Hornets',
+        abbr: 'CHA',
+        conference: 'EAST',
+        arena: 'Spectrum Center',
+        colors: [
+            '#1D1160',
+            '#00788C',
+            '#A1A1AA',
+            '#ca9658',
+            '#00788C'
+        ],
+        players: [
+            [
+                'LaMelo Ball',
+                1,
+                'PG',
+                89,
+                'ELITE_PG',
+                79,
+                {
+                    attrs: {
+                        passAccuracy: 94,
+                        ballHandle: 94,
+                        threePt: 90
+                    },
+                    badges: {
+                        VERSATILE_VISIONARY: 'LEGEND',
+                        LIMITLESS_RANGE: 'HOF',
+                        ANKLE_ASSASSIN: 'HOF',
+                        DIMER: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Brandon Miller',
+                24,
+                'SG',
+                85,
+                'SHARPSHOOTER',
+                81,
+                {
+                    attrs: {
+                        threePt: 90,
+                        drivingDunk: 88
+                    },
+                    badges: {
+                        DEADEYE: 'HOF',
+                        LIMITLESS_RANGE: 'GOLD',
+                        POSTERIZER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Josh Green',
+                10,
+                'SF',
+                78,
+                'TWO_WAY_WING',
+                77
+            ],
+            [
+                'Miles Bridges',
+                0,
+                'PF',
+                83,
+                'SLASHER',
+                79,
+                {
+                    attrs: {
+                        drivingDunk: 94,
+                        vertical: 94
+                    },
+                    badges: {
+                        POSTERIZER: 'HOF',
+                        AERIAL_WIZARD: 'HOF'
+                    }
+                }
+            ],
+            [
+                'Mark Williams',
+                5,
+                'C',
+                82,
+                'RIM_PROTECTOR',
+                84
+            ],
+            [
+                'Tre Mann',
+                23,
+                'PG',
+                78,
+                'ELITE_PG',
+                75
+            ],
+            [
+                'Grant Williams',
+                2,
+                'PF',
+                77,
+                'TWO_WAY_WING',
+                78
+            ],
+            [
+                'Moussa Diabate',
+                14,
+                'C',
+                76,
+                'RIM_PROTECTOR',
+                81
+            ]
+        ]
+    }),
+    (0, _rosterTypes.makeTeam)({
+        id: '2k26_was',
+        era: '2K26',
+        city: 'Washington',
+        name: 'Wizards',
+        abbr: 'WAS',
+        conference: 'EAST',
+        arena: 'Capital One Arena',
+        colors: [
+            '#002B5C',
+            '#E31837',
+            '#C4CED4',
+            '#ca9658',
+            '#002B5C'
+        ],
+        players: [
+            [
+                'Jordan Poole',
+                13,
+                'PG',
+                82,
+                'ELITE_PG',
+                76,
+                {
+                    attrs: {
+                        ballHandle: 91,
+                        threePt: 88
+                    },
+                    badges: {
+                        ANKLE_ASSASSIN: 'HOF',
+                        SHIFTY_SHOOTER: 'GOLD',
+                        LIMITLESS_RANGE: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Carlton Carrington',
+                7,
+                'SG',
+                78,
+                'ROLE_GUARD',
+                76
+            ],
+            [
+                'Bilal Coulibaly',
+                0,
+                'SF',
+                81,
+                'TWO_WAY_WING',
+                80,
+                {
+                    attrs: {
+                        perimeterDef: 90,
+                        drivingDunk: 89,
+                        speed: 90
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'GOLD',
+                        HIGH_FLYING_DENIER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Khris Middleton',
+                22,
+                'PF',
+                80,
+                'SHARPSHOOTER',
+                79,
+                {
+                    badges: {
+                        DEADEYE: 'GOLD',
+                        SHIFTY_SHOOTER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Alex Sarr',
+                20,
+                'C',
+                81,
+                'RIM_PROTECTOR',
+                84,
+                {
+                    attrs: {
+                        block: 90,
+                        interiorDef: 88,
+                        speed: 80
+                    },
+                    badges: {
+                        PAINT_PATROLLER: 'GOLD',
+                        HIGH_FLYING_DENIER: 'GOLD'
+                    }
+                }
+            ],
+            [
+                'Kyshawn George',
+                18,
+                'SF',
+                77,
+                'TWO_WAY_WING',
+                80
+            ],
+            [
+                'Corey Kispert',
+                24,
+                'SG',
+                78,
+                'SHARPSHOOTER',
+                78,
+                {
+                    attrs: {
+                        threePt: 89
+                    }
+                }
+            ],
+            [
+                'Marcus Smart',
+                36,
+                'PG',
+                79,
+                'TWO_WAY_WING',
+                75,
+                {
+                    attrs: {
+                        perimeterDef: 91,
+                        steal: 89
+                    },
+                    badges: {
+                        PERIMETER_CHALLENGER: 'HOF',
+                        GLOVE: 'GOLD'
+                    }
+                }
+            ]
+        ]
+    })
+];
+
+});
+
+})(window.ArcadeMod);

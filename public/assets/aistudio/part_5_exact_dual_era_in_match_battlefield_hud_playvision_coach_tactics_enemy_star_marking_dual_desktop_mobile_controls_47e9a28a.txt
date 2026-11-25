@@ -1,0 +1,94 @@
+================================================================================
+PART 5 OF 7 — GOOGLE AI STUDIO INCREMENTAL BUILD PROMPT
+PROJECT: NBA 2K14 + NBA 2K26 ULTIMATE HYBRID — 100% EXACT 3D WEBGL CLONE
+SCOPE: EXACT 2K14 & 2K26 IN-MATCH BATTLEFIELD HUD, ALL 5 SHOT METER STYLES,
+       ON-THE-FLY COACH PLAYVISION TACTICS, INTERACTIVE RADAR ENEMY STAR
+       MARKING, PICK & ROLL ANGLE CONTROL & SIMULTANEOUS DESKTOP + MOBILE CONTROLS
+================================================================================
+
+CONTINUE BUILDING IN THE SAME PROJECT FROM PARTS 1–4. DO NOT REMOVE OR BREAK ANY PREVIOUS FILES.
+
+In Part 5, build the complete, authentic, lag-free **In-Match Battlefield HUD**, **Interactive Coach Playbook & Enemy Star Marking Suite**, and **Simultaneous Desktop + Mobile Touch Controls** (`src/components/MatchHUD.tsx`, `src/components/ShotMeterOverlay.tsx`, `src/components/TacticalRadarAndMarking.tsx`, `src/components/TouchControlsOverlay.tsx`, `src/components/PauseMenuModal.tsx`).
+
+--------------------------------------------------------------------------------
+1. EXACT DUAL-ERA SCOREBUG & BROADCAST HUD (`src/components/MatchHUD.tsx`)
+--------------------------------------------------------------------------------
+Automatically adapt the entire HUD to `settings.visuals.uiEra` (plus an instant `[🔄 2K14 / 2K26]` HUD toggle in Top-Left):
+
+- **SCOREBUG**:
+  - **`2K14_CLASSIC` (Bottom-Right)**: Iconic dark gunmetal + brushed chrome + crimson `#C8102E` broadcast bar:
+    - `[AWAY LOGO + ABBR + SCORE + FOULS/BONUS + TIMEOUT PIPS]` | `[HOME LOGO + ABBR + SCORE + FOULS/BONUS + TIMEOUT PIPS]` | `[QTR (1ST–4TH/OT) | GAME CLOCK | BOLD RED 24s SHOT CLOCK]`
+  - **`2K26_NEXTGEN` (Bottom-Left or Top-Center per Settings)**: Sleek translucent obsidian glass pill with live team-color neon accent bars, glowing possession arrow indicator, `BONUS` pill, animated score flip ticker, and pulsing red Shot Clock under `5.0s`.
+  - **Blacktop / Park Mode**: Compact Streetball scoreboard showing `SCORE vs TARGET (e.g., 16 / 21)`, `WIN STREAK 🔥` badge, and Check-Ball indicator.
+
+- **TOP-RIGHT CLUSTER**:
+  - **Teammate Grade Meter**: Authentic circular `F` -> `D-` -> `C` -> `B+` -> `A+` color-coded gauge + live scrolling feed of up to 3 recent grade events (`+Good Shot Selection`, `+Assist`, `+Good Shot Contest`, `+Screen Assist`, `-Defensive Breakdown`, `-Bad Block Attempt`, `-Turnover`).
+  - **Live Shot Feedback & Coverage Banner**: Appears smoothly after every shot showing:
+    - Timing (`EXCELLENT!` bright green / `Slightly Early` yellow / `Late` orange / `Very Late` red)
+    - Rhythm Status (`RHYTHM: PERFECT +12%` cyan/gold badge if Rhythm Shot was used!)
+    - Coverage (`WIDE OPEN 0%`, `OPEN 8%`, `LIGHTLY CONTESTED 26%`, `HEAVILY CONTESTED 58%`, `SMOTHERED 92%`)
+  - **Animated Badge Pop-Up Stack**: Gleaming metallic icons (`Bronze`, `Silver`, `Gold`, `Purple HoF`, `Crimson/Gold Legend`) slide in with badge title whenever triggered by `BadgeEngine.ts`.
+
+- **TOP-LEFT CLUSTER**:
+  - `[⏸ PAUSE]` button (opens full Pause Menu with Resume, Instant Replay, Box Score, Gameplan, Camera, Settings, Quit)
+  - `[📷 CAM]` Quick Camera Cycle pill (shows current camera e.g. `2K`, `BROADCAST`, `DRIVE`)
+  - `[📋 TACTICS / 🎯 MARK]` Quick Tactics & Enemy Marking toggle
+  - `[🔄 2K14/2K26]` Live HUD Era Switch button
+  - Optional **Live Telemetry Pill** (`60 FPS | 12ms`) when enabled in Settings.
+
+- **CENTER ACTION BANNERS & PROMPTS**:
+  - Animated Splash Banners for `TIP-OFF`, `GREEN RELEASE!`, `POSTER DUNK!`, `ANKLE BREAKER!`, `AND-ONE!`, `3-POINT SPLASH!`, `TAKEOVER IGNITED!`, `SHOT CLOCK VIOLATION`, `QUARTER END`.
+  - **2K26 Randomized Alley-Oop Prompt**: Pops a crisp glowing button prompt (`[A]`, `[B]`, `[X]`, `[Y]` or Tap Button) right beside the leaping finisher with a shrinking timing ring!
+  - **Icon Passing Floating Overlays**: When `Tab`/`RB`/Icon Pass is active, project `[1] PG`, `[2] SG`, `[3] SF`, `[4] PF`, `[5] C` badges cleanly over each teammate's 3D screen position.
+
+--------------------------------------------------------------------------------
+2. ALL 5 AUTHENTIC SHOT METER STYLES (`src/components/ShotMeterOverlay.tsx`)
+--------------------------------------------------------------------------------
+Project the shooter's 3D head/feet coordinates cleanly to 2D screen space and render the user-selected Shot Meter (or hide it completely for the `+15%` No-Meter Green Boost):
+1. **`2K26_ARROW`**: Curved gold/green precision arrow beside the shooter's hands that fills toward a highlighted dynamic Green Window (with a second Rhythm Tempo tick mark when Rhythm Shooting!).
+2. **`2K14_FLOOR_RING`**: Classic NBA 2K14 under-feet circular timing bar + Red/Yellow/Green shot-quality meter.
+3. **`COMET`**: Sleek sweeping arc comet behind the shooter's release.
+4. **`VERTICAL_BAR`**: Crisp vertical side bar with glowing green sweet-spot slice.
+5. **`MINIMAL`**: Ultra-clean compact horizontal pill above the shooter.
+- Also render the **2K26 Skill Dunk Meter** (high-contrast curved dunk ring) and **Free Throw Meter** cleanly!
+
+--------------------------------------------------------------------------------
+3. INTERACTIVE MINI-COURT RADAR, PLAYVISION TACTICS & ENEMY STAR MARKING (`src/components/TacticalRadarAndMarking.tsx`)
+--------------------------------------------------------------------------------
+Build an elite interactive tactical command panel accessible anytime mid-match via `1/2/3/4`, `Tactics` button, or directly tapping the live Mini-Court Radar:
+- **Live Mini-Court Tactical Radar** (Top-Left beneath buttons, toggleable/expandable):
+  - Real-time 2D top-down half/full court showing all 5 Allied blue/gold circles (with jersey numbers), all 5 Enemy red/crimson circles, moving basketball dot, active **PlayVision play lines**, and **Marked Enemy Star crosshairs (`🎯`)**.
+- **Interactive Click/Tap-to-Mark Enemy Stars (Desktop & Mobile!)**:
+  - Click or tap ANY enemy player icon on the Mini-Court Radar (or open the Quick Matchup Drawer) to open a radial/pill **Enemy Tactical Marking Menu** for that exact player (e.g., *Mark #30 Stephen Curry* or *Mark #6 LeBron James*):
+    1. `🎯 DOUBLE TEAM ON CATCH` — Nearest help defender sprints to trap whenever marked star touches the ball.
+    2. `🔒 DENY BALL / FACE GUARD` — Assigned defender hugs tightly off-ball to deny catches.
+    3. `🛡️ GO OVER SCREENS` — Defender fights over every Pick & Roll screen to erase 3PT pull-ups.
+    4. `🧱 PACK THE PAINT / SAG OFF` — Defender gives 2m cushion to stop rim drives.
+    5. `✖️ CLEAR MARK`
+  - Active marks immediately display a pulsing 3D reticle under the enemy star on the 3D court AND update `AISystem.ts` behavior in real time!
+- **On-The-Fly Coach Play-Calling & Pick-and-Roll**:
+  - **Call Pick & Roll / Pick & Fade (`Hold C / LB` or Touch Screen Button)**: Summons nearest big man to set a live physical screen. Tap `Q/E` (or Touch Flip) while screener approaches to switch **Screen Angle (`45°` / `180°` 2K26 feature)** and toggle **Roll vs Fade**!
+  - **Offensive Sets**: `Smart Play (PlayVision)`, `5-Out Iso`, `Motion Cut`, `Horns Pick & Pop`, `Floppy 3PT`.
+  - **Defensive Schemes**: `Man-to-Man`, `2-3 Zone`, `3-2 Zone`, `Full-Court Press`, `Half-Court Trap`.
+  - **Quick Substitutions & Timeouts**: Instant Lineup Presets (`Starters`, `3PT Shooters`, `Tall`, `Defensive`), live player Stamina bars, and `[CALL TIMEOUT]` (restores stamina & triggers a 3-second quick huddle!).
+
+--------------------------------------------------------------------------------
+4. SIMULTANEOUS DESKTOP + MOBILE DUAL-STICK VIRTUAL CONTROLS (`src/components/TouchControlsOverlay.tsx`)
+--------------------------------------------------------------------------------
+- **Desktop Controls (Keyboard + Mouse + Gamepad API)**:
+  - `W/A/S/D` or Left Stick: 360° Move | `Shift` or `RT`: Sprint (Offense) / Intense-D (Defense)
+  - `Space` or `X`/`Square`: Button Shoot / Layup / Dunk (Offense) | Rebound / Contest (Defense)
+  - `Right-Click Drag Down->Up` or `Arrow Keys Down->Up` or `Right Stick`: **2K26 Rhythm Shooting** & **Dribble Combos**!
+  - `J`: Pass / Steal | `K`: Bounce Pass (Double-tap: Wrap Pass) | `L`: Lob / Double-tap Alley-Oop / Jump Block
+  - `Q`: Crossover / Quick Protect | `E`: Spin / Switch Nearest Defender | `Z`: Step-Back / Hesi
+  - `Tab`: Icon Passing (`1–5`) | `Hold C`: Call Pick & Roll Screen | `T`: Ignite Takeover | `V`: Cycle Camera | `Esc`: Pause
+  - Poll standard HTML5 `navigator.getGamepads()` every frame for plug-and-play Xbox/PlayStation controller support!
+- **Mobile / Touch Virtual Controls** (Auto-enabled on touchscreens AND toggleable on Desktop via Settings for testing):
+  - **Bottom-Left**: Floating Virtual Analog Left Stick with outer **Sprint Ring** auto-lock when pushed to edge.
+  - **Bottom-Right (Context-Aware Offense <-> Defense)**:
+    - *Offense*: Giant dual-mode **`SHOOT / PRO-STICK`** pad (Hold to button-shoot OR drag Down->Up right on the button for **2K26 Rhythm Shooting** with live directional indicator!), `PASS` (Tap=Chest, Swipe-Down=Bounce, Double-Tap=Wrap), `DRIBBLE / PROTECT`, `SCREEN (PnR)`, `ICON PASS`, `ALLEY-OOP`, and glowing `TAKEOVER` button when full.
+    - *Defense*: `BLOCK / REB`, `STEAL`, `SWITCH`, `INTENSE-D`, `HANDS-UP`.
+  - Every single touch control reads its exact `{ x, y, scale, opacity }` live from `settings.controller.customHudLayout` so the Part 7 Drag-and-Drop HUD Editor customizes them seamlessly!
+
+DELIVERABLE FOR PART 5:
+Complete, authentic dual-era In-Match HUD, all 5 Shot Meters, Interactive Mini-Court Radar with Enemy Star Marking, PlayVision Coach Tactics, Pause Menu, and full Keyboard + Gamepad + Mobile Touch controls wired cleanly into the live 3D match.

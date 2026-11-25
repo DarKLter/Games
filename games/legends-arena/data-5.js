@@ -1,0 +1,3138 @@
+(function(ArcadeMod){
+// === MODULE: src/games/legends-arena/mlbb/data/heroesFighterA ===
+ArcadeMod.define("src/games/legends-arena/mlbb/data/heroesFighterA", function(require, module, exports) {
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "MLBB_HEROES_FIGHTER_A", {
+    enumerable: true,
+    get: function() {
+        return MLBB_HEROES_FIGHTER_A;
+    }
+});
+var MLBB_HEROES_FIGHTER_A = [
+    {
+        "id": "aldous",
+        "name": "Aldous",
+        "title": "Soul Contractor",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Burst · Support",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🥊",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 79
+        },
+        "passiveName": "Contract: Transform",
+        "passiveDesc": "Every 2 Basic Attacks empowers the next hit to grant a Shield equal to 500 (+3 Soul Steal Stacks) for 3s.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Contract: Soul Steal",
+                "icon": "🐉",
+                "desc": "[SELF_BUFF / CONE_SWEEP] Empowers next Basic Attack within 3s (+200 + 100% Total Phys ATK + 100% of accumulated Soul Steal stacks). Last-hitting minions/creeps/turrets/heroes with S1 permanently adds +2 to +10 Soul Steal stacks infinitely (max 650 stacks).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 125,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 2,
+                "name": "Contract: Explosion",
+                "icon": "🔥",
+                "desc": "[SELF_BUFF / GROUND_AOE] Enters defensive stance (30% Damage Reduction + +20% MS) for 2s then explodes dealing 100–200 Physical Damage and **Stunning** nearby enemies for 0.5s–1s.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 125,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1
+            },
+            {
+                "slot": 3,
+                "name": "Contract: Chase Fate",
+                "icon": "🌟",
+                "desc": "[GLOBAL_CAST / TARGET_LOCK] Reveals ALL 5 enemy heroes globally for 5s; recasting launches Aldous across the entire map onto the chosen enemy hero, dealing 400 (+10% Target Max HP) Physical Damage and knocking them back.",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 1200,
+                "radius": 175,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "knockback",
+                "ccDuration": 0.8
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Soul Contractor",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Aldous",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "alpha",
+        "name": "Alpha",
+        "title": "Blade of Enmity",
+        "role": "Fighter",
+        "lane": "Jungle",
+        "specialty": "Charge · Damage",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#EA580C",
+        "accentColor": "#FB923C",
+        "weaponIcon": "🔥",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 63
+        },
+        "passiveName": "Beta, Advance!",
+        "passiveDesc": "Hitting an enemy 2 times with skills locks companion drone **Beta** onto them; subsequent attacks trigger Beta laser strikes dealing 80 (+80% Extra Phys ATK) **True Damage** and slowing 40% (0.2s).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Rotary Impact",
+                "icon": "🗡️",
+                "desc": "[PROJECTILE_LINE] Slashes forward sending a linear shockwave (200 + 90% Extra Phys ATK, 40% Slow 1s), followed by Beta firing a parallel laser (120 + 40% Extra Phys ATK).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#EA580C",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Force Swing",
+                "icon": "⚔️",
+                "desc": "[CONE_SWEEP] Wide fan sweep dealing 250 (+100% Extra Phys ATK) Physical Damage and healing Alpha for 100 (+30% Extra Phys ATK) per enemy hit + Beta strafe.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#FB923C",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 3,
+                "name": "Spear of Alpha",
+                "icon": "🌟",
+                "desc": "[DASH / AIRBORNE] Beta slams target circle knocking enemies **Airborne** (1s) while Alpha leaps along the line carrying all hit enemies to the destination, slamming for 200 (+80% Extra Phys ATK) Physical Damage followed by 5 Beta AoE bombardments.",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8,
+                "wallCross": true
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Blade of Enmity",
+                "tag": "Classic",
+                "color": "#EA580C",
+                "accent": "#FB923C",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Alpha",
+                "tag": "Collector",
+                "color": "#FB923C",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "alucard",
+        "name": "Alucard",
+        "title": "Demon Hunter",
+        "role": "Fighter",
+        "secondaryRole": "Assassin",
+        "lane": "Jungle",
+        "specialty": "Chase · Damage",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🗡️",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 80
+        },
+        "passiveName": "Pursuit",
+        "passiveDesc": "After casting any skill, Alucard's next Basic Attack **leaps** onto the target dealing 1.4x Physical Damage; hitting only 1 enemy hero with a skill amplifies skill damage by 1.1x and grants Hybrid Lifesteal.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Groundsplitter",
+                "icon": "⚔️",
+                "desc": "[PARABOLIC_LEAP / GROUND_AOE] Leaps over walls to target circle, slamming down for 270 (+110% Extra Phys ATK) Physical Damage and 40% Slow (2s).",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "leap",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5,
+                "wallCross": true
+            },
+            {
+                "slot": 2,
+                "name": "Whirling Smash",
+                "icon": "🪓",
+                "desc": "[GROUND_AOE] Instant 360-degree greatsword slash dealing 320 (+120% Extra Phys ATK) Physical Damage around Alucard.",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 3,
+                "name": "Fission Wave",
+                "icon": "🌟",
+                "desc": "[SELF_BUFF / CONE_SWEEP] Gains +30% Hybrid Lifesteal and applies Pursuit marks to nearby enemies for 8s; recasting unleashes a wide crimson energy wave dealing 400 (+200% Extra Phys ATK) Physical Damage.",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 175,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Demon Hunter",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Alucard",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "argus",
+        "name": "Argus",
+        "title": "Dark Angel",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Charge · Burst",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#EA580C",
+        "accentColor": "#FB923C",
+        "weaponIcon": "🪓",
+        "resource": "energy",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 100,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 64
+        },
+        "passiveName": "Warmonger",
+        "passiveDesc": "Dealing/taking damage and moving charges Demonic Blade (0-100 Malice); at full charge, next Basic Attack unleashes a rapid **triple-slash** ignoring 40% of target's Physical Defense and healing Argus (65 + 40% Total Phys ATK).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Demonic Grip",
+                "icon": "🥊",
+                "desc": "[HOOK_PULL / DASH] Fires a demonic hand pulling Argus directly to the first enemy hero hit (175 + 60% Total Phys ATK, 0.7s stun); recast within 4s performs a directional slash (225 + 80% Total Phys ATK).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#EA580C",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "pull",
+                "ccDuration": 0.7
+            },
+            {
+                "slot": 2,
+                "name": "Meteoric Sword",
+                "icon": "🐉",
+                "desc": "[PROJECTILE_LINE] Piercing thrust dealing 300 (+100% Total Phys ATK) Physical Damage and inflicting Cursed (4s bleed damage + +40% MS for Argus when walking on cursed trail + double Malice gain).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#FB923C",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 3,
+                "name": "Eternal Evil",
+                "icon": "🌟",
+                "desc": "[SELF_BUFF] Removes ALL debuffs/CC and enters a 4s **Fallen Angel / Death Immunity** state (HP cannot drop below 1), converting 100% of damage dealt into permanent HP when the duration ends + passive +10/+20/+30 Permanent Phys ATK.",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 175,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Dark Angel",
+                "tag": "Classic",
+                "color": "#EA580C",
+                "accent": "#FB923C",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Argus",
+                "tag": "Collector",
+                "color": "#FB923C",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "arlott",
+        "name": "Arlott",
+        "title": "Lone Lancer",
+        "role": "Fighter",
+        "secondaryRole": "Assassin",
+        "lane": "EXP",
+        "specialty": "Charge · Burst",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🥊",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 81
+        },
+        "passiveName": "Demon Gaze",
+        "passiveDesc": "Every 8s (and whenever an enemy near Arlott is affected by ANY Crowd Control), Arlott's demonic eye automatically applies a **Mark** to that enemy for 6s and reveals them.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Dauntless Strike",
+                "icon": "🐉",
+                "desc": "[CONE_SWEEP] Sweeps lance forward dealing 200 (+60% Total Phys ATK) Physical Damage, slowing close enemies 40% and **Stunning** enemies hit at the outer edge for 1s.",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1
+            },
+            {
+                "slot": 2,
+                "name": "Vengeance",
+                "icon": "🔥",
+                "desc": "[DASH] Dashes through target enemy dealing 160 (+60% Total Phys ATK) Physical Damage. If the target has a **Demon Gaze Mark**, Vengeance deals 200% critical damage, heals Arlott (7% Max HP), and **immediately resets Vengeance's cooldown**!",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Final Slash",
+                "icon": "🌟",
+                "desc": "[CONE_SWEEP / KNOCKBACK] Wide horizontal cleave dealing 400 (+80% Total Phys ATK) Physical Damage and sweeping all hit enemies to the far edge of the cone (applying Demon Gaze marks to everyone).",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "knockback",
+                "ccDuration": 0.8
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Lone Lancer",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Arlott",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "aulus",
+        "name": "Aulus",
+        "title": "Warrior of Ferocity",
+        "role": "Fighter",
+        "lane": "Jungle",
+        "specialty": "Damage · Crowd Control",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#EA580C",
+        "accentColor": "#FB923C",
+        "weaponIcon": "🔥",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 65
+        },
+        "passiveName": "Fighting Spirit",
+        "passiveDesc": "Basic Attacks grant 1 stack of Fighting Spirit (max 4, lasting 3s), adding +4–16 Phys ATK and +3–12 Phys Pen per stack; at 4 stacks, gains +15% MS and ignites hammer for +130% Basic Attack damage.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Aulus, Charge!",
+                "icon": "🗡️",
+                "desc": "[SELF_BUFF] Removes all slows, gains +30%–50% MS and 20% Frontal Damage Reduction for 3s.",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 125,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#EA580C",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "The Power of Axe",
+                "icon": "⚔️",
+                "desc": "[CONE_SWEEP] Fan cleave dealing 250 (+120% Extra Phys ATK) Physical Damage and granting up to 6 enhanced Basic Attacks (+140% ATK Speed + 50 HP heal per hit).",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#FB923C",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 3,
+                "name": "Undying Fury",
+                "icon": "🌟",
+                "desc": "[GROUND_AOE / SELF_BUFF] Passive: Permanently upgrades S2/Basic Attack range/Passive crit at Lv.4, Lv.8, and Lv.12. Active: Slams hammer creating a 5s burning lava path dealing 210 (+100% Extra Phys ATK) burst + 90 DPS and 70% Slow.",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 175,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Warrior of Ferocity",
+                "tag": "Classic",
+                "color": "#EA580C",
+                "accent": "#FB923C",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Aulus",
+                "tag": "Collector",
+                "color": "#FB923C",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "badang",
+        "name": "Badang",
+        "title": "Tribal Warrior",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Charge · Burst",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#F59E0B",
+        "accentColor": "#FDE047",
+        "weaponIcon": "⚔️",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 49
+        },
+        "passiveName": "Chivalry Fist",
+        "passiveDesc": "Every 4th Basic Attack knocks enemies backward; if the knocked enemy collides with a map wall or Badang's S2 rock wall, they are **Stunned** for 0.8s.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Fist Wind",
+                "icon": "🪓",
+                "desc": "[PROJECTILE_LINE] Stores 2 charges. Fires a compressed fist gust (210 + 70% Total Phys ATK, 30% Slow) that detonates in AoE upon hitting a wall.",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#F59E0B",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Fist Break",
+                "icon": "🥊",
+                "desc": "[DASH / SUMMON] Dashes forward (230 + 50% Total Phys ATK); hitting an enemy hero stops Badang, knocks them back, and erects a 4s semi-circular **Rock Wall** behind them (recast removes wall early).",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#FDE047",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "knockback",
+                "ccDuration": 0.8,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Fist Crack",
+                "icon": "🌟",
+                "desc": "[CHANNEL] Gains a Shield (500 + 150% Total Phys ATK) + **CC Immunity** while unleashing a rapid barrage of 9 heavy fist shockwaves (120 + 50% Total Phys ATK each) that explode against walls.",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "ring",
+                "physics": "channel",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Tribal Warrior",
+                "tag": "Classic",
+                "color": "#F59E0B",
+                "accent": "#FDE047",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Badang",
+                "tag": "Collector",
+                "color": "#FDE047",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "balmond",
+        "name": "Balmond",
+        "title": "Bloody Beast",
+        "role": "Fighter",
+        "lane": "Jungle",
+        "specialty": "Damage · Regen",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#EA580C",
+        "accentColor": "#FB923C",
+        "weaponIcon": "🪓",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 66
+        },
+        "passiveName": "Bloodthirst",
+        "passiveDesc": "Restores 5% Max HP upon killing a minion or creep, and 20% Max HP upon killing or assisting on an enemy hero.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Soul Lock",
+                "icon": "🥊",
+                "desc": "[DASH] Charges through walls (150 + 60% Total Phys ATK) stopping at the first enemy hero and slowing them 40% for 2s.",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#EA580C",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5,
+                "wallCross": true
+            },
+            {
+                "slot": 2,
+                "name": "Cyclone Sweep",
+                "icon": "🐉",
+                "desc": "[CHANNEL / GROUND_AOE] Spins great axe for 3s (moving freely and ramping speed) dealing 80 (+45% Total Phys ATK) Physical Damage every 0.25s (ramping up to +100% bonus damage on consecutive hits).",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 175,
+                "telegraph": "ring",
+                "physics": "channel",
+                "color": "#FB923C",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 3,
+                "name": "Lethal Counter",
+                "icon": "🌟",
+                "desc": "[CONE_SWEEP] Slams axe in a forward fan dealing 400 (+100% Total Phys ATK) + 20% of Target's Missing HP as **True Damage** and slowing 40% for 2s.",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "true",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Bloody Beast",
+                "tag": "Classic",
+                "color": "#EA580C",
+                "accent": "#FB923C",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Balmond",
+                "tag": "Collector",
+                "color": "#FB923C",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "bane",
+        "name": "Bane",
+        "title": "Frozen King",
+        "role": "Fighter",
+        "secondaryRole": "Mage",
+        "lane": "EXP",
+        "specialty": "Push · Burst",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🥊",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 83
+        },
+        "passiveName": "Shark Bite",
+        "passiveDesc": "Each skill cast infuses Bane's weapon (max 2 stacks); next Basic Attack unleashes a tidal spin dealing +140% Physical Damage + 5%–8% Target Max HP splash damage.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Crab Claw Cannon",
+                "icon": "🐉",
+                "desc": "[PROJECTILE_LINE] Fires a cannonball (250 + 120% Total Phys ATK) that bounces behind the first target for 150% damage and 30% Slow.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Ale",
+                "icon": "🔥",
+                "desc": "[SELF_BUFF / CONE_SWEEP] Chugs rum restoring 200 (+160% Magic Power) + 10% Missing HP and gaining +50% MS; recast spits a fan of magic venom (250 + 150% Magic Power).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 125,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 3,
+                "name": "Deadly Catch",
+                "icon": "🌟",
+                "desc": "[PROJECTILE_LINE / AIRBORNE] Summons a wide charging school of sharks dealing 600 (+100% Total Phys ATK) (+140% Magic Power) Magic Damage, knocking enemies **Airborne** (0.5s), slowing 40%, and dealing 40% damage to enemy **Turrets**.",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Frozen King",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Bane",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "chou",
+        "name": "Chou",
+        "title": "Kung Fu Boy",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Chase · Control",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🥊",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 87
+        },
+        "passiveName": "Only Fast",
+        "passiveDesc": "Every 8 yards Chou moves empowers his next Basic Attack to deal 180% Physical Damage (cannot Crit) and slow target by 80% briefly.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Jeet Kune Do",
+                "icon": "🐉",
+                "desc": "[DASH / AIRBORNE] 3-stage martial arts dash (180 + 70% Total Phys ATK each); the 3rd cast slams enemies **Airborne** (0.6s) and **immediately resets Skill 2's cooldown**.",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8,
+                "wallCross": true
+            },
+            {
+                "slot": 2,
+                "name": "Shunpo",
+                "icon": "🔥",
+                "desc": "[I_FRAME / DASH] Short directional dash granting complete **CC Immunity** during the dash, a Shield (200 + 200% Extra Phys ATK), and +15–40 Physical Penetration (2s).",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "iframe",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "The Way of Dragon",
+                "icon": "🌟",
+                "desc": "[TARGET_LOCK / KNOCKBACK] Roundhouse kick dealing 400 (+200% Extra Phys ATK) Physical Damage and knocking target enemy far backward; recasting chases the target into mid-air delivering a multi-kick Airborne combo (400 + 200% Extra Phys ATK).",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Kung Fu Boy",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Chou",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "cici",
+        "name": "Cici",
+        "title": "Buoyant Performer",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Damage · Regen",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#F59E0B",
+        "accentColor": "#FDE047",
+        "weaponIcon": "🐉",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 54
+        },
+        "passiveName": "Performer's Delight",
+        "passiveDesc": "Dealing damage generates 1 stack of Delight (max 10 stacks, lasting 4s), granting +1% Movement Speed and +1% Spell Vamp per stack (2x bonus at 10 stacks).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Yo-Yo Blitz",
+                "icon": "🔥",
+                "desc": "[CHANNEL / TARGET_LOCK] Moves and casts other skills freely while rapidly whipping the nearest enemy within range 10 times over 3.5s, dealing 60 (+3% + 1.2% per 100 Extra Phys ATK Target Max HP) Physical Damage per hit (+20% vs minions).",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 175,
+                "telegraph": "ring",
+                "physics": "channel",
+                "color": "#F59E0B",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 2,
+                "name": "Buoyant Bounce",
+                "icon": "🗡️",
+                "desc": "[PARABOLIC_LEAP] Leaps to target location; if Cici lands on ANY unit (ally, enemy, minion, or creep), she deals 200 (+40% Total Phys ATK) Physical Damage and vaults a second time in joystick direction.",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "leap",
+                "color": "#FDE047",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Curtain Call",
+                "icon": "🌟",
+                "desc": "[TETHER] Throws yo-yo linking 2 nearby enemy heroes together (250 + 50% Total Phys ATK, 40% Slow 4s), preventing them from moving away from each other while allowing **Yo-Yo Blitz (S1)** to strike BOTH linked targets simultaneously!",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "tether",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Buoyant Performer",
+                "tag": "Classic",
+                "color": "#F59E0B",
+                "accent": "#FDE047",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Cici",
+                "tag": "Collector",
+                "color": "#FDE047",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "dyrroth",
+        "name": "Dyrroth",
+        "title": "Prince of the Abyss",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Charge · Burst",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🥊",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 89
+        },
+        "passiveName": "Wrath of the Abyss",
+        "passiveDesc": "Every 2 Basic Attacks triggers **Circle Strike** (140% AoE damage + heals 50 + 40% Damage Dealt + cuts S1/S2 CD by 1s). At 50+ Rage, S1 and S2 become **Abyss Enhanced**.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Burst Strike",
+                "icon": "🐉",
+                "desc": "[PROJECTILE_LINE] Releases an abyssal wave (200 + 60% Extra Phys ATK, 25% Slow 1.5s); **Abyss Enhanced:** Longer range, 200% damage, and 50% Slow.",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Spectre Step",
+                "icon": "🔥",
+                "desc": "[DASH] Dashes in target direction (230 + 60% Extra Phys ATK); recast locks onto target delivering a devastating **Fatal Strike** (345 + 120% Extra Phys ATK) that shreds enemy **Physical Defense by -50%** (-75% when **Abyss Enhanced**) for 4s.",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Abysm Strike",
+                "icon": "🌟",
+                "desc": "[CONE_SWEEP] Brief 0.8s charge unleashing a massive abyssal blast dealing 650 (+250% Extra Phys ATK) + 20% of Target's Missing HP Physical Damage and slowing 55% (0.8s).",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Prince of the Abyss",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Dyrroth",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "fredrinn",
+        "name": "Fredrinn",
+        "title": "Rogue Appraiser",
+        "role": "Fighter",
+        "secondaryRole": "Tank",
+        "lane": "Jungle",
+        "specialty": "Damage · Chase",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🗡️",
+        "resource": "energy",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 100,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 92
+        },
+        "passiveName": "Crystalline Armor",
+        "passiveDesc": "Stores 85% of damage taken as decaying **Crystal Energy**; dealing damage converts 25% (10% on creeps) of damage dealt back into HP from Crystal Energy. Hitting skills grants 1 **Combo Point** (max 4).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Piercing Strike",
+                "icon": "⚔️",
+                "desc": "[PROJECTILE_LINE] Thrusts greatsword (200 + 8% Total HP) slowing 30% (2s) and extending next Basic Attack range (100 + 140% Total Phys ATK).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Brave Assault",
+                "icon": "🪓",
+                "desc": "[DASH / AIRBORNE] Dashes forward (200 + 80% Extra Phys ATK), empowering next Basic Attack to knock target **Airborne** (0.3s).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Energy Eruption — Costs 1 Combo Point",
+                "icon": "🌟",
+                "desc": "[GROUND_AOE / TAUNT] Slams ground (300 + 100% Extra Phys ATK), **Taunting** nearby enemies for 1s and cutting S1/S2 cooldowns by 75%!",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "taunt",
+                "ccDuration": 1.3
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Rogue Appraiser",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Fredrinn",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "freya",
+        "name": "Freya",
+        "title": "Valkyrie",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Chase · Damage",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#F59E0B",
+        "accentColor": "#FDE047",
+        "weaponIcon": "⚔️",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 59
+        },
+        "passiveName": "Power of Einherjar",
+        "passiveDesc": "Casting a skill grants 2 **Sacred Orbs** (max 6); each Basic Attack consumes 1 Orb to increase Attack Speed by +100% and cleave in an AoE.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Leap of Faith",
+                "icon": "🪓",
+                "desc": "[PARABOLIC_LEAP / VORTEX_PULL] Leaps to target circle dealing 200 (+80% Extra Phys ATK) Physical Damage and pulling enemies toward the center.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#F59E0B",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "pull",
+                "ccDuration": 0.7
+            },
+            {
+                "slot": 2,
+                "name": "Spirit Combo",
+                "icon": "🥊",
+                "desc": "[DASH / SHIELD / AIRBORNE] Consumes 1 Sacred Orb per cast with **zero cooldown**; dashes forward gaining a Shield (160 + 70% Extra Phys ATK) and slashing (130 + 90% Extra Phys ATK), culminating in a heavy slam that knocks enemies **Airborne** (0.5s).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#FDE047",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Valkyrie Descent",
+                "icon": "🌟",
+                "desc": "[TRANSFORM] Gains 3 Sacred Orbs, a massive Shield (600 + 180% Extra Phys ATK), +30–70 Physical Attack, and transforms for 10s into winged **Valkyrie Form** with extended ranged splash Basic Attacks.",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 175,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Valkyrie",
+                "tag": "Classic",
+                "color": "#F59E0B",
+                "accent": "#FDE047",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Freya",
+                "tag": "Collector",
+                "color": "#FDE047",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "guinevere",
+        "name": "Guinevere",
+        "title": "Ms. Violet",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Burst · Magic Damage",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#F59E0B",
+        "accentColor": "#FDE047",
+        "weaponIcon": "⚔️",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 61
+        },
+        "passiveName": "Super Magic",
+        "passiveDesc": "Deals +25% bonus damage to **Airborne** enemies. Hitting skills/attacks builds Super Magic; at full gauge, next Basic Attack leaps onto target (+80 + 100% Total Phys ATK + 120% Magic Power) and heals HP. Skills apply **Super Magic Marks** (max 3).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Energy Wave",
+                "icon": "🪓",
+                "desc": "[PROJECTILE_LINE] Fires an energy orb (300 + 130% Magic Power, 50% Slow 1.2s) that reduces ALL of Guinevere's cooldowns by 1s on hit.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#F59E0B",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Spatial Migration",
+                "icon": "🥊",
+                "desc": "[PARABOLIC_LEAP / AIRBORNE / BLINK] Leaps to target circle (250 + 80% Magic Power) knocking enemies **Airborne** (1s); recasting within 5s blinks in target direction leaving behind a decoy that explodes (300 + 100% Magic Power).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "leap",
+                "color": "#FDE047",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Violet Requiem",
+                "icon": "🌟",
+                "desc": "[CHANNEL / AIRBORNE] Unleashes a 2s psychic storm (650–910 + 500% Magic Power over 11 hits) with **CC Immunity**; any enemy already **Airborne** or holding 3 **Super Magic Marks** is continuously juggled **Airborne** for the full duration!",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "ring",
+                "physics": "channel",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Ms. Violet",
+                "tag": "Classic",
+                "color": "#F59E0B",
+                "accent": "#FDE047",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Guinevere",
+                "tag": "Collector",
+                "color": "#FDE047",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "hilda",
+        "name": "Hilda",
+        "title": "Power of Megalith",
+        "role": "Fighter",
+        "secondaryRole": "Tank",
+        "lane": "EXP",
+        "specialty": "Damage · Regen",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🥊",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 47
+        },
+        "passiveName": "Blessing of Wilderness",
+        "passiveDesc": "Entering any bush regenerates 2% Max HP per second and grants a 15% Max HP Shield (5s, 10s CD). Skills and Basic Attacks apply **Wilderness Marks** (max 6, shredding -4% Hybrid Defense per stack).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Combat Ritual",
+                "icon": "🐉",
+                "desc": "[SELF_BUFF] Gains +60% MS (3s) and empowers next Basic Attack (200 + 100% Total Phys ATK + 120 + 60% Total Phys ATK shockwave behind target + 40% Slow 3s).",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 0,
+                "radius": 125,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Art of Hunting",
+                "icon": "🔥",
+                "desc": "[TARGET_LOCK / DASH] Locks onto enemy hero for up to 3 sequential shoulder-axe strikes (210 + 100% Total Phys ATK each; 2nd hit is AoE, 3rd hit knocks target backward).",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "knockback",
+                "ccDuration": 0.8,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Power of Wildness",
+                "icon": "🌟",
+                "desc": "[TARGET_LOCK / PARABOLIC_LEAP] Leaps onto target enemy dealing 600 (+250% Extra Phys ATK) Physical Damage + +2.5% Target Max HP per **Wilderness Mark** (+15% Max HP at 6 stacks, ignoring 40% of target's Physical Defense at max stacks!).",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "circle",
+                "physics": "leap",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "wallCross": true
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Power of Megalith",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Hilda",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "jawhead",
+        "name": "Jawhead",
+        "title": "Steel Sweetheart",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Charge · Burst",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EA580C",
+        "accentColor": "#FB923C",
+        "weaponIcon": "🪓",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 82
+        },
+        "passiveName": "Mecha Suppression",
+        "passiveDesc": "Every hit inflicts 1 stack of Compression (max 10 stacks, lasting 3s), increasing Jawhead's Basic Attack damage against that target by +8% per stack (+80% max).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Smart Missiles",
+                "icon": "🥊",
+                "desc": "[ORBIT / HOMING] Enters 5s launch state firing 12 homing missiles at random nearby targets (140 + 30% Total Phys ATK each).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#EA580C",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 2,
+                "name": "Ejector",
+                "icon": "🐉",
+                "desc": "[SELF_BUFF / KNOCKBACK] Gains +30% MS and a Shield (250 + 180% Extra Phys ATK) for 5s; recasting grabs the nearest unit (enemy, creep, or ally without *Throw Forbidden*) and hurls them to target circle (300 + 80% Total Phys ATK + 0.5s **Airborne** stun).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#FB923C",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8
+            },
+            {
+                "slot": 3,
+                "name": "Unstoppable Force",
+                "icon": "🌟",
+                "desc": "[TARGET_LOCK / DASH / STUN] Locks onto an enemy hero and charges irresistibly with **CC Immunity**, dealing 350 (+150% Extra Phys ATK) Physical Damage, **Stunning** target (0.4s), and knocking surrounding enemies back.",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "knockback",
+                "ccDuration": 0.8,
+                "wallCross": true
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Steel Sweetheart",
+                "tag": "Classic",
+                "color": "#EA580C",
+                "accent": "#FB923C",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Jawhead",
+                "tag": "Collector",
+                "color": "#FB923C",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "julian",
+        "name": "Julian",
+        "title": "Scarlet Raven",
+        "role": "Fighter",
+        "secondaryRole": "Mage",
+        "lane": "Jungle",
+        "specialty": "Chase · Magic Damage",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EA580C",
+        "accentColor": "#FB923C",
+        "weaponIcon": "🔥",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 83
+        },
+        "passiveName": "Smith's Legacy",
+        "passiveDesc": "Has NO separate Level 4 Ultimate (all 3 skills level up to 5). After casting any 2 different skills, Julian's 3rd skill is immediately refreshed and transformed into an **Enhanced Ultimate Version**, and his next Basic Attacks (5s) pull enemies toward him with +25% Hybrid Lifesteal!",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Scythe",
+                "icon": "🗡️",
+                "desc": "[PROJECTILE_LINE] Throws flying scythe (420 + 140% Magic Power, 30% slow). **Enhanced Scythe:** Leaves a massive stationary spinning buzzsaw at hit spot dealing 9 rapid AoE ticks (100 + 32% Magic Power each) + 50% slow.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#EA580C",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Sword",
+                "icon": "⚔️",
+                "desc": "[DASH] Dashes forward (420 + 75% Magic Power). **Enhanced Sword:** Becomes **Untargetable** while slashing across the line 9 times (90 + 24% Magic Power each).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#FB923C",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Chain",
+                "icon": "🌟",
+                "desc": "[GROUND_AOE / IMMOBILIZE] Drops chains (300 + 100% Magic Power) **Immobilizing** enemies for 1.2s. **Enhanced Chain:** Creates a continuous gravity vortex (250 + 80% Magic Power + 60 + 20% Magic Power ticks) throwing enemies **Airborne** (0.8s).",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Scarlet Raven",
+                "tag": "Classic",
+                "color": "#EA580C",
+                "accent": "#FB923C",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Julian",
+                "tag": "Collector",
+                "color": "#FB923C",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "khaleed",
+        "name": "Khaleed",
+        "title": "Desert Scimitar",
+        "role": "Fighter",
+        "lane": "EXP",
+        "specialty": "Damage · Regen",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EF4444",
+        "accentColor": "#FCA5A5",
+        "weaponIcon": "🗡️",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2720,
+        "hpGrowth": 195,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 22,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 256,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 76,
+            "offense": 64,
+            "control": 54,
+            "difficulty": 52
+        },
+        "passiveName": "Sand Walk",
+        "passiveDesc": "Moving builds **Desert Power**; at 100 charge, Khaleed glides on sand gaining +35% MS and empowering his next Basic Attack to leap onto target (140% Total Phys ATK) leaving a 40% slowing sand pool.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Desert Tornado",
+                "icon": "⚔️",
+                "desc": "[CONE_SWEEP / VORTEX_PULL] Whirls scimitar (200 + 140% Total Phys ATK) pulling enemies inward; hitting any enemy allows casting up to 3 consecutive times (+15% ramping damage per spin).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#EF4444",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "pull",
+                "ccDuration": 0.7
+            },
+            {
+                "slot": 2,
+                "name": "Quicksand Guard",
+                "icon": "🪓",
+                "desc": "[CHANNEL / SELF_BUFF] Channels up to 4s generating Desert Power, gaining 35% Damage Reduction, restoring 60 + 5%–10% Missing HP every 0.5s, and slowing nearby enemies 60%.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 175,
+                "telegraph": "ring",
+                "physics": "channel",
+                "color": "#FCA5A5",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 3,
+                "name": "Raging Sandstorm",
+                "icon": "🌟",
+                "desc": "[DASH / STUN] Gains **CC Immunity** and rides a giant sandstorm wave (100 + 50% Total Phys ATK) dragging all enemies in path to the destination before slamming down for 450 (+160% Total Phys ATK) Physical Damage, 1s **Stun**, and full Desert Power!",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1,
+                "wallCross": true
+            }
+        ],
+        "recommendedBuild": [
+            "warrior_boots",
+            "war_axe",
+            "endless_battle",
+            "queens_wings",
+            "brute_force_breastplate",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Desert Scimitar",
+                "tag": "Classic",
+                "color": "#EF4444",
+                "accent": "#FCA5A5",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Khaleed",
+                "tag": "Collector",
+                "color": "#FCA5A5",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    }
+];
+
+});
+
+})(window.ArcadeMod);

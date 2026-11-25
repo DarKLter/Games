@@ -1,0 +1,113 @@
+================================================================================
+PART 1 OF 7 — GOOGLE AI STUDIO INCREMENTAL BUILD PROMPT
+PROJECT: NBA 2K14 + NBA 2K26 ULTIMATE HYBRID — 100% EXACT 3D WEBGL CLONE
+SCOPE: CORE ARCHITECTURE, PERSISTENCE, AUDIO/2K BEATS, EXACT 2K14 + 2K26 UI SHELL,
+       LIVE 3D ANIMATED MAIN MENU BACKGROUNDS & PRE-GAME MATCHUP LOBBY
+================================================================================
+
+ACT AS A PRINCIPAL AAA SPORTS GAME ENGINEER, THREE.JS WEBGL ARCHITECT, AND UI/UX SPECIALIST.
+
+We are building a complete, 100% playable 60 FPS 3D Basketball simulation web app in React + TypeScript + Three.js (WebGL) + Tailwind CSS + Procedural Web Audio API that faithfully merges **NBA 2K14 (Classic Golden Era)** AND **NBA 2K26 (Next-Gen ProPLAY Era)** into one seamless unified game with an instant Live Era/UI Theme Switcher (`2K14_CLASSIC` | `2K26_NEXTGEN` | `HYBRID_PRO`).
+
+CRITICAL ARCHITECTURE RULES FOR THIS 7-PART BUILD:
+- Build clean, strictly typed modular files (`src/types/`, `src/store/`, `src/audio/`, `src/data/`, `src/engine/`, `src/components/`, `src/App.tsx`).
+- ZERO external images, audio files, or CDNs—generate all textures, logos, jersey numbers, wood grain, and sound effects procedurally via HTML5 Canvas, SVG, Three.js, and Web Audio API.
+- Every single button we place in Part 1 must route cleanly to a real screen/modal (for screens whose deep logic arrives in Parts 2–7, wire clean mountable container views that Parts 2–7 will seamlessly upgrade—never leave broken clicks or TypeScript errors).
+
+--------------------------------------------------------------------------------
+1. CORE TYPE DEFINITIONS & PERSISTENT STORE (`src/types/game.ts`, `src/store/gameStore.ts`)
+--------------------------------------------------------------------------------
+Define clean TypeScript interfaces and a reactive persistent store (`localStorage` key `nba2k14_2k26_ultimate_save_v1` with JSON Export/Import support):
+- `UIEraMode`: `'2K14_CLASSIC' | '2K26_NEXTGEN' | 'HYBRID_PRO'`
+- `ActiveScreen`: `'MAIN_MENU' | 'PLAY_NOW_SETUP' | 'THE_CITY' | 'MYPLAYER_BUILDER' | 'PATH_TO_GREATNESS' | 'MYTEAM' | 'MYNBA_ASSOCIATION' | 'BLACKTOP_SETUP' | 'TRAINING_CAMP' | 'ROSTER_MANAGER' | 'CREATE_A_PLAYER' | 'MATCH_LIVE' | 'POST_MATCH'`
+- `CurrencyState`: `vc: number` (starts at `25000`), `mtp: number` (starts at `15000`), `seasonLevel: number` (1–40), `seasonXP: number`, `repTier: 'ROOKIE_I' | 'ROOKIE_III' | 'STARTER_I' | 'STARTER_III' | 'VETERAN_I' | 'LEGEND'`, `repXP: number`, `geoRank: string` (e.g. `#14 Local / Top 2%`).
+- `UserProfileState` (`My Profile.USR` + 2K26 Player Card):
+  - `gamertag: string`, `avatarSeed: number`, `favoriteTeamId: string`, `crewName: string`, `crewTag: string`, `crewLevel: number` (1–30), `winStreak: number`, `bestWinStreak: number`
+  - Career Stats: `gamesPlayed, wins, losses, totalPts, totalAst, totalReb, totalStl, totalBlk, fgm, fga, tpm, tpa, greenReleases, totalShotsTimed`
+  - `shotChartHistory: Array<{ x: number; y: number; made: boolean; is3pt: boolean; isGreen: boolean }>` (tracks half-court career shots for spray chart!)
+- `SettingsState`: Pre-define the full strongly-typed config object covering all 7 tabs (Gameplay/Rules, Controller/ShotMeter/TouchHUDLayout, Camera, Visuals/UIEra, Audio/2KBeats, User & CPU Gameplay Sliders 0–100) with authentic default values.
+- `ActiveMatchConfig`: `homeTeamId`, `awayTeamId`, `homeEra`, `awayEra`, `homeJersey` (`'HOME'|'AWAY'|'CITY'|'CLASSIC'`), `awayJersey`, `venue` (`'ARENA_2K26'|'ARENA_2K14'|'SKYLINE_PARK'|'RIVET_CITY'|'SUNSET_BEACH'|'OLD_TOWN'|'BLACKTOP_CAGE'|'STREET_KINGS'`), `mode` (`'QUICK_GAME'|'BLACKTOP_1V1'|'BLACKTOP_3V3'|'BLACKTOP_5V5'|'PARK_3V3'|'REC_5V5'|'PATH_TO_GREATNESS'|'MYTEAM_DOM'|'MYTEAM_TT'|'STREET_KINGS'|'TRAINING_FREESTYLE'`), `quarterLengthMin`, `targetScore` (for Blacktop/Park e.g. 21), `difficulty`.
+
+--------------------------------------------------------------------------------
+2. PROCEDURAL WEB AUDIO ENGINE & 2K BEATS JUKEBOX (`src/audio/SoundEngine.ts`)
+--------------------------------------------------------------------------------
+Create a zero-dependency Web Audio API engine that unlocks cleanly on first user interaction and respects live volume sliders (`master`, `crowd`, `sfx`, `commentary`, `music`):
+- **Menu UI SFX**:
+  - `2K14 Classic`: Crisp metallic chrome click, deep crimson bass thump on confirm, carbon swoosh on back.
+  - `2K26 Next-Gen`: Clean glass harmonic chime, subtle bass pulse on tab switch, futuristic soft swoosh.
+- **Basketball On-Court SFX** (synthesized accurately via filtered noise + oscillators):
+  - `playDribble()`: Hollow hardwood leather thump with slight pitch variance.
+  - `playSneakerSqueak()`: High-frequency frequency-modulated rubber chirp.
+  - `playSwish(isChainNet?: boolean)`: Crisp nylon air-brush filter sweep (or metallic ring clink when playing on the Blacktop Cage chain net!).
+  - `playRimClank()` & `playBackboardThud()`: Metallic ring resonance / heavy acrylic thud.
+  - `playGreenRelease(style)`: Bright celebratory chord + flash ping!
+  - `playDunkSlam()`: Sub-bass punch + metallic breakaway rim rattle.
+  - `playWhistle()` & `playBuzzer()`: Dual-tone pea referee whistle & deep arena shot-clock/end-of-quarter horn.
+  - `playCrowdReaction(intensity)`: Bandpass-filtered stadium cheer/roar swell.
+  - `speakCallout(text)`: Optional Web Speech API PA Announcer / Commentary callout (`"FROM DOWNTOWN — BANG!"`, `"MONSTER JAM!"`, `"AND ONE!"`, `"SHOT CLOCK VIOLATION!"`) with instant mute toggle.
+- **2K Beats Procedural 6-Track Jukebox**:
+  - Synthesize 6 looping arena hip-hop/trap/boom-bap instrumental tracks inspired by 2K14 & 2K26 (e.g., *1. "King's Crown (2K14 Anthem)"*, *2. "Hardwood Dynasty"*, *3. "Skyline 60 FPS (2K26)"*, *4. "Rhythm & Green"*, *5. "Blacktop Midnight"*, *6. "Fourth Quarter Clutch"*) using Web Audio step-sequencer drums (808 kick, crisp snare, hi-hat rolls) + brass/synth chords. Include Play/Pause, Next, Shuffle, and per-track enable toggles.
+
+--------------------------------------------------------------------------------
+3. LIVE 3D ANIMATED MAIN MENU BACKGROUNDS (`src/components/MenuBackground3D.tsx`)
+--------------------------------------------------------------------------------
+Build a lightweight, 60 FPS Three.js WebGL background canvas running behind the Main Menu that switches dynamically based on `UIEraMode`:
+- **When `2K14_CLASSIC`**:
+  - Dark spotlighted glossy hardwood half-court arena with volumetric crimson `#C8102E` and white sweeping spotlights, floating arena dust particles, shimmering wood-plank reflections, and an articulated 3D `#6 Miami Heat` star silhouette smoothly performing idle crossovers, dribble between-the-legs, and jump-shot warmups while the camera slowly orbits!
+- **When `2K26_NEXTGEN` or `HYBRID_PRO`**:
+  - Sunlit golden-hour 60 FPS sweeping drone camera overlooking **The City** open-air Skyline Park plaza (3D basketball courts, glowing championship gold `#F5B700` / cyan `#00E5FF` court LEDs, surrounding low-poly skyscrapers, slowly gliding distant helicopter/jet in sky) with an articulated 3D Cover Star (`#2 Shai Gilgeous-Alexander` or active MyPLAYER) warming up in the foreground.
+
+--------------------------------------------------------------------------------
+4. EXACT DUAL-ERA MAIN MENU UI & BUTTON COORDINATES (`src/components/MainMenu.tsx`)
+--------------------------------------------------------------------------------
+Build BOTH exact layouts so toggling `2K14 CLASSIC` <-> `2K26 NEXT-GEN` transforms the entire interface instantaneously:
+
+- **LAYOUT A: NBA 2K14 CLASSIC UI**
+  - Palette: Obsidian `#0A0B0E`, gunmetal `#1A1D24`, 2K14 Crimson `#C8102E`, chrome silver borders, carbon sheen, bold condensed uppercase font.
+  - **TOP-LEFT (0–28% W, 0–10% H)**: Metallic embossed `NBA 2K14` red-and-chrome badge + glowing `[SWITCH TO 2K26]` Era Toggle Pill.
+  - **TOP-CENTER (28–68% W, 0–10% H)**: Continuous scrolling **2K Sports Live Ticker** (Classic 2013-14 scores, LeBron Path to Greatness milestones, user VIP win streak).
+  - **TOP-RIGHT (68–100% W, 0–10% H)**:
+    - `[My Profile.USR]` VIP Pill (opens Profile/Settings Tab 7)
+    - `[🪙 VC Counter]` Gold coin + live formatted VC balance
+    - `[♫ 2K Beats]` Mini music player toggle showing active track name + Skip button
+    - `[⚙️ OPTIONS]` Settings Gear button (opens Settings Drawer)
+  - **CENTER-LEFT HERO CARD (4–44% W, 14–76% H)**: Large glossy crimson-bordered `PLAY NOW / QUICK GAME` card displaying featured matchup (`MIA '14 vs SAS '14` or last matchup) + instant `[TIP-OFF NOW]` button & `[CHOOSE TEAMS]` button.
+  - **CENTER-RIGHT METRO GRID (46–96% W, 14–76% H)** — 2 rows × 3 columns of metallic beveled tiles with crimson rim hover zoom:
+    1. `LeBRON: PATH TO GREATNESS`
+    2. `MyCAREER / MyPLAYER`
+    3. `BLACKTOP (1v1 – 5v5)`
+    4. `MyTEAM`
+    5. `THE ASSOCIATION / MyGM`
+    6. `TRAINING CAMP & FREESTYLE`
+  - **BOTTOM METALLIC ACTION BAR (0–100% W, 82–96% H)**:
+    - `[MANAGE ROSTER]` | `[CREATE-A-PLAYER]` | `[VIP PROFILE]` | `[GAME SLIDERS]` | `[CONTROLLER]` | `[2K BEATS]` | `[THE CITY MAP (2K26)]`
+
+- **LAYOUT B: NBA 2K26 NEXT-GEN UI**
+  - Palette: Translucent obsidian glass `bg-[#0B0E14]/80 backdrop-blur-md`, championship gold `#F5B700`, court cyan `#00E5FF`, crisp white borders, smooth 60 FPS hover transitions.
+  - **TOP-LEFT (2–18% W, 2–9% H)**: Sleek `NBA 2K26` white/gold wordmark + `[SWITCH TO 2K14]` Era Toggle Pill.
+  - **TOP-CENTER HORIZONTAL TAB BAR (18–70% W, 2–9% H)**:
+    - `[HOME]` | `[PLAY NOW]` | `[MyCAREER / THE CITY]` | `[MyTEAM]` | `[MyNBA ERAS]` | `[THE W]` | `[FEATURES]`
+  - **TOP-RIGHT UTILITY CLUSTER (70–98% W, 2–9% H)**:
+    - `[⚡ SWAP BUILD]` Dropdown to swap active MyPLAYER Build
+    - `[🪙 VC]` & `[💎 MTP]` dual currency pills
+    - `[LVL 1–40]` Season Level circular progress badge
+    - `[👥 CREW]` Crew & Friends drawer button (shows online count)
+    - `[👤 PROFILE]` Player Card button (Geo Rank + Rep Tier)
+    - `[⚙️]` Settings gear button
+  - **MAIN STAGE (4–96% W, 13–84% H)**: Dynamic stage switching cleanly per top tab. On `HOME`, display:
+    - Hero Featured Card: `ENTER THE CITY — 60 FPS OPEN-AIR PLAZA` (launches City Map / Walkable Plaza)
+    - 4 Side Action Cards: `QUICK PLAY NOW`, `STREET KINGS BOSSES`, `MyTEAM GAME CHANGER`, `2K14 PATH TO GREATNESS LEGACY`
+    - Bottom `DAILY / SEASONAL / LIFETIME CHALLENGES` interactive progress strip with claimable VC rewards!
+  - **BOTTOM FOOTER BAR (2–98% W, 88–97% H)**: Controller/Keyboard Prompt Legend (`[Enter/A] Select`, `[Esc/B] Back`, `[M/Y] Open City Map`, `[F/X] Quick Match`, `[Q/E] Switch Tabs`) + Live Telemetry Widget (`60 FPS | 12ms`).
+
+--------------------------------------------------------------------------------
+5. PRE-GAME MATCHUP & TEAM SELECT SCREEN (`src/components/PlayNowSetup.tsx`)
+--------------------------------------------------------------------------------
+Build the complete side-by-side **Away vs Home Team Select Screen** (styled dynamically for 2K14 or 2K26):
+- Era Pool Filter pills per side: `[2013-14 2K14]` | `[2025-26 2K26]` | `[LEGENDS]` | `[EUROLEAGUE '14]` | `[THE W / WNBA]`
+- Team selector arrows (`<` `>`) showing custom procedural SVG Team Emblem, Team OVR / OFF / DEF bars, Star Player Spotlight, and Starting 5 Preview.
+- Jersey Switcher (`HOME`, `AWAY`, `CITY EDITION`, `CLASSIC THROWBACK`), Venue Selector (all 8 venues/parks), Quarter Length (`2`–`12` min), Difficulty (`Rookie`–`Hall of Fame`), and Side Select (`AWAY` | `CPU vs CPU` | `HOME`).
+- Giant glowing `[TIP-OFF / START GAME]` button.
+
+DELIVERABLE FOR PART 1:
+Ensure the app boots cleanly with zero TypeScript errors, full animated 3D Main Menu backgrounds, instant 2K14 <-> 2K26 UI skin switching, working 2K Beats Jukebox & Web Audio SFX, Play Now Setup screen, and clean navigation hooks ready for Parts 2–7.

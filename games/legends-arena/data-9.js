@@ -1,0 +1,2148 @@
+(function(ArcadeMod){
+// === MODULE: src/games/legends-arena/mlbb/data/heroesSupport ===
+ArcadeMod.define("src/games/legends-arena/mlbb/data/heroesSupport", function(require, module, exports) {
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "MLBB_HEROES_SUPPORT", {
+    enumerable: true,
+    get: function() {
+        return MLBB_HEROES_SUPPORT;
+    }
+});
+var MLBB_HEROES_SUPPORT = [
+    {
+        "id": "angela",
+        "name": "Angela",
+        "title": "Bunnylove",
+        "role": "Support",
+        "lane": "Roam",
+        "specialty": "Guard · Support",
+        "costBp": 0,
+        "costDiamonds": 0,
+        "starter": true,
+        "primaryColor": "#10B981",
+        "accentColor": "#A7F3D0",
+        "weaponIcon": "💚",
+        "resource": "mana",
+        "attackRange": 430,
+        "isRanged": true,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 47
+        },
+        "passiveName": "Smart Heart",
+        "passiveDesc": "Casting a skill increases Angela's Movement Speed by +7.5% (stacks up to +30% for 4s); this speed bonus is shared with the allied host while attached.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Love Waves",
+                "icon": "🌿",
+                "desc": "[PROJECTILE_LINE] Stores up to 5 charges. Fires a wave of heart energy healing allies (150 + 60% Magic Power) and damaging enemies (170 + 80% Magic Power) while applying **Lover's Mark** (stacks up to 5, increasing damage taken by +4% per stack and slowing 8% per stack).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "projectile",
+                "color": "#10B981",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Puppet-on-a-String",
+                "icon": "💖",
+                "desc": "[TETHER] Attaches a puppet string to target enemy dealing 300 (+40% Magic Power) Magic Damage and gradually slowing up to 80%; if the enemy fails to break the tether within 3s, they are **Immobilized** for 1.5s and take 450 (+60% Magic Power) burst damage.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "tether",
+                "color": "#A7F3D0",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "root",
+                "ccDuration": 1.2
+            },
+            {
+                "slot": 3,
+                "name": "Heartguard",
+                "icon": "🌟",
+                "desc": "[GLOBAL_CAST / TETHER] Channels 2s to grant any selected allied hero globally a massive Shield (1200 + 200% Magic Power), then teleports **inside** that ally for 12s, allowing Angela to cast zero-mana S1 and S2 from the host's position (recast detaches early).",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 1200,
+                "radius": 175,
+                "telegraph": "ally",
+                "physics": "attach",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Bunnylove",
+                "tag": "Classic",
+                "color": "#10B981",
+                "accent": "#A7F3D0",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Angela",
+                "tag": "Collector",
+                "color": "#A7F3D0",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "carmilla",
+        "name": "Carmilla",
+        "title": "Shadow of Twilight",
+        "role": "Support",
+        "secondaryRole": "Tank",
+        "lane": "Roam",
+        "specialty": "Crowd Control · Damage",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#14B8A6",
+        "accentColor": "#99F6E4",
+        "weaponIcon": "🪷",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 69
+        },
+        "passiveName": "Vampire Pact",
+        "passiveDesc": "Damaging enemy heroes steals 7–11 Physical & Magic Defense from each target (5s cooldown per target, stacks up to 5 times = +55 Hybrid DEF).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Crimson Flower",
+                "icon": "🕊️",
+                "desc": "[ORBIT] Summons 2 spinning blood blossoms (5s, +25% decaying MS) dealing 100 (+50% Magic Power) Magic Damage per hit, slowing 10%, and healing Carmilla (75 + 35% Magic Power).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#14B8A6",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Bloodbath",
+                "icon": "💚",
+                "desc": "[SELF_BUFF / TARGET_LOCK] Gains +70% decaying MS for 3.5s; recasting hurls blood energy dealing 150 (+120% Magic Power) Magic Damage and **Stunning** target for 0.6s–1.2s based on charge time.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 0,
+                "radius": 125,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#99F6E4",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1
+            },
+            {
+                "slot": 3,
+                "name": "Curse of Blood",
+                "icon": "🌟",
+                "desc": "[GROUND_AOE / TETHER] Casts a wide blood circle linking up to 3 nearby enemy heroes for 5s (dealing 450 + 130% Magic Power and 50% Slow); whenever ANY linked enemy takes damage or Crowd Control, 70% of that damage and CC is duplicated onto all other linked enemies!",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "tether",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Shadow of Twilight",
+                "tag": "Classic",
+                "color": "#14B8A6",
+                "accent": "#99F6E4",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Carmilla",
+                "tag": "Collector",
+                "color": "#99F6E4",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "chip",
+        "name": "Chip",
+        "title": "Phase Technician",
+        "role": "Support",
+        "secondaryRole": "Tank",
+        "lane": "Roam",
+        "specialty": "Support · Crowd Control",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#14B8A6",
+        "accentColor": "#99F6E4",
+        "weaponIcon": "🌿",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 70
+        },
+        "passiveName": "Snack Time!",
+        "passiveDesc": "Out of combat (5s), Chip eats potato chips restoring 150 (+15% Missing HP) per bite (4 bites total).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Crash Course",
+                "icon": "💖",
+                "desc": "[GROUND_AOE / STUN] Slams hovercraft onto ground dealing 220 (+6% Target Max HP) Magic Damage, granting a Shield (300 + 60% Magic Power), and applying **Chip's Mark** so Chip's next Basic Attack charges onto the target and **Stuns** all nearby enemies for 0.6s.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#14B8A6",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1
+            },
+            {
+                "slot": 2,
+                "name": "Overtime",
+                "icon": "🔔",
+                "desc": "[SELF_BUFF / KNOCKBACK] Accelerates hovercraft up to +65% MS (2s), empowering next Basic Attack to dash-ram target (200 + 45% Magic Power) and knock them back.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#99F6E4",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "knockback",
+                "ccDuration": 0.8
+            },
+            {
+                "slot": 3,
+                "name": "Shortcut",
+                "icon": "🌟",
+                "desc": "[GLOBAL_CAST / SUMMON] Drops a **Main Portal** onto target enemy hero (200 + 60% Magic Power + 30% slow) while simultaneously opening **Connecting Portals** beside all 4 allied heroes globally for 10s, allowing teammates to teleport straight into the fight (and return back if desired). [Alt Form / S4: Why Walk?]",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 1200,
+                "radius": 175,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Phase Technician",
+                "tag": "Classic",
+                "color": "#14B8A6",
+                "accent": "#99F6E4",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Chip",
+                "tag": "Collector",
+                "color": "#99F6E4",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "diggie",
+        "name": "Diggie",
+        "title": "Timekeeper",
+        "role": "Support",
+        "lane": "Roam",
+        "specialty": "Guard · Poke",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#14B8A6",
+        "accentColor": "#99F6E4",
+        "weaponIcon": "🌿",
+        "resource": "mana",
+        "attackRange": 430,
+        "isRanged": true,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 72
+        },
+        "passiveName": "Young Again",
+        "passiveDesc": "Upon death, Diggie reverses time and transforms into an invulnerable, untargetable mobile **Egg** (25 Magic Dmg skill) that scouts the map and respawns directly at his Egg location when the death timer finishes.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Auto Alarm Bomb",
+                "icon": "💖",
+                "desc": "[SUMMON / GROUND_AOE] Stores up to 3 charges. Throws an owl alarm (25s duration) that chases nearby enemies and explodes (500 + 100% Magic Power, 30% slow) while stacking +2% permanent Magic Power per hero hit (up to 60 stacks).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#14B8A6",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Reverse Time",
+                "icon": "🔔",
+                "desc": "[TETHER / KNOCKBACK] Marks target enemy (150 + 100% Magic Power, 80% Slow); after 4s (or if target leaves the circle), yanks them straight back to the starting spot (150 + 100% Magic Power).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#99F6E4",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "knockback",
+                "ccDuration": 0.8
+            },
+            {
+                "slot": 3,
+                "name": "Time Journey",
+                "icon": "🌟",
+                "desc": "[SELF_BUFF] Immediately **cleanses ALL Crowd Control** from Diggie and all nearby allies, granting 3s of complete **CC Immunity**, +50% MS (0.5s), and a massive Shield (650 + 300% Magic Power).",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 0,
+                "radius": 175,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Timekeeper",
+                "tag": "Classic",
+                "color": "#14B8A6",
+                "accent": "#99F6E4",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Diggie",
+                "tag": "Collector",
+                "color": "#99F6E4",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "estes",
+        "name": "Estes",
+        "title": "Moon Elf King",
+        "role": "Support",
+        "lane": "Roam",
+        "specialty": "Regen · Guard",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EC4899",
+        "accentColor": "#FBCFE8",
+        "weaponIcon": "🕊️",
+        "resource": "mana",
+        "attackRange": 430,
+        "isRanged": true,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 90
+        },
+        "passiveName": "Scripture of the Moon Elf",
+        "passiveDesc": "Charges Lunar Energy (100 max); at full charge, next Basic Attack deals 250 (+100% Total Phys ATK) (+150% Magic Power) bouncing Magic Damage and slows 60% (1.5s).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Moonlight Immersion",
+                "icon": "💚",
+                "desc": "[TARGET_LOCK / TETHER] Instantly heals target ally (250 + 110% Magic Power) and links a 3s tether restoring 325 (+60% Magic Power) over 3s while boosting both Estes's and the ally's Hybrid Attack.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "tether",
+                "color": "#EC4899",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 2,
+                "name": "Domain of Moon Goddess",
+                "icon": "🌿",
+                "desc": "[GROUND_AOE] Drops a wide lunar barrier circle (350 + 70% Magic Power); enemies touching the outer border suffer a massive 90% Slow for 1.5s.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#FBCFE8",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 3,
+                "name": "Blessing of Moon Goddess",
+                "icon": "🌟",
+                "desc": "[SELF_BUFF / TETHER] Casts an enhanced **Moonlight Immersion** simultaneously onto **every allied hero** within range, continuously restoring 1260 (+210% Magic Power) HP over 8s.",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 620,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "tether",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Moon Elf King",
+                "tag": "Classic",
+                "color": "#EC4899",
+                "accent": "#FBCFE8",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Estes",
+                "tag": "Collector",
+                "color": "#FBCFE8",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "faramis",
+        "name": "Faramis",
+        "title": "Soul Binder",
+        "role": "Support",
+        "secondaryRole": "Mage",
+        "lane": "Mid",
+        "specialty": "Guard · Charge",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EC4899",
+        "accentColor": "#FBCFE8",
+        "weaponIcon": "💖",
+        "resource": "mana",
+        "attackRange": 430,
+        "isRanged": true,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 91
+        },
+        "passiveName": "Vicious Retrieval",
+        "passiveDesc": "Nearby dying units drop **Soul Fragments**; collecting them heals Faramis (150 + 60% Magic Power), grants +2 permanent Magic Power (max 40), and shortens his respawn timer by 3% per fragment (up to 90%).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Shadow Stampede",
+                "icon": "🔔",
+                "desc": "[SELF_BUFF / HOOK_PULL] Enters 3s Shadow state (+70% MS, +25 Hybrid DEF, **phases through map walls**) tagging collided enemies (250 + 60% Magic Power); when the state ends (or on recast), yanks all tagged enemy heroes straight to Faramis.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "displacement",
+                "color": "#EC4899",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "pull",
+                "ccDuration": 0.7
+            },
+            {
+                "slot": 2,
+                "name": "Ghost Bursters",
+                "icon": "🪷",
+                "desc": "[CONE_SWEEP] Fan nether blast (330 + 144% Magic Power) that splits into up to 3 bouncing energy arcs (200 + 72% Magic Power each) per enemy hit.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#FBCFE8",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 3,
+                "name": "Cult Altar",
+                "icon": "🌟",
+                "desc": "[GROUND_AOE / SELF_BUFF] Transforms surroundings into the **Nether Realm** for 6s, granting all allied heroes inside an extra **Specter HP Bar** (700 + 150% Magic Power + 15% Extra HP) and +50% MS; if an ally's Specter HP breaks, they enter 1s Invulnerable resurrection instead of dying!",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 0,
+                "radius": 175,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Soul Binder",
+                "tag": "Classic",
+                "color": "#EC4899",
+                "accent": "#FBCFE8",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Faramis",
+                "tag": "Collector",
+                "color": "#FBCFE8",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "floryn",
+        "name": "Floryn",
+        "title": "Budding Hope",
+        "role": "Support",
+        "lane": "Roam",
+        "specialty": "Poke · Guard",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#10B981",
+        "accentColor": "#A7F3D0",
+        "weaponIcon": "🔔",
+        "resource": "mana",
+        "attackRange": 430,
+        "isRanged": true,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 58
+        },
+        "passiveName": "Dew",
+        "passiveDesc": "Equips unique **Lantern of Hope** (0g item slot, evolves at 1000 energy) and gifts **Flower of Hope** (0g item slot) to 1 chosen ally (swapable at Base), granting +10% Hybrid Attack and converting heals into shields.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Sow",
+                "icon": "🪷",
+                "desc": "[TARGET_LOCK / HOMING] Fires an energy seed (220 + 150% Magic Power) that sprouts healing fruits bouncing to nearby allies (175 + 90% Magic Power + 5% Target Missing HP).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "projectile",
+                "color": "#10B981",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 2,
+                "name": "Sprout",
+                "icon": "🕊️",
+                "desc": "[PROJECTILE_LINE / STUN] Fires a nature orb (225 + 90% Magic Power) that explodes upon hitting an enemy or max range, **Stunning** all enemies in AoE for 1s.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "projectile",
+                "color": "#A7F3D0",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1
+            },
+            {
+                "slot": 3,
+                "name": "Bloom",
+                "icon": "🌟",
+                "desc": "[GLOBAL_CAST] Channels 2s to send 2 global waves of healing (400 + 100% Magic Power each) to **ALL 5 allied heroes anywhere on the map** (ignoring distance), removing all Anti-Heal debuffs and damaging enemies near healed allies!",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 1200,
+                "radius": 175,
+                "telegraph": "ring",
+                "physics": "channel",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Budding Hope",
+                "tag": "Classic",
+                "color": "#10B981",
+                "accent": "#A7F3D0",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Floryn",
+                "tag": "Collector",
+                "color": "#A7F3D0",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "kaja",
+        "name": "Kaja",
+        "title": "Nazar King",
+        "role": "Support",
+        "secondaryRole": "Fighter",
+        "lane": "Roam",
+        "specialty": "Control · Charge",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#14B8A6",
+        "accentColor": "#99F6E4",
+        "weaponIcon": "🌿",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 84
+        },
+        "passiveName": "Wrath Sanction",
+        "passiveDesc": "Every 6s, Kaja's Basic Attack chains lightning (100 + 100% Magic Power + 4% Target Max HP Magic Damage) and inflicts **Paralysis** (slows 30% and reduces enemy damage dealt by 8%, stacking up to 4 times = -32% enemy damage!).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Ring of Order",
+                "icon": "💖",
+                "desc": "[GROUND_AOE] Emits an expanding electric ring (135 + 70% Magic Power) applying Paralysis, healing Kaja (100 + 40% Magic Power) per hero hit, and cutting Passive CD by 1s per hit.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#14B8A6",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 2,
+                "name": "Lightning Bomb",
+                "icon": "🔔",
+                "desc": "[DASH] Dashes forward leaving 3 lightning orbs (200 + 80% Magic Power each) that explode when touched by enemies.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#99F6E4",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Divine Judgment",
+                "icon": "🌟",
+                "desc": "[TARGET_LOCK / SUPPRESSION] Deals 300 (+100% Magic Power) Magic Damage and **Suppresses** target enemy hero for 1.5s (un-purifiable), allowing Kaja to drag the suppressed target behind him while moving!",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "suppression",
+                "ccDuration": 1.6
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Nazar King",
+                "tag": "Classic",
+                "color": "#14B8A6",
+                "accent": "#99F6E4",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Kaja",
+                "tag": "Collector",
+                "color": "#99F6E4",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "kalea",
+        "name": "Kalea",
+        "title": "Surging Wave",
+        "role": "Support",
+        "secondaryRole": "Fighter",
+        "lane": "Roam",
+        "specialty": "Control · Regen",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EC4899",
+        "accentColor": "#FBCFE8",
+        "weaponIcon": "💖",
+        "resource": "none",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 0,
+        "manaGrowth": 0,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 51
+        },
+        "passiveName": "Surge of Life",
+        "passiveDesc": "Casting any skill creates a 6s **Water Zone** on the ground (grants vision inside bushes). Casting a skill while standing inside an existing Water Zone absorbs it to empower Kalea's next 3 Basic Attacks: **1st BA** dashes to target (+100% Total Phys ATK); **2nd BA** unleashes 4 rapid water strikes launching healing projectiles to the lowest-HP nearby ally; **3rd BA** slams tail in AoE dealing bonus damage and refreshing a Water Zone.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Wavebreaker",
+                "icon": "🔔",
+                "desc": "[GROUND_AOE] Slams fist into the ground generating a tidal wave dealing 250 (+5% Total HP) Physical Damage to nearby enemies and slowing them 40% for 1.5s.",
+                "manaCost": 0,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#EC4899",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Tidal Strike",
+                "icon": "🪷",
+                "desc": "[DASH / AIRBORNE] Charges forward body-slamming the first enemy hero (150 + 60% Total Phys ATK, 0.6s **Airborne**). If Kalea hits a map obstacle or touches the edge of a **Water Zone**, she leaps into the air (2s window) to recast and slam down at target spot (150 + 60% Total Phys ATK, 0.6s **Airborne**).",
+                "manaCost": 0,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#FBCFE8",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Tsunami Slam",
+                "icon": "🌟",
+                "desc": "[TARGET_LOCK / AIRBORNE] Gains **CC Immunity**, grabs target enemy hero with her serpent tail, and slams them down in joystick direction (7.5 units) dealing 300 (+80% Total Phys ATK) Physical Damage and heavy AoE knockup!",
+                "manaCost": 0,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "cone",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Surging Wave",
+                "tag": "Classic",
+                "color": "#EC4899",
+                "accent": "#FBCFE8",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Kalea",
+                "tag": "Collector",
+                "color": "#FBCFE8",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "lolita",
+        "name": "Lolita",
+        "title": "Steel Elf",
+        "role": "Support",
+        "secondaryRole": "Tank",
+        "lane": "Roam",
+        "specialty": "Guard · Crowd Control",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#EC4899",
+        "accentColor": "#FBCFE8",
+        "weaponIcon": "💖",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 55
+        },
+        "passiveName": "Noumenon Energy Core",
+        "passiveDesc": "Out of combat (5s) charges core to grant a Shield (80 + 20 * Lv) to Lolita and nearby allies every 5s (stacks up to 3 times).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Power Charge",
+                "icon": "🔔",
+                "desc": "[DASH / STUN] Dashes forward empowering next Basic Attack (4s) to lunge onto target (200 + 100% Total Phys ATK + 3.5%–6% Target Max HP) and **Stun** for 0.5s.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#EC4899",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1,
+                "wallCross": true
+            },
+            {
+                "slot": 2,
+                "name": "Guardian's Reflection",
+                "icon": "🪷",
+                "desc": "[CHANNEL / PROJECTILE_LINE] Raises a wide directional energy shield (3s) that **blocks AND reflects ALL incoming enemy ranged Basic Attacks and projectiles** (1500–3000 shield HP cap) straight back at enemies!",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 175,
+                "telegraph": "ring",
+                "physics": "channel",
+                "color": "#FBCFE8",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 3,
+                "name": "Noumenon Blast",
+                "icon": "🌟",
+                "desc": "[CHANNEL / CONE_SWEEP / STUN] Charges a massive wide fan cone (up to 2s, slowing enemies 75%); releasing deals 350–700 (+100% Total Phys ATK) Physical Damage and **Stuns** everyone inside for up to 2s (comboable with Flicker!).",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "ring",
+                "physics": "channel",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Steel Elf",
+                "tag": "Classic",
+                "color": "#EC4899",
+                "accent": "#FBCFE8",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Lolita",
+                "tag": "Collector",
+                "color": "#FBCFE8",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "marcel",
+        "name": "Marcel",
+        "title": "Soul Photographer",
+        "role": "Support",
+        "secondaryRole": "Tank",
+        "lane": "Roam",
+        "specialty": "Crowd Control · Support",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#14B8A6",
+        "accentColor": "#99F6E4",
+        "weaponIcon": "🌿",
+        "resource": "mana",
+        "attackRange": 145,
+        "isRanged": false,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 118,
+        "physAtkGrowth": 11,
+        "baseMagicPow": 0,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 90
+        },
+        "passiveName": "Platinum Snap",
+        "passiveDesc": "Split soul camera **Clemar** converts Extra HP into 1.5% Hybrid Defense (cannot Crit or gain ATK Spd), scales Basic Attacks with 40% Total Phys ATK + 40% Phys DEF + 40% Magic DEF, and automatically snapshots nearby enemy heroes (12s CD per target, cut by 1s per BA) inflicting brief **Frozen Moment** stasis, dealing 20 + 5% Target Max HP **True Damage**, and granting an equal Shield to Marcel and nearest ally.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Framed Moment",
+                "icon": "💖",
+                "desc": "[GROUND_AOE / IMMOBILIZE] Clemar focuses an area around Marcel slowing enemies by 20%–60%; after 2.5s completes the shot dealing 370 (+50% Total Phys ATK) (+100% Phys DEF) (+100% Magic DEF) Physical Damage and **Immobilizing** enemies for 1s.",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 340,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#14B8A6",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "root",
+                "ccDuration": 1.2
+            },
+            {
+                "slot": 2,
+                "name": "Tracking Shot",
+                "icon": "🔔",
+                "desc": "[SELF_BUFF / DASH] Enters 3s **Tracking Haste** (+15% MS, surging to +75% when moving toward enemy heroes); recasting dashes in target direction leaving a framing phantom while Clemar finishes *Framed Moment* at the original spot.",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0.85,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#99F6E4",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Golden Hour",
+                "icon": "🌟",
+                "desc": "[GROUND_AOE / STASIS] Clemar projects a wide-angle 3s temporal stasis zone putting all other heroes, turrets, and flying projectiles inside into **Frozen Moment** stasis (ranged attacks/projectiles freeze mid-air and resume simultaneously when the 3s frame ends!), resets *Platinum Snap* on all enemies, and lets Marcel & shielded allies move freely inside!",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 1.35,
+                "magicScale": 0,
+                "damageType": "physical",
+                "range": 420,
+                "radius": 175,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "freeze",
+                "ccDuration": 1.1
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Soul Photographer",
+                "tag": "Classic",
+                "color": "#14B8A6",
+                "accent": "#99F6E4",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Marcel",
+                "tag": "Collector",
+                "color": "#99F6E4",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "mathilda",
+        "name": "Mathilda",
+        "title": "Swift Plume",
+        "role": "Support",
+        "secondaryRole": "Assassin",
+        "lane": "Roam",
+        "specialty": "Initiator · Guard",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#14B8A6",
+        "accentColor": "#99F6E4",
+        "weaponIcon": "🪷",
+        "resource": "mana",
+        "attackRange": 430,
+        "isRanged": true,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 91
+        },
+        "passiveName": "Ancestral Guidance",
+        "passiveDesc": "Moving charges Guidance; at 100, next Basic Attack deals 150 (+100% Total Phys ATK) (+100% Magic Power) Magic Damage and grants +80 decaying MS (2.5s).",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Soul Bloom",
+                "icon": "🕊️",
+                "desc": "[ORBIT / HOMING] Gathers up to 6 wisps (3.5s) while moving; recasting (or expiring) hurls all wisps at nearby enemies (275 + 80% Magic Power first wisp; 20% per extra wisp).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#14B8A6",
+                "foreswing": 0.1,
+                "backswing": 0.14
+            },
+            {
+                "slot": 2,
+                "name": "Guiding Wind",
+                "icon": "💚",
+                "desc": "[DASH / SELF_BUFF] Dashes granting a Shield (500 + 180% Magic Power) + +25% MS to Mathilda and nearby allies, while giving 1 allied hero a temporary **Guiding Wind** action button to fly straight to Mathilda's position!",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 420,
+                "radius": 125,
+                "telegraph": "line",
+                "physics": "dash",
+                "color": "#99F6E4",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "wallCross": true
+            },
+            {
+                "slot": 3,
+                "name": "Circling Eagle",
+                "icon": "🌟",
+                "desc": "[TARGET_LOCK / ORBIT / AIRBORNE] Locks onto target enemy hero (600 Shield + **CC Immunity**), orbiting them rapidly for 2s firing wisps (40 + 15% Magic Power) before slamming into the target (400 + 120% Magic Power) and knocking enemies **Airborne** (0.6s).",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 620,
+                "radius": 175,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "airborne",
+                "ccDuration": 0.8
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Swift Plume",
+                "tag": "Classic",
+                "color": "#14B8A6",
+                "accent": "#99F6E4",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Mathilda",
+                "tag": "Collector",
+                "color": "#99F6E4",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    },
+    {
+        "id": "rafaela",
+        "name": "Rafaela",
+        "title": "Wings of Holiness",
+        "role": "Support",
+        "lane": "Roam",
+        "specialty": "Regen · Guard",
+        "costBp": 32000,
+        "costDiamonds": 599,
+        "starter": false,
+        "primaryColor": "#10B981",
+        "accentColor": "#A7F3D0",
+        "weaponIcon": "🔔",
+        "resource": "mana",
+        "attackRange": 430,
+        "isRanged": true,
+        "baseHp": 2560,
+        "hpGrowth": 165,
+        "baseMana": 480,
+        "manaGrowth": 42,
+        "basePhysAtk": 105,
+        "physAtkGrowth": 6,
+        "baseMagicPow": 24,
+        "basePhysDef": 17,
+        "physDefGrowth": 3.6,
+        "baseMagicDef": 15,
+        "magicDefGrowth": 2,
+        "baseMoveSpd": 246,
+        "baseAtkSpd": 0.84,
+        "ratings": {
+            "durability": 62,
+            "offense": 64,
+            "control": 82,
+            "difficulty": 80
+        },
+        "passiveName": "Divine Resurrection / Deity Penalization",
+        "passiveDesc": "Enhances healing/allied resurrection utility and punishes attackers with holy retribution upon death.",
+        "skills": [
+            {
+                "slot": 1,
+                "name": "Light of Retribution",
+                "icon": "🪷",
+                "desc": "[GROUND_AOE] Strikes 3 nearest enemies (225 + 120% Magic Power), revealing invisible/camouflaged enemies, slowing 40% (1.5s), and stacking +20% extra damage per consecutive hit (up to 3 stacks).",
+                "manaCost": 55,
+                "cooldown": [
+                    8.5,
+                    8,
+                    7.5,
+                    7,
+                    6.5,
+                    6
+                ],
+                "baseDmg": [
+                    210,
+                    250,
+                    290,
+                    330,
+                    370,
+                    410
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 540,
+                "radius": 125,
+                "telegraph": "circle",
+                "physics": "aoe",
+                "color": "#10B981",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 2,
+                "name": "Holy Healing",
+                "icon": "🕊️",
+                "desc": "[SELF_BUFF] Restores 150 (+65% Magic Power) HP to all nearby allies (extra 150 + 60% Magic Power to lowest-HP ally), **cleanses slows**, and grants +50% MS (1s) + +30% MS (1.5s).",
+                "manaCost": 65,
+                "cooldown": [
+                    10,
+                    9.5,
+                    9,
+                    8.5,
+                    8,
+                    7.5
+                ],
+                "baseDmg": [
+                    230,
+                    270,
+                    310,
+                    350,
+                    390,
+                    430
+                ],
+                "physScale": 0,
+                "magicScale": 0.9,
+                "damageType": "magic",
+                "range": 0,
+                "radius": 125,
+                "telegraph": "self",
+                "physics": "buff",
+                "color": "#A7F3D0",
+                "foreswing": 0.1,
+                "backswing": 0.14,
+                "ccType": "slow",
+                "ccDuration": 1.5
+            },
+            {
+                "slot": 3,
+                "name": "Holy Baptism",
+                "icon": "🌟",
+                "desc": "[PROJECTILE_LINE / STUN] Fires a wide beam of holy light (460 + 120% Magic Power) **Stunning** all enemies in path for 1.5s and slowing 40% afterward.",
+                "manaCost": 110,
+                "cooldown": [
+                    38,
+                    33,
+                    28
+                ],
+                "baseDmg": [
+                    460,
+                    620,
+                    780
+                ],
+                "physScale": 0,
+                "magicScale": 1.4,
+                "damageType": "magic",
+                "range": 620,
+                "radius": 175,
+                "telegraph": "line",
+                "physics": "projectile",
+                "color": "#F5C451",
+                "foreswing": 0.16,
+                "backswing": 0.14,
+                "ccType": "stun",
+                "ccDuration": 1
+            }
+        ],
+        "recommendedBuild": [
+            "magic_shoes",
+            "flask_of_the_oasis",
+            "enchanted_talisman",
+            "dominance_ice",
+            "oracle",
+            "immortality"
+        ],
+        "skins": [
+            {
+                "id": "default",
+                "name": "Wings of Holiness",
+                "tag": "Classic",
+                "color": "#10B981",
+                "accent": "#A7F3D0",
+                "costDiamonds": 0
+            },
+            {
+                "id": "collector",
+                "name": "Arcane Rafaela",
+                "tag": "Collector",
+                "color": "#A7F3D0",
+                "accent": "#F5C451",
+                "costDiamonds": 450
+            }
+        ]
+    }
+];
+
+});
+
+})(window.ArcadeMod);

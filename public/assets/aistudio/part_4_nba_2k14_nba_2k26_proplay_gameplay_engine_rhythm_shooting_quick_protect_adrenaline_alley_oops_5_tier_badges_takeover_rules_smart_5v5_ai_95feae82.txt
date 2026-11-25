@@ -1,0 +1,94 @@
+================================================================================
+PART 4 OF 7 — GOOGLE AI STUDIO INCREMENTAL BUILD PROMPT
+PROJECT: NBA 2K14 + NBA 2K26 ULTIMATE HYBRID — 100% EXACT 3D WEBGL CLONE
+SCOPE: DETERMINISTIC 60 FPS BASKETBALL PHYSICS & PROPLAY™ GAMEPLAY ENGINE —
+       RHYTHM SHOOTING, LAYUPS/DUNKS, QUICK PROTECT, ADRENALINE, PASSING/OOPS,
+       DEFENSE/REBOUNDING, 5-TIER BADGES, TAKEOVER, NBA RULES & SMART 5V5 AI
+================================================================================
+
+CONTINUE BUILDING IN THE SAME PROJECT FROM PARTS 1–3. DO NOT REMOVE OR BREAK ANY PREVIOUS FILES.
+
+In Part 4, build the complete, deterministic 60 FPS **Basketball Physics & ProPLAY™ Simulation Engine** (`src/engine/BasketballSimulation.ts`, `src/engine/BadgeEngine.ts`, `src/engine/AISystem.ts`) that drives `Court3D.tsx` and captures the exact feel of **NBA 2K14's fluid control** + **NBA 2K26's skill-based ProPLAY™ mechanics**.
+
+--------------------------------------------------------------------------------
+1. SHOOTING & NBA 2K26 ENHANCED RHYTHM SHOOTING (`BasketballSimulation.ts`)
+--------------------------------------------------------------------------------
+Implement TWO authentic shooting methods plus full NBA 2K26 shot math:
+- **Method A: Button Shooting (`Space` / `X` / `Square` / Touch Shoot Hold)**:
+  - Holding initiates the shooter's jump-shot gather (`shotProgress` climbs from `0.0` to `1.0` scaled by `player.jumpshotSpeed` and selected Visual Cue `JUMP | SET_POINT | PUSH | RELEASE`).
+  - Releasing inside the **Dynamic Green Window** yields `EXCELLENT (GREEN)` -> guaranteed swish + green splash VFX + SoundEngine chime!
+- **Method B: NBA 2K26 Rhythm Shooting (Right Stick Down->Up / Mouse Drag Down->Up / Touch Pro-Stick Swipe)**:
+  - Pulling down starts the gather; flicking up at set-point evaluates BOTH:
+    1. **Timing** (when you started pushing up)
+    2. **Tempo** (matching flick speed to shooter's natural rhythm — fast flick speeds up release to beat closeouts!).
+  - Nailing Rhythm Tempo expands the **Green Window by +12%** and triggers `"RHYTHM: PERFECT"` feedback!
+- **No-Dip Catch-and-Shoot**: Holding `Quick Protect` (`Shift`/`LT`) while stationary before catching a pass triggers an instant high-set catch-and-shoot with `-20%` gather time.
+- **Exact Shot Percentage & Contest Formula**:
+  - Computes real contest (`0% Open` -> `100% Smothered`) based on nearest defender distance, height/wingspan delta, `perimeterDef`/`interiorDef`, and whether defender has Hands-Up or jumped to contest.
+  - Factors: Shooter Rating (`closeShot`/`midRange`/`threePt`), Distance (`2PT` vs `3PT` vs `Limitless` deep 3), **Hot/Cold Zone** (`+8%` Hot / `-6%` Cold), Stamina/Adrenaline penalty, **No-Meter Bonus (`+15%` Green Window when Shot Meter is OFF)**, Active Badges (`Deadeye`, `Limitless Range`, `Set Shot Specialist`, `Shifty Shooter`, `Mini Marksman`), Difficulty (`Rookie` forgiving -> `Hall of Fame` tight), and **Shot Timing Profile** (`GREEN_OR_MISS` 2K26 Competitive | `HIGH_RISK` | `NORMAL` | `LOW_RISK` | `REAL_PLAYER_PCT` 2K14 Classic).
+  - **Realistic 3D Parabolic Ball Arc**: Computes clean 3D flight trajectory to the rim; Green shots swish cleanly through center; Slight Early/Late shots either bank/rattle in or bounce off the rim with physically realistic rebound trajectories (`reboundVelocity`, rim bounce spin, backboard carom).
+
+--------------------------------------------------------------------------------
+2. FINISHING, EURO-STEPS & SKILL DUNK METER
+--------------------------------------------------------------------------------
+When initiating a shot inside `4.2m` of the hoop while moving:
+- **Dunk vs Layup Selection**: Factors `drivingDunk`, `vertical`, `speed`, sprint held, and paint defender proximity.
+- **Finishing Moves**:
+  - *Standard / Reverse Layup*: Moving baseline triggers smooth reverse layup protected by the rim.
+  - *Floater / Tear Drop*: Pressing Shoot while pulling away from basket inside mid-paint launches a high-arcing floater (`Float Game` badge).
+  - *Euro-Step & 2K26 Slow-Motion Euro-Step*: Double-tap Shoot (or tap `Quick Protect` mid-drive) executes a lateral Euro-Step that freezes help defenders (`Layup Mixmaster` badge).
+  - *2K26 Skill Dunk Meter*: Triggered on aggressive contact dunks (Sprint + Rhythm Dunk / Down-Up). A fast timing meter pops up; greening it triggers a **Poster Contact Dunk** with rim-hang animation, camera shake, crowd eruption, and `Posterizer` badge pop-up! High enemy `interiorDef` + `Paint Patroller` visibly shrinks the dunk green window.
+
+--------------------------------------------------------------------------------
+3. DRIBBLING, 3-BAR ADRENALINE & 2K26 QUICK PROTECT
+--------------------------------------------------------------------------------
+- **3 Adrenaline Boost Bars** per possession (refills on possession change or after ball-handler passes):
+  - Chaining explosive speed boosts (`Sprint` burst) or dribble combos consumes 1 bar (`Lightning Launch` & `Handles For Days` reduce drain). At `0` bars, burst speed drops `-18%` and shooting green window tightens.
+- **Signature Dribble Moves** (Pro-Stick flicks / `Q` Crossover, `E` Behind-the-Back/Spin, `Z` Step-Back/Hesi, or Mobile Dribble Swipes):
+  - Crossing up a defender who over-commits triggers an **Ankle Breaker** stumble (`Ankle Assassin` badge) opening a wide-open lane or step-back 3!
+- **2K26 Quick Protect (`Shift` / `LT` / Touch Protect)**:
+  - Shields the ball cleanly on the hip away from the defender (`Unpluckable` boost). If the defender spams Steal during Quick Protect, they whiff and get trapped behind your hip ("defender jail") for an automatic blow-by or reach-in foul!
+
+--------------------------------------------------------------------------------
+4. PASSING, ICON PASSING, WRAP PASSES & ALLEY-OOPS
+--------------------------------------------------------------------------------
+- **Chest Pass (`J`/`A`)**: Fast directional pass toward teammate closest to stick aim (`Dimer` boosts receiver's next shot!).
+- **Bounce Pass (`K`/`B`)**: Low pass under outstretched arms.
+- **2K26 Wrap Pass (Double-tap `K`/`B`)**: Smooth around-the-defender wrap pass ideal for feeding rollers in Pick & Roll.
+- **Icon Passing (`Tab`/`RB`)**: Toggles position labels (`[1] PG`, `[2] SG`, `[3] SF`, `[4] PF`, `[5] C`) over teammates; pressing `1–5` (or tapping the teammate icon) zips an immediate pass.
+- **Alley-Oop (`Double-tap L`/`Y` or Touch Alley-Oop)**: Lobs high toward a cutting teammate (`Aerial Wizard` badge). On Pro+ difficulty, pops up a **2K26 Randomized Finish Button Prompt** (`[A]`, `[B]`, `[X]`, or `[Y]` / Touch Tap!) mid-air—hitting it within the window slams down a thunderous Alley-Oop dunk!
+
+--------------------------------------------------------------------------------
+5. DEFENSE, STEALS, BLOCKS & 2K26 REBOUND TIMING
+--------------------------------------------------------------------------------
+- **Intense-D / Defensive Slide (`Shift`/`LT`)**: Squares hips toward ball-handler, engages physical body-up bumps (`Perimeter Challenger` + `strength` clamp blow-bys!).
+- **Hands-Up Contest (`Hold Right Stick Up` / `Hold U` / Auto-Contest toggle)**: Raises arms cleanly to contest shots without jumping on pump fakes.
+- **Jump Block / Chase-Down Block (`L`/`Y`)**: Leaps to swat layups/dunks/jumpers (`Paint Patroller` & `High-Flying Denier`). Jumping on a pump fake causes a realistic fly-by!
+- **Steal / Passing Lane Intercept (`J`/`X`)**: Attempts on-ball rip (`Glove`) or mid-air pass deflection (`Interceptor`). Spamming steal drains adrenaline and risks a **Reach-In Foul**.
+- **2K26 Rebound Timing & Box-Out**: Holding Intense-D near the paint seals off opponents (`Boxout Beast`). Pressing Rebound right as the ball drops off the rim triggers high-vertical snags (`Rebound Chaser`); jumping too early delays recovery (`Pogo Stick` helps second jumps).
+
+--------------------------------------------------------------------------------
+6. 5-TIER BADGE ENGINE & TAKEOVER SYSTEM (`src/engine/BadgeEngine.ts`)
+--------------------------------------------------------------------------------
+- Implement real mathematical modifiers for all 25 badges across 5 tiers (`Bronze +4%`, `Silver +8%`, `Gold +12%`, `HoF +16%`, `Legend +22%`).
+- Whenever a badge influences an action, emit a `BadgeTriggerEvent` (`{ playerId, badgeId, tier, timestamp }`) so the HUD pops up the gleaming badge icon in real time!
+- **Takeover Progression (Levels 1–5 + Ignition)**:
+  - Positive plays (Green shots, assists, steals, blocks, good contests) fill each player's Takeover meter (`0–100`). Passing Levels `1` (`20%`), `2` (`40%`), `3` (`60%`), `4` (`80%`) gives progressive `+2` attribute boosts. At `100%` (Level 5), pressing `T` / `R3` / Touch Takeover ignites **Takeover Mode** for 45 seconds (blazing flames under feet + `+10` archetype ratings + Deep Range / Ankle Breaker / Paint Wall perk!).
+
+--------------------------------------------------------------------------------
+7. COMPLETE NBA & BLACKTOP RULES ENGINE
+--------------------------------------------------------------------------------
+- **Jump Ball Tip-Off**: Opening tip-off timing mini-game at center court!
+- **Clocks & Violations**: Quarter countdown clock, **24-second Shot Clock** (resets to `14s` on offensive rebound or non-shooting foul), **8-second Backcourt violation**, **Out-of-Bounds** sideline/baseline checks with inbound pass animations, toggleable **3-Second Paint violation**, Shooting & Reach-In Fouls, Team Bonus (`5` fouls/qtr), and interactive **Free Throw Shooting** (with timing meter or Real Player %).
+- **Blacktop / Park Ruleset**: First to `11` or `21` (win by 2 toggleable), `1s & 2s` or `2s & 3s`, half-court check-ball clearance on turnovers, Make-It-Take-It toggle.
+- **Quarter Transitions & Overtime**: Smooth quarter summary chime, side swap at Halftime, and 2–5 min Overtime periods if tied at `0.0`.
+
+--------------------------------------------------------------------------------
+8. SMART 5v5 AI ENGINE (`src/engine/AISystem.ts`)
+--------------------------------------------------------------------------------
+- **Offensive AI**: Runs real spacing (2 corners, 2 wings/slots, 1 dunker/screener), executes active PlayVision sets (`5-Out`, `Motion Cut`, `Horns`, `Floppy`, `Pick & Roll`), kicks out to open 3PT shooters when user double-teams, and follows real player tendencies (Curry/Clark pull deep 3s, SGA/Kobe hit mid-range fades, LeBron/Giannis attack transition, Jokić/Sabonis facilitate).
+- **Defensive AI**: Obeys user's active Defensive Scheme (`Man-to-Man`, `2-3 Zone`, `3-2 Zone`, `Full-Court Press`, `Half-Court Trap`) AND respects **Marked Enemy Star Directives** (`Double Team`, `Deny Ball`, `Go Over Screens`, `Pack Paint`)!
+- **Difficulty Scaling (`Rookie` -> `Hall of Fame`)**: Scales AI reaction speed, contest timing, help rotation speed, shot release precision, and user green window smoothly.
+
+DELIVERABLE FOR PART 4:
+Wire `BasketballSimulation.ts`, `BadgeEngine.ts`, and `AISystem.ts` into a live runnable match loop connected to `Court3D.tsx` so hitting `[TIP-OFF]` from Part 1 launches a fully playable 5v5 / 3v3 / 1v1 3D basketball game at 60 FPS!

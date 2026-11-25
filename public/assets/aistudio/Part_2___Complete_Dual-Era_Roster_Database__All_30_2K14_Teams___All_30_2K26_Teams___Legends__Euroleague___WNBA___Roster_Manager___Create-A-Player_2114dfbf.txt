@@ -1,0 +1,105 @@
+================================================================================
+PART 2 OF 7 — GOOGLE AI STUDIO INCREMENTAL BUILD PROMPT
+PROJECT: NBA 2K14 + NBA 2K26 ULTIMATE HYBRID — 100% EXACT 3D WEBGL CLONE
+SCOPE: COMPLETE DUAL-ERA ROSTER DATABASE (60 NBA TEAMS + LEGENDS + EUROLEAGUE
+       + WNBA), BADGES, HOT ZONES, ROSTER MANAGER & CREATE-A-PLAYER
+================================================================================
+
+CONTINUE BUILDING IN THE SAME PROJECT FROM PART 1. DO NOT REMOVE OR BREAK ANY PART 1 FILES OR FUNCTIONALITY.
+
+In Part 2, build the complete, authentic **Dual-Era Team & Player Database**, procedural Team Emblem/Jersey SVG generator, full **Manage Roster** editor, and **Create-A-Player** studio so every team from BOTH **NBA 2K14 (2013-14)** and **NBA 2K26 (2025-26)** plus Bonus Eras is immediately selectable, editable, and playable.
+
+--------------------------------------------------------------------------------
+1. PLAYER & TEAM DATA SCHEMA (`src/types/roster.ts`)
+--------------------------------------------------------------------------------
+Define rich, gameplay-ready interfaces:
+- `BadgeTier`: `'BRONZE' | 'SILVER' | 'GOLD' | 'HOF' | 'LEGEND'`
+- `BadgeId`: All 25 authentic 2K26/2K14 badges:
+  - *Shooting*: `'DEADEYE' | 'LIMITLESS_RANGE' | 'SET_SHOT_SPECIALIST' | 'SHIFTY_SHOOTER' | 'MINI_MARKSMAN'`
+  - *Playmaking*: `'ANKLE_ASSASSIN' | 'DIMER' | 'LIGHTNING_LAUNCH' | 'UNPLUCKABLE' | 'HANDLES_FOR_DAYS' | 'VERSATILE_VISIONARY' | 'BREAK_STARTER'`
+  - *Finishing*: `'POSTERIZER' | 'AERIAL_WIZARD' | 'LAYUP_MIXMASTER' | 'FLOAT_GAME' | 'PHYSICAL_FINISHER'`
+  - *Defense/Reb*: `'PERIMETER_CHALLENGER' | 'GLOVE' | 'INTERCEPTOR' | 'PAINT_PATROLLER' | 'HIGH_FLYING_DENIER' | 'BOXOUT_BEAST' | 'REBOUND_CHASER' | 'POGO_STICK'`
+- `HotZones`: 9 half-court zones (`leftCorner3, leftWing3, topKey3, rightWing3, rightCorner3, leftMid, topMid, rightMid, paint`) each rated `-1` (Cold), `0` (Neutral), or `1` (Hot).
+- `PlayerAttributes`: 18 exact ratings (25–99):
+  - `closeShot, midRange, threePt, freeThrow, drivingDunk, drivingLayup, ballHandle, passAccuracy, speed, acceleration, vertical, strength, perimeterDef, interiorDef, steal, block, offReb, defReb`
+- `PlayerProfile`:
+  - `id, name, jerseyNumber, position ('PG'|'SG'|'SF'|'PF'|'C'), heightInches (69–88), weightLbs, wingspanInches, ovr (65–99), archetype, era`
+  - `appearance`: `{ skinTone: string; hairStyle: 'BALD'|'BUZZ'|'FADE'|'AFRO'|'DREADS'|'BRAIDS'|'PONYTAIL'|'SHORT'; hairColor: string; headband: boolean; armSleeve: 'NONE'|'LEFT'|'RIGHT'|'BOTH'; legCompression: boolean; shoeColor: string }`
+  - `jumpshotSpeed` (`0.75` fast to `1.25` slow), `tendencies` (`shoot3, driveRim, postUp, passFirst, stealAggro`), `attributes`, `hotZones`, `badges: Partial<Record<BadgeId, BadgeTier>>`
+- `TeamData`:
+  - `id, era ('2K14'|'2K26'|'LEGENDS'|'EUROLEAGUE'|'WNBA'), city, name, abbr, conference ('EAST'|'WEST'|'EURO'|'WNBA')`
+  - `colors`: `{ primary: string; secondary: string; accent: string; courtWood: string; keyColor: string }`
+  - `ovr, offRating, defRating`, `roster: PlayerProfile[]` (Starting 5 ordered `PG, SG, SF, PF, C` + 3 key bench players = 8 playable players per team!).
+
+--------------------------------------------------------------------------------
+2. COMPLETE 72-TEAM DATABASE (`src/data/rosters2K14.ts`, `src/data/rosters2K26.ts`, `src/data/rostersBonus.ts`, `src/data/teamsIndex.ts`)
+--------------------------------------------------------------------------------
+Use a clean helper factory function `makePlayer(...)` to keep files concise, readable, and 100% free of syntax bloat while ensuring EVERY SINGLE TEAM has authentic real players, accurate ratings, heights, jersey numbers, hot zones, and badges:
+
+- **A. ALL 30 NBA TEAMS — 2013-14 NBA 2K14 ERA (`src/data/rosters2K14.ts`)**:
+  - **Eastern Conference (15 Teams)**:
+    1. **Miami Heat '14** (LeBron James #6 99, Dwyane Wade #3 91, Chris Bosh #1 86, Ray Allen #34 81, Mario Chalmers #15 78 + Shane Battier, Chris Andersen, Norris Cole)
+    2. **Indiana Pacers '14** (Paul George #24 90, Roy Hibbert #55 83, David West #21 82, George Hill #3 79, Lance Stephenson #1 79 + Danny Granger, Luis Scola, C.J. Watson)
+    3. **Chicago Bulls '14** (Derrick Rose #1 92, Joakim Noah #13 86, Jimmy Butler #21 81, Luol Deng #9 83, Carlos Boozer #5 80 + Taj Gibson, Kirk Hinrich, Mike Dunleavy)
+    4. **New York Knicks '14** (Carmelo Anthony #7 92, Tyson Chandler #6 82, J.R. Smith #8 81, Iman Shumpert #21 77, Raymond Felton #2 78 + Amar'e Stoudemire, Metta World Peace, Tim Hardaway Jr.)
+    5. **Brooklyn Nets '14** (Deron Williams #8 86, Joe Johnson #7 84, Paul Pierce #34 83, Kevin Garnett #2 82, Brook Lopez #11 84 + Andrei Kirilenko, Jason Terry, Shaun Livingston)
+    6. **Boston Celtics '14** (Rajon Rondo #9 89, Jeff Green #8 80, Avery Bradley #0 78, Jared Sullinger #7 77, Kelly Olynyk #41 75 + Gerald Wallace, Brandon Bass, Courtney Lee)
+    7. **Toronto Raptors '14** (DeMar DeRozan #10 83, Kyle Lowry #7 82, Rudy Gay #22 83, Jonas Valanciunas #17 78, Amir Johnson #15 77 + Terrence Ross, Tyler Hansbrough, Greivis Vasquez)
+    8. **Washington Wizards '14** (John Wall #2 86, Bradley Beal #3 81, Nene #42 80, Marcin Gortat #4 79, Trevor Ariza #1 78 + Martell Webster, Otto Porter Jr., Andre Miller)
+    9. **Cleveland Cavaliers '14** (Kyrie Irving #2 89, Dion Waiters #3 79, Luol Deng/Earl Clark, Tristan Thompson #13 78, Anderson Varejao #17 79 + Jarrett Jack, Andrew Bynum, Anthony Bennett)
+    10. **Detroit Pistons '14** (Josh Smith #6 84, Brandon Jennings #7 82, Greg Monroe #10 82, Andre Drummond #0 81, Rodney Stuckey #3 77 + Kentavious Caldwell-Pope, Chauncey Billups, Kyle Singler)
+    11. **Atlanta Hawks '14** (Al Horford #15 86, Paul Millsap #4 83, Jeff Teague #0 81, Kyle Korver #26 78, DeMarre Carroll #5 76 + Lou Williams, Dennis Schroder, Elton Brand)
+    12. **Charlotte Bobcats '14** (Al Jefferson #25 85, Kemba Walker #15 82, Michael Kidd-Gilchrist #14 78, Gerald Henderson #9 78, Josh McRoberts #11 75 + Cody Zeller, Bismack Biyombo, Ramon Sessions)
+    13. **Milwaukee Bucks '14** (Larry Sanders #8 80, O.J. Mayo #00 79, Brandon Knight #11 78, Ersan Ilyasova #7 78, Giannis Antetokounmpo #34 74 + Caron Butler, John Henson, Zaza Pachulia)
+    14. **Orlando Magic '14** (Arron Afflalo #4 80, Nikola Vucevic #9 81, Victor Oladipo #5 79, Tobias Harris #12 78, Jameer Nelson #14 77 + Maurice Harkless, Glen Davis, Kyle O'Quinn)
+    15. **Philadelphia 76ers '14** (Michael Carter-Williams #1 79, Thaddeus Young #21 80, Evan Turner #12 79, Spencer Hawes #00 77, Nerlens Noel #4 76 + Tony Wroten, James Anderson, Hollis Thompson)
+  - **Western Conference (15 Teams)**:
+    16. **San Antonio Spurs '14** (Tony Parker #9 89, Tim Duncan #21 88, Kawhi Leonard #2 84, Manu Ginobili #20 83, Danny Green #4 78 + Tiago Splitter, Boris Diaw, Patty Mills)
+    17. **OKC Thunder '14** (Kevin Durant #35 95, Russell Westbrook #0 91, Serge Ibaka #9 84, Thabo Sefolosha #2 76, Kendrick Perkins #5 74 + Reggie Jackson, Jeremy Lamb, Steven Adams)
+    18. **LA Clippers '14** (Chris Paul #3 94, Blake Griffin #32 88, DeAndre Jordan #6 82, J.J. Redick #4 79, Jamal Crawford #11 81 + Matt Barnes, Darren Collison, Jared Dudley)
+    19. **Golden State Warriors '14** (Stephen Curry #30 90, Andre Iguodala #9 84, Klay Thompson #11 83, David Lee #10 82, Andrew Bogut #12 80 + Harrison Barnes, Draymond Green, Jermaine O'Neal)
+    20. **Houston Rockets '14** (Dwight Howard #12 91, James Harden #13 89, Chandler Parsons #25 80, Jeremy Lin #7 79, Patrick Beverley #2 77 + Omer Asik, Terrence Jones, Omri Casspi)
+    21. **LA Lakers '14** (Kobe Bryant #24 93, Pau Gasol #16 84, Steve Nash #10 81, Nick Young #0 78, Chris Kaman #9 76 + Jordan Hill, Jodie Meeks, Wesley Johnson)
+    22. **Portland Trail Blazers '14** (LaMarcus Aldridge #12 88, Damian Lillard #0 86, Nicolas Batum #88 81, Wesley Matthews #2 80, Robin Lopez #42 78 + Mo Williams, C.J. McCollum, Thomas Robinson)
+    23. **Memphis Grizzlies '14** (Marc Gasol #33 87, Zach Randolph #50 85, Mike Conley #11 84, Tony Allen #9 79, Tayshaun Prince #21 76 + Courtney Lee, Jerryd Bayless, Kosta Koufos)
+    24. **Dallas Mavericks '14** (Dirk Nowitzki #41 87, Monta Ellis #11 84, Jose Calderon #8 78, Shawn Marion #0 79, Samuel Dalembert #1 75 + Vince Carter, Devin Harris, Brandan Wright)
+    25. **Denver Nuggets '14** (Ty Lawson #3 84, Kenneth Faried #35 82, Danilo Gallinari #8 81, Wilson Chandler #21 79, JaVale McGee #34 78 + Nate Robinson, Randy Foye, J.J. Hickson)
+    26. **Minnesota Timberwolves '14** (Kevin Love #42 89, Ricky Rubio #9 82, Nikola Pekovic #14 81, Kevin Martin #23 80, Corey Brewer #13 77 + Chase Budinger, J.J. Barea, Gorgui Dieng)
+    27. **New Orleans Pelicans '14** (Anthony Davis #23 87, Jrue Holiday #11 84, Eric Gordon #10 81, Tyreke Evans #1 81, Ryan Anderson #33 79 + Al-Farouq Aminu, Jason Smith, Austin Rivers)
+    28. **Phoenix Suns '14** (Goran Dragic #1 84, Eric Bledsoe #2 83, Gerald Green #14 79, Markieff Morris #11 78, Miles Plumlee #22 76 + P.J. Tucker, Channing Frye, Marcus Morris)
+    29. **Sacramento Kings '14** (DeMarcus Cousins #15 86, Isaiah Thomas #22 81, Rudy Gay/Ben McLemore #16 77, Marcus Thornton #23 77, Jason Thompson #34 75 + Derrick Williams, Carl Landry, Jimmer Fredette)
+    30. **Utah Jazz '14** (Gordon Hayward #20 82, Derrick Favors #15 81, Enes Kanter #0 78, Trey Burke #3 78, Alec Burks #10 77 + Richard Jefferson, Marvin Williams, Rudy Gobert)
+
+- **B. ALL 30 NBA TEAMS — 2025-26 NBA 2K26 ERA (`src/data/rosters2K26.ts`)**:
+  - Populate all 30 modern 2025-26 rosters faithfully, headlined by:
+    - **OKC Thunder '26** (Shai Gilgeous-Alexander #2 98, Jalen Williams #8 89, Chet Holmgren #7 88, Alex Caruso #9 83, Isaiah Hartenstein #55 82 + Lu Dort, Cason Wallace, Isaiah Joe)
+    - **Denver Nuggets '26** (Nikola Jokić #15 98, Jamal Murray #27 86, Aaron Gordon #32 83, Michael Porter Jr. #1 82, Christian Braun #0 79 + Russell Westbrook, Peyton Watson, Julian Strawther)
+    - **Boston Celtics '26** (Jayson Tatum #0 96, Jaylen Brown #7 92, Derrick White #9 86, Kristaps Porziņģis #8 86, Jrue Holiday #4 85 + Payton Pritchard, Al Horford, Sam Hauser)
+    - **LA Lakers '26** (Luka Dončić #77 97, LeBron James #23 95, Austin Reaves #15 84, Rui Hachimura #28 80, Jaxson Hayes #11 77 + Dorian Finney-Smith, Jarred Vanderbilt, Dalton Knecht)
+    - **San Antonio Spurs '26** (Victor Wembanyama #1 95, De'Aaron Fox #4 88, Stephon Castle #5 82, Devin Vassell #24 81, Jeremy Sochan #10 79 + Harrison Barnes, Keldon Johnson, Chris Paul)
+    - **Milwaukee Bucks '26** (Giannis Antetokounmpo #34 97, Damian Lillard #0 89, Kyle Kuzma #18 81, Brook Lopez #11 80, Bobby Portis #9 80 + Gary Trent Jr., Taurean Prince, AJ Green)
+    - **Minnesota Timberwolves '26** (Anthony Edwards #5 95, Rudy Gobert #27 86, Julius Randle #30 84, Jaden McDaniels #3 81, Naz Reid #11 82 + Donte DiVincenzo, Mike Conley, Nickeil Alexander-Walker)
+    - **Golden State Warriors '26** (Stephen Curry #30 95, Jimmy Butler #10 89, Draymond Green #23 83, Jonathan Kuminga #00 81, Brandin Podziemski #2 79 + Buddy Hield, Moses Moody, Kevon Looney)
+    - **New York Knicks '26** (Jalen Brunson #11 93, Karl-Anthony Towns #32 90, Mikal Bridges #25 84, OG Anunoby #8 84, Josh Hart #3 82 + Miles McBride, Mitchell Robinson, Cameron Payne)
+    - **Cleveland Cavaliers '26** (Donovan Mitchell #45 93, Evan Mobley #4 89, Darius Garland #10 87, Jarrett Allen #31 86, De'Andre Hunter #12 81 + Max Strus, Ty Jerome, Isaac Okoro)
+    - Plus all other 20 2025-26 NBA Teams (`DAL` Anthony Davis/Kyrie Irving/Cooper Flagg-era stars, `PHX` KD/Booker, `PHI` Embiid/Maxey/PG, `MEM` Ja/JJJ/Bane, `HOU` Sengun/Amen/Jalen Green, `IND` Haliburton/Siakam, `ORL` Paolo/Franz, `MIA` Bam/Herro, `LAC` Kawhi/Harden/Zubac, `SAC` Sabonis/LaVine/DeRozan, `DET` Cade/Duren, `ATL` Trae/Jalen Johnson, `CHI` Giddey/Coby White, `TOR` Scottie Barnes/Ingram/RJ, `POR` Sharpe/Scoot/Avdija, `NOP` Zion/Trey Murphy, `BKN` Cam Thomas/Claxton, `CHA` LaMelo/Brandon Miller, `UTA` Markkanen/Keyonte, `WAS` Bilal/Alex Sarr/Poole).
+
+- **C. BONUS ERAS (`src/data/rostersBonus.ts`)**:
+  - **4 Classic Legend Teams**: `95-96 Chicago Bulls` (Michael Jordan #23 99, Scottie Pippen #33 95, Dennis Rodman #91 91, Toni Kukoc 85, Ron Harper 82), `00-01 LA Lakers` (Shaquille O'Neal #34 99, Kobe Bryant #8 97, Derek Fisher 80, Rick Fox 79, Horace Grant 80), `85-86 Boston Celtics` (Larry Bird #33 98, Kevin McHale #32 92, Robert Parish 88, Dennis Johnson 85, Danny Ainge 83), `16-17 Golden State Warriors` (Kevin Durant #35 97, Stephen Curry #30 97, Klay Thompson #11 90, Draymond Green #23 88, Andre Iguodala 83).
+  - **4 NBA 2K14 Euroleague Teams**: `Real Madrid`, `FC Barcelona`, `CSKA Moscow`, `Olympiacos Piraeus` (with authentic 2013-14 Euroleague stars like Sergio Llull, Rudy Fernandez, Juan Carlos Navarro, Vassilis Spanoulis, Milos Teodosic).
+  - **4 NBA 2K26 The W / WNBA Teams**: `Las Vegas Aces` (A'ja Wilson #22 98, Chelsea Gray 89, Jackie Young 89), `Indiana Fever` (Caitlin Clark #22 95, Aliyah Boston 88, Kelsey Mitchell 87), `New York Liberty` (Breanna Stewart #30 95, Sabrina Ionescu #20 92, Jonquel Jones 91), `Chicago Sky` (Angel Reese #5 92, Kamilla Cardoso 85, Courtney Vandersloot 82).
+
+--------------------------------------------------------------------------------
+3. PROCEDURAL SVG TEAM EMBLEMS (`src/components/TeamLogo.tsx`)
+--------------------------------------------------------------------------------
+Build a crisp dynamic SVG Team Emblem component that renders a unique shield/basketball/crest logo in each team's exact primary/secondary/accent colors with team abbreviation and era badge (`'14`, `'26`, `LEGEND`, `EURO`, `WNBA`)—zero external URLs!
+
+--------------------------------------------------------------------------------
+4. MANAGE ROSTER & CREATE-A-PLAYER (`src/components/RosterManager.tsx`, `src/components/CreateAPlayer.tsx`)
+--------------------------------------------------------------------------------
+- **Manage Roster**: Browse all 72 teams by Era filter, inspect any player's 18 attributes, Hot Zones visual half-court map, and Badges, edit player ratings/jersey numbers, swap Starters vs Bench, or trade players between teams (persisted in `localStorage` with `[RESET DEFAULT ROSTERS]`).
+- **Create-A-Player**: Full standalone creator (Name, Position, Height/Weight/Wingspan, Appearance/Headband/Sleeves/Shoes, 18 Attribute sliders, Badge picker, Hot Zone editor, and Assign to Any Team or Free Agents pool).
+- Wire the full 72-team database directly into `PlayNowSetup.tsx` from Part 1 so every team's Starting 5, OVR/OFF/DEF, and colors display immediately!
+
+DELIVERABLE FOR PART 2:
+All 72 teams (576+ players) cleanly structured, typed, and integrated into Play Now Setup, Manage Roster, and Create-A-Player with zero TypeScript errors.

@@ -1,0 +1,87 @@
+================================================================================
+GOOGLE AI STUDIO INCREMENTAL MASTER PROMPT — PART 2 OF 7
+PROJECT: MOBILE LEGENDS: BANG BANG (MLBB) — 100% EXACT CLONE
+SCOPE: 60 FPS LAND OF DAWN 5v5 BATTLEFIELD ENGINE, 5 MAP THEMES, 4 2026 MAP
+       VARIANTS, EXACT TURRET/MINION/JUNGLE/TURTLE/LORD TIMERS, DYNAMIC FOG
+       OF WAR, BUSH STEALTH + OVERHEAD EYE (👁️) & 3-STATE TURRET RINGS
+================================================================================
+
+CONTINUATION RULES (CRITICAL):
+- Preserve 100% of Part 1 (Main Lobby, Profile, Pre-Match, Draft Pick, Loading Screen, Audio Engine, State). Do NOT remove or break any existing UI screen.
+- Now build the complete, high-FPS (60+ FPS) **Land of Dawn 5v5 Battlefield Engine** (`src/engine/`) rendered on a crisp, responsive HTML5 Canvas / 2.5D Isometric Battlefield Renderer.
+
+--------------------------------------------------------------------------------
+1. LAND OF DAWN SYMMETRICAL DIAGONAL MAP GEOMETRY (`4200 x 4200` WORLD UNITS)
+--------------------------------------------------------------------------------
+Build the authentic MLBB diagonal 3-lane square map:
+- **Blue Base (Bottom-Left)** vs. **Red Base (Top-Right)**, mirrored cleanly across the diagonal river:
+  * **3 Lanes:**
+    1. **EXP Lane** (Top-Left outer curve — marked on ground at `00:00` with glowing Cyan Sword/EXP floor decal; Siege Minion grants `+35%` bonus EXP from `00:00` to `05:00`).
+    2. **Mid Lane** (Center diagonal shortest corridor).
+    3. **Gold Lane** (Bottom-Right outer curve — marked on ground at `00:00` with glowing Gold Coin floor decal; Siege Minion grants `+45%` bonus Gold from `00:00` to `05:00`).
+  * **Central Diagonal River:** Flows from Top-Left alcove through Mid crossing to Bottom-Right alcove with animated water ripples, flowing current chevrons (grants `+15%` downstream Move Speed), and two semicircular Objective Pits (Turtle/Lord pits).
+  * **4 Jungle Quadrants & Authentic Collision Walls:** Sculpted rock walls with exact jungle corridors, thickets/bushes (swaying grass blades when units walk through!), river bushes, lane side bushes, and base high-ground stairs.
+  * **Brawl Map Mode Support:** When game mode is `BRAWL`, load the single-lane wide bridge arena with 2 Outer Turrets, 1 Base Crystal per side, and periodic side healing shrines!
+
+--------------------------------------------------------------------------------
+2. ALL 5 SELECTABLE MAP THEMES & ALL 4 2026 MAP VARIANTS
+--------------------------------------------------------------------------------
+Read the player's selected Map Theme and Map Variant from Pre-Match / Settings and render them dynamically:
+- **5 Battlefield Visual Themes:**
+  1. `Imperial Sanctuary`: Sunlit carved marble lanes, lush emerald forest grass, crystal-blue river.
+  2. `Western Expanse`: Warm golden sandstone canyon walls, desert oasis turquoise river, amber dust motes.
+  3. `Celestial Palace`: Floating white-gold astral marble, golden cloud edges, luminous cyan sky-river.
+  4. `Sanctum Island`: Ancient coastal temple stone, misty teal waterfalls, glowing turquoise coral water.
+  5. `Harmonic Sanctuary`: Twilight lantern glow, lotus-pond river with floating glowing blossoms, indigo-emerald grass.
+- **4 Toggleable 2026 Map Mechanics Variants:**
+  1. `Dangerous Grass`: Spawns additional dense ambush bushes near Outer/Inner Turrets, Mid River entrances, and behind Lord/Turtle pits.
+  2. `Broken Walls`: Opens extra shortcut wall gaps near Blue Buff, Red Buff, and Mid Lane walls for high-mobility ganks & escapes.
+  3. `Flying Cloud`: Spawns an interactive glowing **Wind Platform** at your Base Fountain after respawning—stepping on it launches your hero flying over walls swiftly back toward outer lanes!
+  4. `Expanding Rivers`: Widens the river current aura into adjacent jungle entrances, granting boosted river movement speed for rapid rotations.
+
+--------------------------------------------------------------------------------
+3. BASES, FOUNTAINS, 18 TURRETS & 3-STATE TURRET AGGRO RINGS
+--------------------------------------------------------------------------------
+- **Fountain (Both Sides):** Instant rapid HP & Mana regen (`+15% Max HP/sec`) for allies + lethal true-damage laser (`1500/hit`) targeting invading enemies.
+- **Base Crystal (Both Sides):** Massive crystal core (`8500 HP`, regenerating shield); destroying the enemy Base Crystal triggers slow-motion shatter VFX + `VICTORY` / `DEFEAT` transition!
+- **9 Turrets Per Side (18 Total):** 3 Outer, 3 Inner, 3 Base/Inhibitor Turrets:
+  * **Outer Turret Energy Shield (`00:00` – `05:00`):** Outer turrets glow with a visible cyan energy dome reducing incoming damage by `50%` and dropping gold coins (`+40g` per plate chunk) to nearby attackers! At `05:00`, the shield shatters with an announcer chime.
+  * **Inhibitor Destruction Rule:** Destroying an enemy Base/Inhibitor Turret permanently upgrades your allied wave in that lane to spawn empowered **Super Minions** (larger armor, heavy HP & damage).
+  * **Turret Target Priority & Escalating Damage:** Turrets attack nearest Minion/Lord first -> unless an enemy Hero damages an allied Hero inside turret range, which immediately switches turret lock onto that Hero! Each consecutive turret shot on a hero ramps damage by `+40%` (resets 3s after leaving range).
+- **3-STATE TURRET RANGE RING & LOCK-ON WARNING (MANDATORY VISUAL):**
+  * Whenever the player approaches an enemy turret, draw a crisp circular ground ring at exact turret range:
+    - **GREEN RING:** Safe — allied minions/Lord are tanking turret shots and you have not hit an enemy hero.
+    - **YELLOW RING:** Caution — entering range with low-HP minions or approaching edge.
+    - **RED RING + PULSING LASER TETHER + WARNING BEEP SFX:** Turret is actively locked onto YOU!
+
+--------------------------------------------------------------------------------
+4. EXACT MINION WAVES, JUNGLE CAMPS, TURTLE & 3-STAGE LORD TIMERS
+--------------------------------------------------------------------------------
+Implement an exact match clock (`00:00` counting upward) driving every spawn, respawn timer icon on the minimap, and buff reward:
+
+| Entity | First Spawn | Respawn | Exact Location & Behavior |
+|---|---|---|---|
+| **Lane Minions** | `00:10` | Every `00:30` | 3 Lanes: 1 Melee, 1 Ranged, 1 Siege/Cannon (bonus Gold in Gold Lane / bonus EXP in EXP Lane during `00:00–05:00`). Super Minion spawns if enemy Inhibitor is down. |
+| **Purple Buff (Thunder Fenrir)** | `00:20` | `01:15` (75s) | Blue & Red Upper/Lower Buff pits. Grants **Blue Buff (75s)**: `-10% CDR`, `-40% Mana / -20% Energy Cost`, HP heal on kill. |
+| **Orange Buff (Molten Fiend)** | `00:20` | `01:15` (75s) | Opposite Buff pits. Grants **Red Buff (75s)**: Bonus True Damage burn + Slow on attacks. |
+| **Small Jungle Creeps** | `00:25` | `01:00` (60s) | Beetle, Rockursa, Fiend, Crammer across all 4 jungle quadrants (grant Gold, EXP & Retribution stacks). |
+| **Lithowanderer (Walkie Grass)** | `00:43` | `02:00` (120s) | Mid-River (Blue Buff side). Killing it summons a moving **Walkie Grass** ward giving river vision, Mana regen & `+15%` river speed. |
+| **Sanctum Crab (Gold Crab)** | `00:45` | `01:30` (90s) | Outer River Alcoves (Gold & EXP edges). Drops Gold Buff ticking bonus gold every 1s for 18s. |
+| **TURTLE** | `02:00` | `02:00` (120s) *(Stops at `08:00`)* | Spawns in the **EXP-Lane side River Pit**. Killer gets huge refreshing Shield + Adaptive Attack; entire team gets Shield + Gold + EXP + Announcer Banner. |
+| **LORD (Normal)** | `08:00` | `03:00` (180s) after death | Spawns in River Pit. When defeated, marches down the enemy team's weakest lane, smashing turrets with heavy AoE knockup slams! |
+| **ENHANCED LORD** | `12:00` | `03:00` (180s) | Gains an unstoppable **Charge Dash** that rams straight into the first enemy turret for massive True Damage! |
+| **EVOLVED LORD** | `18:00` | `03:00` (180s) | Huge HP pool, Damage Reduction aura for nearby allies, AND empowers ALL 3 lanes' allied minion waves simultaneously! |
+
+- Render crisp floating HP bars over every Minion, Creep, Turret, Turtle, and Lord (with exact numeric HP on Turtle/Lord so Junglers can time **Retribution** accurately!).
+- Render circular respawn countdown timers directly on the ground & minimap for cleared Buffs, Turtle, and Lord.
+
+--------------------------------------------------------------------------------
+5. DYNAMIC FOG OF WAR, BUSH STEALTH & OVERHEAD VISION EYE (`👁️`)
+--------------------------------------------------------------------------------
+- **Real-Time Fog of War:** Dim all map zones outside allied Hero, Minion, Turret, and Walkie Grass vision radii. Enemies outside vision or concealed inside bushes are completely hidden from both the main battlefield canvas and the minimap!
+- **Authentic Bush Stealth & Overhead Eye Indicator (`👁️`):**
+  * Walking into any bush dims your hero model to `opacity: 0.55` with swaying grass particles to show you are concealed.
+  * The instant an enemy enters your bush, reveals you with a vision skill/trap, or you attack from inside the bush so enemies can see you, display a bright pulsing **Eye Icon (`👁️`)** directly above your hero's head!
+- **Basic Movement & Camera Engine:** Smooth 60 FPS hero movement (`WASD`/Arrows + touch virtual joystick hook), wall collision sliding, river current boost, and smooth camera following with `Camera Height` (`Low` vs `High` = +20% wider FOV) ready for Part 3's HUD & tactical scouting modes.
+
+BUILD PART 2 COMPLETELY NOW. ENSURE SMOOTH 60 FPS RENDERING AND ZERO ERRORS.
